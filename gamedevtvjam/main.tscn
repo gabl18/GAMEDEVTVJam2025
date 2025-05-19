@@ -1,11 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=10 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Texture2D" uid="uid://d1dfmber6ydek" path="res://Assets/Art/main_scene_sheet.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cq6v4aavnaov8" path="res://UI/texture_rect.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dqqi5n6c7p3dw" path="res://Assets/Art/main_scene_cover_sheet.png" id="3_h2yge"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
 atlas = ExtResource("1_ig7tw")
 region = Rect2(0, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
+atlas = ExtResource("3_h2yge")
+region = Rect2(450, 0, 150, 100)
+
+[sub_resource type="Animation" id="Animation_1bvp3"]
+resource_name = "Opening_Closing_Drawer"
+length = 0.433
+step = 0.0667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 150, 100), Rect2(0, 100, 150, 100), Rect2(150, 100, 150, 100), Rect2(300, 100, 150, 100), Rect2(450, 100, 150, 100), Rect2(600, 100, 150, 100), Rect2(600, 100, 150, 100), Rect2(0, 200, 150, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:texture:region")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333381, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(450, 0, 150, 100), Rect2(0, 0, 150, 100)]
+}
 
 [sub_resource type="Animation" id="Animation_h2yge"]
 length = 0.001
@@ -21,11 +55,23 @@ tracks/0/keys = {
 "update": 0,
 "values": [Rect2(0, 0, 150, 100)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(450, 0, 150, 100)]
+}
 
-[sub_resource type="Animation" id="Animation_1bvp3"]
-resource_name = "Opening_Closing_Drawer"
-length = 0.333
-step = 0.0667
+[sub_resource type="Animation" id="Animation_lquwl"]
+resource_name = "Opening_Closing_Cover"
+length = 0.25
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -33,14 +79,27 @@ tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(0, 0, 150, 100), Rect2(0, 100, 150, 100), Rect2(150, 100, 150, 100), Rect2(300, 100, 150, 100), Rect2(450, 100, 150, 100), Rect2(600, 100, 150, 100)]
+"values": [Rect2(0, 200, 150, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:texture:region")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.17, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 150, 100), Rect2(150, 0, 150, 100), Rect2(300, 0, 150, 100), Rect2(450, 0, 150, 100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lquwl"]
 _data = {
+&"Opening_Closing_Cover": SubResource("Animation_lquwl"),
 &"Opening_Closing_Drawer": SubResource("Animation_1bvp3"),
 &"RESET": SubResource("Animation_h2yge")
 }
@@ -59,6 +118,15 @@ size_flags_horizontal = 4
 texture = SubResource("AtlasTexture_0xm2m")
 script = ExtResource("2_0xm2m")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1bvp3")
+
 [node name="Button_Drawer_Open" type="TextureButton" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
@@ -74,17 +142,52 @@ mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_Drawer_Close" type="TextureButton" parent="CanvasLayer/TextureRect"]
-layout_mode = 0
-offset_left = 142.0
-offset_top = 530.0
-offset_right = 199.0
-offset_bottom = 582.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.130812
+anchor_top = 0.824173
+anchor_right = 0.16866
+anchor_bottom = 0.885654
+offset_left = 0.304001
+offset_top = -0.0640259
+offset_right = -0.296005
+offset_bottom = 0.0959473
+mouse_default_cursor_shape = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
-root_node = NodePath("../TextureRect")
+[node name="Button_Cover_Up" type="TextureButton" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0407222
+anchor_top = 0.799309
+anchor_right = 0.106972
+anchor_bottom = 0.861309
+offset_left = 0.0879822
+offset_top = 0.0479736
+offset_right = -0.23201
+offset_bottom = -0.128052
+mouse_default_cursor_shape = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Cover_Down" type="TextureButton" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0659722
+anchor_top = 0.871642
+anchor_right = 0.132222
+anchor_bottom = 0.933642
+offset_top = 0.175964
+offset_right = -0.32
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect"]
 libraries = {
 &"": SubResource("AnimationLibrary_lquwl")
 }
 
 [connection signal="pressed" from="CanvasLayer/TextureRect/Button_Drawer_Open" to="CanvasLayer/TextureRect" method="_on_button_drawer_open_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/Button_Drawer_Close" to="CanvasLayer/TextureRect" method="_on_button_drawer_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/Button_Cover_Up" to="CanvasLayer/TextureRect" method="_on_button_cover_up_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/Button_Cover_Down" to="CanvasLayer/TextureRect" method="_on_button_cover_down_pressed"]
