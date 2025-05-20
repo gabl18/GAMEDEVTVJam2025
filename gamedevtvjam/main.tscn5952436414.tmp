@@ -1,24 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=17 format=3 uid="uid://bkc51s3m5kq0b"]
 
-[ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
 [ext_resource type="Texture2D" uid="uid://d1dfmber6ydek" path="res://Assets/Art/main_scene_sheet.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cq6v4aavnaov8" path="res://UI/texture_rect.gd" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://b8e1n3m6wdlyx" path="res://UI/drawer_handler.gd" id="2_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dqqi5n6c7p3dw" path="res://Assets/Art/main_scene_cover_sheet.png" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://ch7cm8lhlf15s" path="res://UI/drawer_grid.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bnv1dhcl7q278" path="res://Assets/Art/main_scene_tabeltop.png" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://bj6xwwnw0n27n" path="res://other/off_table_area_2d.gd" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bxmj2m0arsj5o" path="res://other/globe_part.tscn" id="6_272bh"]
-[ext_resource type="Texture2D" uid="uid://nexl78gm5rfg" path="res://Assets/Art/Globes/Globe/Globe1.png" id="8_4c57u"]
+[ext_resource type="Script" uid="uid://bmpdkokienqx1" path="res://other/garbage_area_2d.gd" id="7_kek77"]
 [ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="8_kek77"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
 atlas = ExtResource("1_ig7tw")
 region = Rect2(0, 0, 150, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(36.4835, 16.7033)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_efxa6"]
-radius = 23.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
 atlas = ExtResource("3_h2yge")
@@ -116,13 +110,10 @@ _data = {
 &"RESET": SubResource("Animation_h2yge")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(36.4835, 16.7033)
+
 [node name="Main" type="Node2D"]
-
-[node name="Area Handler" type="Node" parent="."]
-script = ExtResource("1_efxa6")
-
-[node name="Drawer Handler" type="Node" parent="."]
-script = ExtResource("2_5vw27")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -137,39 +128,105 @@ size_flags_horizontal = 4
 texture = SubResource("AtlasTexture_0xm2m")
 script = ExtResource("2_0xm2m")
 
-[node name="Parts" type="Node2D" parent="CanvasLayer/TextureRect"]
-y_sort_enabled = true
-
-[node name="GlobePart" parent="CanvasLayer/TextureRect/Parts" instance=ExtResource("6_272bh")]
-position = Vector2(256, 416)
-scale = Vector2(4.08, 4.08)
-wall_min_slide_angle = 2.1293
-texture = ExtResource("8_kek77")
-part = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/TextureRect/Parts/GlobePart"]
-visible = false
-position = Vector2(-0.490194, -8.57843)
-shape = SubResource("RectangleShape2D_5vw27")
-
-[node name="GlobePart2" parent="CanvasLayer/TextureRect/Parts" instance=ExtResource("6_272bh")]
-position = Vector2(503, 430)
-scale = Vector2(4.15, 4.15)
-texture = ExtResource("8_4c57u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/TextureRect/Parts/GlobePart2"]
-visible = false
-position = Vector2(2.98023e-06, -17.8313)
-shape = SubResource("CircleShape2D_efxa6")
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/TextureRect"]
+[node name="Drawer_Grid" type="Control" parent="CanvasLayer/TextureRect" node_paths=PackedStringArray("Grid")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_7mycd")
+anchor_left = 0.232639
+anchor_top = 0.782407
+anchor_right = 0.772847
+anchor_bottom = 0.998728
+offset_right = -0.32
+offset_bottom = -0.176003
+script = ExtResource("3_lquwl")
+Grid = [NodePath("Control1"), NodePath("Control2"), NodePath("Control3"), NodePath("Control4"), NodePath("Control5"), NodePath("Control6"), NodePath("Control7"), NodePath("Control8")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Control1" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16881
+anchor_top = 0.264286
+anchor_right = 0.23281
+anchor_bottom = 0.550286
+offset_right = 0.192001
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.361736
+anchor_top = 0.292857
+anchor_right = 0.425736
+anchor_bottom = 0.578857
+offset_right = 0.191986
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
+
+[node name="Control3" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.594855
+anchor_top = 0.278571
+anchor_right = 0.658855
+anchor_bottom = 0.564571
+offset_right = 0.191986
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
+
+[node name="Control4" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771704
+anchor_top = 0.278571
+anchor_right = 0.835704
+anchor_bottom = 0.564571
+offset_right = 0.192017
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
+
+[node name="Control5" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117363
+anchor_top = 0.585714
+anchor_right = 0.181363
+anchor_bottom = 0.871714
+offset_right = 0.192001
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
+
+[node name="Control6" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.300643
+anchor_top = 0.614286
+anchor_right = 0.364643
+anchor_bottom = 0.900286
+offset_right = 0.191986
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
+
+[node name="Control7" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.596463
+anchor_top = 0.621429
+anchor_right = 0.660463
+anchor_bottom = 0.907429
+offset_right = 0.191986
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
+
+[node name="Control8" type="CenterContainer" parent="CanvasLayer/TextureRect/Drawer_Grid"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.836013
+anchor_top = 0.621429
+anchor_right = 0.900013
+anchor_bottom = 0.907429
+offset_right = 0.192017
+offset_bottom = -0.0400009
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
@@ -179,6 +236,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_1bvp3")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_7mycd")
 
 [node name="Button_Drawer_Open" type="TextureButton" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
@@ -241,62 +307,58 @@ libraries = {
 }
 
 [node name="Off_Table_Area2d" type="Area2D" parent="CanvasLayer/TextureRect"]
-visible = false
-collision_layer = 0
-collision_mask = 256
+script = ExtResource("6_5vw27")
 
 [node name="Drawer_Close_Poly" type="CollisionPolygon2D" parent="CanvasLayer/TextureRect/Off_Table_Area2d"]
-polygon = PackedVector2Array(90, 839, 229, 570, 897, 572, 988, 819)
+polygon = PackedVector2Array(77, 771, 231, 585, 915, 589, 948, 771)
 
 [node name="Always_Poly" type="CollisionPolygon2D" parent="CanvasLayer/TextureRect/Off_Table_Area2d"]
-polygon = PackedVector2Array(-15, 308, 1310, 313, 1321, -28, -207, -26, -216, 925, 1400, 923, 1320, 284, 1183, 320, 1177, 551, 1234, 820, 1043, 802, 897, 568, 793, 569, 882, 813, 263, 811, 366, 602, 799, 605, 794, 573, 382, 572, -19, 574)
+polygon = PackedVector2Array(-15, 308, 1203, 316, 1209, -28, -50, -22, -76, 840, 90, 844, 1400, 923, 1231, 275, 1183, 320, 1177, 551, 1258, 868, 947, 772, 86, 767, 233, 583, -22, 590)
 
 [node name="Table_Area2D" type="Area2D" parent="CanvasLayer"]
-visible = false
-collision_layer = 0
-collision_mask = 256
+collision_layer = 2
+collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Table_Area2D"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="CanvasLayer/Table_Area2D"]
+visible = false
 polygon = PackedVector2Array(0, 329, 1, 567, 1153, 571, 1156, 328)
 
 [node name="Drawer_Area2D" type="Area2D" parent="CanvasLayer"]
-visible = false
-collision_layer = 0
-collision_mask = 256
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Drawer_Area2D"]
-polygon = PackedVector2Array(275, 618, 863, 619, 934, 774, 190, 775)
+visible = false
+polygon = PackedVector2Array(276, 591, 870, 590, 983, 748, 173, 751)
 
 [node name="Garbage_Area2D" type="Area2D" parent="CanvasLayer"]
-visible = false
 collision_layer = 0
-collision_mask = 256
+collision_mask = 8
+script = ExtResource("7_kek77")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Garbage_Area2D"]
-position = Vector2(-5, 3)
-polygon = PackedVector2Array(921, 572, 1165, 574, 1224, 795, 1044, 778)
+polygon = PackedVector2Array(959, 608, 1117, 613, 1147, 708, 1008, 714)
 
-[node name="AboveTable_Area2D" type="Area2D" parent="CanvasLayer"]
+[node name="GlobePart" parent="." instance=ExtResource("6_272bh")]
+position = Vector2(256, 416)
+scale = Vector2(4.08, 4.08)
+collision_mask = 1
+input_pickable = true
+motion_mode = 1
+wall_min_slide_angle = 2.1293
+texture = ExtResource("8_kek77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlobePart"]
 visible = false
-collision_layer = 0
-collision_mask = 256
+position = Vector2(-0.219781, 2.1978)
+shape = SubResource("RectangleShape2D_5vw27")
+metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/AboveTable_Area2D"]
-polygon = PackedVector2Array(-75, 591, 1219, 596, 1315, -88, -110, -68)
-
-[connection signal="changed_drawer_layer" from="CanvasLayer/TextureRect" to="Drawer Handler" method="_on_texture_rect_changed_drawer_layer"]
-[connection signal="drawer_opened_closed" from="CanvasLayer/TextureRect" to="Drawer Handler" method="_on_texture_rect_drawer_opened_closed"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/Button_Drawer_Open" to="CanvasLayer/TextureRect" method="_on_button_drawer_open_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/Button_Drawer_Close" to="CanvasLayer/TextureRect" method="_on_button_drawer_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/Button_Cover_Up" to="CanvasLayer/TextureRect" method="_on_button_cover_up_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/Button_Cover_Down" to="CanvasLayer/TextureRect" method="_on_button_cover_down_pressed"]
-[connection signal="area_entered" from="CanvasLayer/TextureRect/Off_Table_Area2d" to="Area Handler" method="_on_off_table_area_2d_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/TextureRect/Off_Table_Area2d" to="Area Handler" method="_on_off_table_area_2d_area_exited"]
-[connection signal="area_entered" from="CanvasLayer/Table_Area2D" to="Area Handler" method="_on_table_area_2d_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/Table_Area2D" to="Area Handler" method="_on_table_area_2d_area_exited"]
-[connection signal="area_entered" from="CanvasLayer/Drawer_Area2D" to="Drawer Handler" method="_on_drawer_area_2d_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/Drawer_Area2D" to="Drawer Handler" method="_on_drawer_area_2d_area_exited"]
-[connection signal="area_entered" from="CanvasLayer/Garbage_Area2D" to="Area Handler" method="_on_garbage_area_2d_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/Garbage_Area2D" to="Area Handler" method="_on_garbage_area_2d_area_exited"]
-[connection signal="area_entered" from="CanvasLayer/AboveTable_Area2D" to="Area Handler" method="_on_above_table_area_2d_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/AboveTable_Area2D" to="Area Handler" method="_on_above_table_area_2d_area_exited"]
+[connection signal="body_entered" from="CanvasLayer/TextureRect/Off_Table_Area2d" to="CanvasLayer/TextureRect/Off_Table_Area2d" method="_on_body_entered"]
+[connection signal="body_exited" from="CanvasLayer/TextureRect/Off_Table_Area2d" to="CanvasLayer/TextureRect/Off_Table_Area2d" method="_on_body_exited"]
+[connection signal="body_entered" from="CanvasLayer/Garbage_Area2D" to="CanvasLayer/Garbage_Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="CanvasLayer/Garbage_Area2D" to="CanvasLayer/Garbage_Area2D" method="_on_body_exited"]
