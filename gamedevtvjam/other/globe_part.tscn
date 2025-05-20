@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxmj2m0arsj5o"]
+
+[ext_resource type="Script" uid="uid://ber8vi5342568" path="res://other/globe_part.gd" id="1_0yapt"]
+
+[node name="GlobePart" type="CharacterBody2D"]
+collision_layer = 15
+collision_mask = 0
+script = ExtResource("1_0yapt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

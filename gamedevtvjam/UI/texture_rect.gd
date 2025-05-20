@@ -6,7 +6,10 @@ extends TextureRect
 @onready var button_drawer_close: = $Button_Drawer_Close
 @onready var animation_player: AnimationPlayer = $"AnimationPlayer"
 
-var drawer_is_open := false
+var drawer_is_open := false:
+	set(value):
+		drawer_is_open = value
+		$Off_Table_Area2d/Drawer_Close_Poly.disabled = value
 var layerindex := 0
 var drawer_button_cooldown = false
 var cover_button_cooldown = false
