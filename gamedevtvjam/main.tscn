@@ -119,6 +119,33 @@ _data = {
 atlas = ExtResource("5_ycdy4")
 region = Rect2(0, 0, 150, 100)
 
+[sub_resource type="Animation" id="Animation_w48qg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 150, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_ycdy4"]
 resource_name = "Tablet_Startup"
 length = 0.4
@@ -146,33 +173,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_w48qg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 150, 100)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vivmo"]
@@ -318,13 +318,16 @@ libraries = {
 }
 
 [node name="Off_Table_Area2d" type="Area2D" parent="CanvasLayer/Background"]
+visible = false
 collision_layer = 0
 collision_mask = 256
 
 [node name="Drawer_Close_Poly" type="CollisionPolygon2D" parent="CanvasLayer/Background/Off_Table_Area2d"]
+visible = false
 polygon = PackedVector2Array(90, 839, 229, 570, 897, 572, 988, 819)
 
 [node name="Always_Poly" type="CollisionPolygon2D" parent="CanvasLayer/Background/Off_Table_Area2d"]
+visible = false
 polygon = PackedVector2Array(-15, 308, 1310, 313, 1321, -28, -207, -26, -216, 925, 1400, 923, 1320, 284, 1183, 320, 1161, 498, 1090, 390, 951, 396, 1034, 534, 1178, 571, 897, 568, 793, 569, 882, 813, 263, 811, 366, 602, 799, 605, 794, 573, 382, 572, -19, 574)
 
 [node name="Off_Table_Area2d_Globes" type="Area2D" parent="CanvasLayer/Background"]
@@ -377,6 +380,7 @@ collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Drawer_Area2D"]
+visible = false
 polygon = PackedVector2Array(275, 618, 863, 619, 934, 774, 190, 775)
 
 [node name="Garbage_Area2D" type="Area2D" parent="CanvasLayer"]
