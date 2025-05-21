@@ -230,8 +230,8 @@ texture = ExtResource("8_efxa6")
 parttype = 2
 
 [node name="GlobePart" parent="CanvasLayer/Background/Parts" instance=ExtResource("6_272bh")]
-position = Vector2(203, 544)
-scale = Vector2(4.72, 4.72)
+position = Vector2(87, 484)
+scale = Vector2(4.42, 4.42)
 wall_min_slide_angle = 2.1293
 texture = ExtResource("8_kek77")
 parttype = 1

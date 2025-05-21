@@ -32,7 +32,6 @@ collision_layer = 256
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_0yapt")
 
@@ -42,12 +41,10 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Merge_Area2D"]
-visible = false
 shape = SubResource("CircleShape2D_efdfx")
 debug_color = Color(0.811039, 0.354325, 0.548496, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = ExtResource("2_efdfx")
 
 [connection signal="area_entered" from="Merge_Area2D" to="." method="_on_merge_area_2d_area_entered"]
