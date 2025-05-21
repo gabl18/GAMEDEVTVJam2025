@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxmj2m0arsj5o"]
+[gd_scene load_steps=6 format=3 uid="uid://bxmj2m0arsj5o"]
 
 [ext_resource type="Script" uid="uid://ber8vi5342568" path="res://other/globe_part.gd" id="1_0yapt"]
+[ext_resource type="Shape2D" uid="uid://dif2oljiw1gar" path="res://other/colliders/inside_collider.tres" id="2_efdfx"]
+
+[sub_resource type="Resource" id="Resource_0yapt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yapt"]
 radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efdfx"]
+radius = 9.00617
 
 [node name="GlobePart" type="CharacterBody2D"]
 z_index = 1
@@ -12,6 +18,7 @@ collision_mask = 0
 input_pickable = true
 motion_mode = 1
 script = ExtResource("1_0yapt")
+info = SubResource("Resource_0yapt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -20,10 +27,25 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(3, 3)
 collision_layer = 256
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_0yapt")
+
+[node name="Merge_Area2D" type="Area2D" parent="."]
+scale = Vector2(3, 3)
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merge_Area2D"]
+shape = SubResource("CircleShape2D_efdfx")
+debug_color = Color(0.811039, 0.354325, 0.548496, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("2_efdfx")
+
+[connection signal="area_entered" from="Merge_Area2D" to="." method="_on_merge_area_2d_area_entered"]
+[connection signal="area_exited" from="Merge_Area2D" to="." method="_on_merge_area_2d_area_exited"]

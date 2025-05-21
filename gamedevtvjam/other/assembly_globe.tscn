@@ -1,6 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyodvmudwd7hr"]
+[gd_scene load_steps=5 format=3 uid="uid://dyodvmudwd7hr"]
 
 [ext_resource type="Script" uid="uid://x42rud223qt4" path="res://other/assembly_globe.gd" id="1_3dqd3"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dqd3"]
+size = Vector2(44, 49)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3dqd3"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydmwo"]
+radius = 14.004
+
 [node name="AssemblyGlobe" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 15
+collision_mask = 0
+input_pickable = true
+motion_mode = 1
 script = ExtResource("1_3dqd3")
+
+[node name="Base" type="Sprite2D" parent="."]
+
+[node name="Inside" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -12)
+
+[node name="Globe" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_3dqd3")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(3, 3)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_3dqd3")
+
+[node name="Merge_Area2D" type="Area2D" parent="."]
+scale = Vector2(3, 3)
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merge_Area2D"]
+visible = false
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_ydmwo")
+debug_color = Color(0.811039, 0.354325, 0.548496, 0.42)

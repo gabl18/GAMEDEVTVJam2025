@@ -12,16 +12,18 @@ var opened = false
 
 func _on_drawer_area_2d_area_entered(area: Area2D) -> void:
 	if opened:
-		layers[active_layer].append(area.get_parent())
-		
-		area.get_parent().z_index = 0
+		if area.get_parent() is GlobePart:
+			layers[active_layer].append(area.get_parent())
+			
+			area.get_parent().z_index = 0
 
 
 func _on_drawer_area_2d_area_exited(area: Area2D) -> void:
 	if opened:
-		layers[active_layer].erase(area.get_parent())
-		
-		area.get_parent().z_index = 1
+		if area.get_parent() is GlobePart:
+			layers[active_layer].erase(area.get_parent())
+			
+			area.get_parent().z_index = 1
 
 
 func _on_texture_rect_changed_drawer_layer(value: int) -> void:
