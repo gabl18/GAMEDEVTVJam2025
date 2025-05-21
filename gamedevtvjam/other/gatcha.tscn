@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqn66igg7t2c8"]
+
+[ext_resource type="Script" uid="uid://bynhial2wlrl" path="res://other/gatcha.gd" id="1_nsmpc"]
+[ext_resource type="Texture2D" uid="uid://b3grh1oit67k6" path="res://Assets/Art/gacha_ball.png" id="2_w81qd"]
+[ext_resource type="Texture2D" uid="uid://c8hm52qol42v" path="res://Assets/Art/Globes/Inside/Inside1.png" id="3_41ft7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82d6i"]
+atlas = ExtResource("2_w81qd")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="Animation" id="Animation_w81qd"]
+resource_name = "Fade_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gatcha:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.698039), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_41ft7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gatcha:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.576471)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_82d6i"]
+_data = {
+&"Fade_Out": SubResource("Animation_w81qd"),
+&"RESET": SubResource("Animation_41ft7")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w81qd"]
+radius = 64.0
+
+[node name="Gatcha" type="CharacterBody2D"]
+collision_layer = 8192
+collision_mask = 8192
+input_pickable = true
+script = ExtResource("1_nsmpc")
+
+[node name="Inside" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(3, 3)
+texture = ExtResource("3_41ft7")
+
+[node name="Gatcha" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.576471)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_82d6i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_82d6i")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_w81qd")

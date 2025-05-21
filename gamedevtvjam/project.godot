@@ -15,10 +15,15 @@ run/main_scene="uid://bkc51s3m5kq0b"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MouseState="*res://mouse_state.gd"
+
 [display]
 
 window/size/viewport_height=748
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://cdmaieu2745k7"
 
 [rendering]
 

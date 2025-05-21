@@ -1,16 +1,20 @@
-[gd_scene load_steps=25 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=36 format=3 uid="uid://bkc51s3m5kq0b"]
 
+[ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
 [ext_resource type="Texture2D" uid="uid://d1dfmber6ydek" path="res://Assets/Art/main_scene_sheet.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cq6v4aavnaov8" path="res://UI/texture_rect.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://b8e1n3m6wdlyx" path="res://UI/drawer_handler.gd" id="2_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dqqi5n6c7p3dw" path="res://Assets/Art/main_scene_cover_sheet.png" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://dcuxn8pxio3k3" path="res://UI/gatcha_dispenser.gd" id="5_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bnv1dhcl7q278" path="res://Assets/Art/main_scene_tabeltop.png" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://bl21a0nsgimnq" path="res://UI/tablet.gd" id="5_dg77c"]
 [ext_resource type="Texture2D" uid="uid://e0gaf5s8si8a" path="res://Assets/Art/Tablet_big.png" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cu04txq31cqlg" path="res://Assets/Art/tablet_spritesheet.png" id="5_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://bxmj2m0arsj5o" path="res://other/globe_part.tscn" id="6_272bh"]
 [ext_resource type="Script" uid="uid://ciw3lgb8rkx2r" path="res://UI/tablet_screen.gd" id="6_w48qg"]
+[ext_resource type="Texture2D" uid="uid://cs5bax42dujiq" path="res://Assets/Art/gacha_röhre.png" id="6_yaehf"]
+[ext_resource type="Texture2D" uid="uid://b3grh1oit67k6" path="res://Assets/Art/gacha_ball.png" id="7_yaehf"]
 [ext_resource type="Texture2D" uid="uid://nexl78gm5rfg" path="res://Assets/Art/Globes/Globe/Globe1.png" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://c8hm52qol42v" path="res://Assets/Art/Globes/Inside/Inside1.png" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="8_kek77"]
@@ -18,6 +22,82 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
 atlas = ExtResource("1_ig7tw")
 region = Rect2(0, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
+atlas = ExtResource("6_yaehf")
+region = Rect2(40, 0, 40, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
+atlas = ExtResource("7_yaehf")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
+size = Vector2(128.5, 184)
+
+[sub_resource type="Curve2D" id="Curve2D_2cqfq"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1053, 137, 44.5263, -80.6448, -44.5263, 80.6448, 828, 211, 5, -11.7438, -5, 11.7438, 748, 404)
+}
+point_count = 3
+
+[sub_resource type="Animation" id="Animation_2cqfq"]
+resource_name = "Drop_Ball"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 0, 1),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 0.362831, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.2, 1)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:region")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.173155, 0.320336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 41, 30), Rect2(41, 0, 41, 30), Rect2(82, 0, 41, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_yaehf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(40, 0, 40, 30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_074og"]
+_data = {
+&"Drop_Ball": SubResource("Animation_2cqfq"),
+&"RESET": SubResource("Animation_yaehf")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
 atlas = ExtResource("3_h2yge")
@@ -182,6 +262,7 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_074og")
 
 [node name="Area Handler" type="Node" parent="."]
 script = ExtResource("1_efxa6")
@@ -205,6 +286,42 @@ size_flags_horizontal = 4
 texture = SubResource("AtlasTexture_0xm2m")
 script = ExtResource("2_0xm2m")
 
+[node name="Gatcha_Dispenser" type="Area2D" parent="CanvasLayer/Background"]
+z_index = 3
+script = ExtResource("5_2cqfq")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background/Gatcha_Dispenser"]
+position = Vector2(1078, 108)
+rotation = 1.5708
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_074og")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Background/Gatcha_Dispenser"]
+z_index = -1
+position = Vector2(1118, 137)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_cegan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Background/Gatcha_Dispenser"]
+visible = false
+position = Vector2(1097.25, 94)
+shape = SubResource("RectangleShape2D_cegan")
+
+[node name="Path2D" type="Path2D" parent="CanvasLayer/Background/Gatcha_Dispenser"]
+z_index = 1
+position = Vector2(1, -1)
+curve = SubResource("Curve2D_2cqfq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CanvasLayer/Background/Gatcha_Dispenser/Path2D"]
+position = Vector2(1053, 137)
+rotates = false
+loop = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Background/Gatcha_Dispenser"]
+libraries = {
+&"": SubResource("AnimationLibrary_074og")
+}
+
 [node name="Tablet" type="Area2D" parent="CanvasLayer/Background" node_paths=PackedStringArray("tablet_animation_player")]
 z_index = 1
 position = Vector2(1053, 457)
@@ -227,8 +344,8 @@ polygon = PackedVector2Array(672.301, 263.679, 1354.64, 226.01, 1836.28, 807.778
 y_sort_enabled = true
 
 [node name="GlobePart3" parent="CanvasLayer/Background/Parts" instance=ExtResource("6_272bh")]
-position = Vector2(517, 412)
-scale = Vector2(4.06, 4.06)
+position = Vector2(504, 411)
+scale = Vector2(4.055, 4.055)
 texture = ExtResource("8_efxa6")
 parttype = 2
 
@@ -275,7 +392,6 @@ offset_left = 0.384003
 offset_top = 0.263977
 offset_right = 0.135925
 offset_bottom = 0.112
-mouse_default_cursor_shape = 2
 
 [node name="Button_Drawer_Close" type="TextureButton" parent="CanvasLayer/Background"]
 layout_mode = 1
@@ -459,7 +575,7 @@ polygon = PackedVector2Array(-75, 591, 1219, 596, 1315, -88, -110, -68)
 
 [node name="Drawer_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
 visible = false
-polygon = PackedVector2Array(360, 645, 313, 734, 806, 730, 770, 649)
+polygon = PackedVector2Array(358, 659, 313, 734, 806, 730, 769, 661)
 
 [node name="Globe_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
 visible = false

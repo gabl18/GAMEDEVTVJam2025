@@ -22,11 +22,9 @@ script = ExtResource("1_3dqd3")
 [node name="Base" type="Sprite2D" parent="."]
 
 [node name="Inside" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(0, -16)
 
 [node name="Globe" type="Sprite2D" parent="."]
-z_index = 2
 position = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
