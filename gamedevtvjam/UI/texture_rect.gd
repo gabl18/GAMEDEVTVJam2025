@@ -1,10 +1,8 @@
 extends TextureRect
 
-
-
 @onready var button_drawer_open: = $Button_Drawer_Open
 @onready var button_drawer_close: = $Button_Drawer_Close
-@onready var animation_player: AnimationPlayer = $"AnimationPlayer"
+@onready var animation_player: AnimationPlayer = $Desk_AnimationPlayer
 
 var drawer_is_open := false:
 	set(value):
@@ -12,8 +10,8 @@ var drawer_is_open := false:
 		drawer_opened_closed.emit(value)
 		if value:
 			await get_tree().create_timer(0.25).timeout
-			$Off_Table_Area2d/Drawer_Close_Poly.disabled = false
-		$Off_Table_Area2d/Drawer_Close_Poly.disabled = true
+			$Off_Table_Area2d/Drawer_Close_Poly.disabled = true
+		else:$Off_Table_Area2d/Drawer_Close_Poly.disabled = false
 		
 
 var drawer_button_cooldown = false

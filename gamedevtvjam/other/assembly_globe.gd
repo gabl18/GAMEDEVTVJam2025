@@ -36,6 +36,7 @@ var mouse_offset := Vector2.ZERO
 var want_dropped := false
 var dropable := true
 
+var lock_movement := false
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -45,44 +46,44 @@ func _ready() -> void:
 	scale = Vector2.ONE * scale_factor
 
 func _process(_delta: float) -> void:
+	if not lock_movement:
+		$Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
+		$Merge_Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
 
-	$Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
-	$Merge_Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
+		if is_dragged:
+			var motion = (get_global_mouse_position() - mouse_offset - global_position)
+			move_and_collide(motion)
 
-	if is_dragged:
-		var motion = (get_global_mouse_position() - mouse_offset - global_position)
-		move_and_collide(motion)
-
-		var y = -global_position.y
-		var scale_factor = -0.005 * y + 2.0
-		scale = Vector2.ONE * scale_factor
+			var y = -global_position.y
+			var scale_factor = -0.005 * y + 2.0
+			scale = Vector2.ONE * scale_factor
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.is_pressed():
-				
-				var x = remove_part()
-				if x:
-					get_parent().add_child(x)
-				
-				get_viewport().set_input_as_handled()
-
-
-		elif event.button_index == MOUSE_BUTTON_LEFT:
-			
-			if event.is_pressed():
-				want_dropped = false
-				is_dragged = true
-				mouse_offset = event.global_position - global_position 
-				get_viewport().set_input_as_handled()
-			else:
-				if dropable:
-					is_dragged = false
-				else:
-					want_dropped = true
+	if not lock_movement:
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_RIGHT:
+				if event.is_pressed():
 					
+					var x = remove_part()
+					if x:
+						get_parent().add_child(x)
+					
+					get_viewport().set_input_as_handled()
+
+
+			elif event.button_index == MOUSE_BUTTON_LEFT:
+				
+				if event.is_pressed():
+					want_dropped = false
+					is_dragged = true
+					mouse_offset = event.global_position - global_position 
+					get_viewport().set_input_as_handled()
+				else:
+					if dropable:
+						is_dragged = false
+					else:
+						want_dropped = true
+						
 
 func check_part(part: GlobePart) -> bool:
 	return owned_parts.get(part.parttype) == null

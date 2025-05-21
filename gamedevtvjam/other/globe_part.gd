@@ -46,6 +46,15 @@ var dropable := true
 var on_garbage := false
 var on_table := false
 var under_table := false
+var lock_movement := false
+var sleep := false:
+	set(value):
+		sleep = value
+		$Merge_Area2D.monitorable = not sleep
+var no_merge := false:
+	set(value):
+		no_merge = value
+		$Merge_Area2D.set_deferred("monitorable",not no_merge)
 
 var merge_bodies : Array[CharacterBody2D]
 var closest_merge_body : CharacterBody2D
@@ -69,43 +78,54 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if not lock_movement and not sleep:
+		$Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
+		$Merge_Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
 
-	$Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
-	$Merge_Area2D.scale = Vector2(1.0 / scale.x, 1.0 / scale.y)*3
-
-	if is_dragged:
-		var motion = (get_global_mouse_position() - mouse_offset - global_position)
-		move_and_collide(motion)
-		if merge_bodies:
-			colorin_closest_body()
-		
-		if not under_table:
-			var y = -global_position.y
-			var scale_factor = -0.005 * y + 2.0
-			scale = Vector2.ONE * scale_factor
-		else:
-			scale = Vector2.ONE * 3
-
-
-
-func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-
-		if event.is_pressed():
-			want_dropped = false
-			is_dragged = true
-			mouse_offset = event.global_position - global_position 
-			get_viewport().set_input_as_handled()
+		if is_dragged:
+			var motion = (get_global_mouse_position() - mouse_offset - global_position)
+			move_and_collide(motion)
+			if merge_bodies:
+				colorin_closest_body()
 			
-			for area in $Merge_Area2D.get_overlapping_areas():
-				check_for_merging(area)
-				
-		else:
-			if dropable:
-				is_dragged = false
+			if not under_table:
+				var y = -global_position.y
+				var scale_factor = -0.005 * y + 2.0
+				scale = Vector2.ONE * scale_factor
 			else:
-				want_dropped = true
+				scale = Vector2.ONE * 3
+
+
+func _mouse_enter() -> void:
+	pass
+	#Input.set_custom_mouse_cursor(load("res://Assets/Art/tablet.png"))
+	
+	
+func _mouse_exit() -> void:
+	pass
+
+
+func _input_event(viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if not lock_movement and not sleep:
+		if viewport.gui_get_focus_owner():
+			return
+			
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+
+			if event.is_pressed():
+				want_dropped = false
+				is_dragged = true
+				mouse_offset = event.global_position - global_position 
+				get_viewport().set_input_as_handled()
+				
+				for area in $Merge_Area2D.get_overlapping_areas():
+					check_for_merging(area)
+					
+			else:
+				if dropable:
+					is_dragged = false
+				else:
+					want_dropped = true
 
 
 func _on_merge_area_2d_area_entered(area: Area2D) -> void:
