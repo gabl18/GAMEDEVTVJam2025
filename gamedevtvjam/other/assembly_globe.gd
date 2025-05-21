@@ -32,6 +32,7 @@ var part_sequence: Array[Parts] = [
 
 var is_dragged := false
 var mouse_offset := Vector2.ZERO
+var in_drawer := false
 
 var want_dropped := false
 var dropable := true

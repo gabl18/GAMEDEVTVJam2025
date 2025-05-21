@@ -55,6 +55,7 @@ var no_merge := false:
 	set(value):
 		no_merge = value
 		$Merge_Area2D.set_deferred("monitorable",not no_merge)
+var in_drawer := false
 
 var merge_bodies : Array[CharacterBody2D]
 var closest_merge_body : CharacterBody2D
@@ -105,10 +106,10 @@ func _mouse_exit() -> void:
 	pass
 
 
-func _input_event(viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	
 	if not lock_movement and not sleep:
-		if viewport.gui_get_focus_owner():
-			return
+
 			
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 

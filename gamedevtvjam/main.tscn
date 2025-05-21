@@ -186,8 +186,11 @@ _data = {
 [node name="Area Handler" type="Node" parent="."]
 script = ExtResource("1_efxa6")
 
-[node name="Drawer Handler" type="Node" parent="."]
+[node name="Drawer Handler" type="Node" parent="." node_paths=PackedStringArray("drawer_collision_polygon", "globe_collision_polygon", "parts_location")]
 script = ExtResource("2_5vw27")
+drawer_collision_polygon = NodePath("../CanvasLayer/Drawer_Spawn_Area")
+globe_collision_polygon = NodePath("../CanvasLayer/Globe_Spawn_Area")
+parts_location = NodePath("../CanvasLayer/Background/Parts")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -224,8 +227,8 @@ polygon = PackedVector2Array(672.301, 263.679, 1354.64, 226.01, 1836.28, 807.778
 y_sort_enabled = true
 
 [node name="GlobePart3" parent="CanvasLayer/Background/Parts" instance=ExtResource("6_272bh")]
-position = Vector2(568, 414)
-scale = Vector2(4.07, 4.07)
+position = Vector2(517, 412)
+scale = Vector2(4.06, 4.06)
 texture = ExtResource("8_efxa6")
 parttype = 2
 
@@ -349,9 +352,10 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_w48qg")
 script = ExtResource("6_w48qg")
 
-[node name="Control" type="Control" parent="CanvasLayer/TabletScreen"]
+[node name="Close_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
 z_index = 11
 layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.909722
 anchor_top = -0.0013369
 anchor_right = 1.0
@@ -360,6 +364,60 @@ grow_horizontal = 0
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Return_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000868056
+anchor_top = 0.800802
+anchor_right = 0.140035
+anchor_bottom = 1.0022
+offset_right = -0.32
+offset_bottom = 0.355999
+metadata/_edit_use_anchors_ = true
+
+[node name="Tutorial_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0845625
+anchor_top = 0.122995
+anchor_right = 0.256076
+anchor_bottom = 0.291444
+offset_left = -0.416016
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Email_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 57.0
+offset_right = 520.0
+offset_bottom = 241.0
+
+[node name="Rating_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 251.0
+offset_right = 294.0
+offset_bottom = 433.0
+
+[node name="Credits_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 347.0
+offset_right = 1028.0
+offset_bottom = 523.0
+
+[node name="Settings_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 523.0
+offset_right = 1021.0
+offset_bottom = 679.0
 
 [node name="Tablet_Animationplayer" type="AnimationPlayer" parent="CanvasLayer/TabletScreen"]
 libraries = {
@@ -375,7 +433,6 @@ collision_mask = 256
 polygon = PackedVector2Array(0, 329, 1, 567, 1153, 571, 1156, 328)
 
 [node name="Drawer_Area2D" type="Area2D" parent="CanvasLayer"]
-visible = false
 collision_layer = 0
 collision_mask = 256
 
@@ -400,6 +457,14 @@ collision_mask = 256
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/AboveTable_Area2D"]
 polygon = PackedVector2Array(-75, 591, 1219, 596, 1315, -88, -110, -68)
 
+[node name="Drawer_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
+visible = false
+polygon = PackedVector2Array(360, 645, 313, 734, 806, 730, 770, 649)
+
+[node name="Globe_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
+visible = false
+polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
+
 [connection signal="changed_drawer_layer" from="CanvasLayer/Background" to="Drawer Handler" method="_on_texture_rect_changed_drawer_layer"]
 [connection signal="drawer_opened_closed" from="CanvasLayer/Background" to="Drawer Handler" method="_on_texture_rect_drawer_opened_closed"]
 [connection signal="pressed" from="CanvasLayer/Background/Button_Drawer_Open" to="CanvasLayer/Background" method="_on_button_drawer_open_pressed"]
@@ -410,7 +475,13 @@ polygon = PackedVector2Array(-75, 591, 1219, 596, 1315, -88, -110, -68)
 [connection signal="area_exited" from="CanvasLayer/Background/Off_Table_Area2d" to="Area Handler" method="_on_off_table_area_2d_area_exited"]
 [connection signal="area_entered" from="CanvasLayer/Background/Off_Table_Area2d_Globes" to="Area Handler" method="_on_off_table_area_2d_globes_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/Background/Off_Table_Area2d_Globes" to="Area Handler" method="_on_off_table_area_2d_globes_area_exited"]
-[connection signal="gui_input" from="CanvasLayer/TabletScreen/Control" to="CanvasLayer/TabletScreen" method="_on_control_gui_input"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Close_Button" to="CanvasLayer/TabletScreen" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Return_Button" to="CanvasLayer/TabletScreen" method="_on_return_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Tutorial_Button" to="CanvasLayer/TabletScreen" method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Email_Button" to="CanvasLayer/TabletScreen" method="_on_email_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Rating_Button" to="CanvasLayer/TabletScreen" method="_on_rating_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Credits_Button" to="CanvasLayer/TabletScreen" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Settings_Button" to="CanvasLayer/TabletScreen" method="_on_settings_button_pressed"]
 [connection signal="area_entered" from="CanvasLayer/Table_Area2D" to="Area Handler" method="_on_table_area_2d_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/Table_Area2D" to="Area Handler" method="_on_table_area_2d_area_exited"]
 [connection signal="area_entered" from="CanvasLayer/Drawer_Area2D" to="Drawer Handler" method="_on_drawer_area_2d_area_entered"]
