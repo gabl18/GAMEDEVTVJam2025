@@ -100,12 +100,17 @@ func _process(_delta: float) -> void:
 
 
 func _mouse_enter() -> void:
+	print(12)
+	MouseState.Mouse_Hovers.append(self)
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
+		print(13)
 		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor3.png"))
 
 
 func _mouse_exit() -> void:
-	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
+	MouseState.Mouse_Hovers.erase(self)
+	if not MouseState.moues_state == MouseState.Mouse_States.dragging and not MouseState.Mouse_Hovers:
+		print(23)
 		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
 
 

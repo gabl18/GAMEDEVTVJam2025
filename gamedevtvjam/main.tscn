@@ -392,6 +392,7 @@ offset_left = 0.384003
 offset_top = 0.263977
 offset_right = 0.135925
 offset_bottom = 0.112
+mouse_default_cursor_shape = 2
 
 [node name="Button_Drawer_Close" type="TextureButton" parent="CanvasLayer/Background"]
 layout_mode = 1
@@ -490,6 +491,7 @@ anchor_right = 0.140035
 anchor_bottom = 1.0022
 offset_right = -0.32
 offset_bottom = 0.355999
+mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
@@ -505,6 +507,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Email_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
@@ -513,6 +516,7 @@ offset_left = 342.0
 offset_top = 57.0
 offset_right = 520.0
 offset_bottom = 241.0
+mouse_default_cursor_shape = 2
 
 [node name="Rating_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
 layout_mode = 0
@@ -520,6 +524,7 @@ offset_left = 90.0
 offset_top = 251.0
 offset_right = 294.0
 offset_bottom = 433.0
+mouse_default_cursor_shape = 2
 
 [node name="Credits_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
 layout_mode = 0
@@ -527,6 +532,7 @@ offset_left = 822.0
 offset_top = 347.0
 offset_right = 1028.0
 offset_bottom = 523.0
+mouse_default_cursor_shape = 2
 
 [node name="Settings_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
 layout_mode = 0
@@ -534,6 +540,7 @@ offset_left = 834.0
 offset_top = 523.0
 offset_right = 1021.0
 offset_bottom = 679.0
+mouse_default_cursor_shape = 2
 
 [node name="Tablet_Animationplayer" type="AnimationPlayer" parent="CanvasLayer/TabletScreen"]
 libraries = {
