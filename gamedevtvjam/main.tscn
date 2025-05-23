@@ -1,11 +1,13 @@
-[gd_scene load_steps=35 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=41 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
 [ext_resource type="Texture2D" uid="uid://d1dfmber6ydek" path="res://Assets/Art/main_scene_sheet.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cq6v4aavnaov8" path="res://UI/texture_rect.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://b8e1n3m6wdlyx" path="res://UI/drawer_handler.gd" id="2_5vw27"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_82xsv"]
 [ext_resource type="Texture2D" uid="uid://dqqi5n6c7p3dw" path="res://Assets/Art/main_scene_cover_sheet.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b47y8sncpllxf" path="res://Assets/Art/people/person1.png" id="4_ryguw"]
 [ext_resource type="Script" uid="uid://dcuxn8pxio3k3" path="res://UI/gatcha_dispenser.gd" id="5_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bnv1dhcl7q278" path="res://Assets/Art/main_scene_tabeltop.png" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://bl21a0nsgimnq" path="res://UI/tablet.gd" id="5_dg77c"]
@@ -14,8 +16,16 @@
 [ext_resource type="Script" uid="uid://ciw3lgb8rkx2r" path="res://UI/tablet_screen.gd" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cs5bax42dujiq" path="res://Assets/Art/gacha_röhre.png" id="6_yaehf"]
 [ext_resource type="Texture2D" uid="uid://b3grh1oit67k6" path="res://Assets/Art/gacha_ball.png" id="7_yaehf"]
+[ext_resource type="Texture2D" uid="uid://8smesy5ta88t" path="res://Assets/Art/people_sheet.png" id="11_yaehf"]
 [ext_resource type="Texture2D" uid="uid://cupi24po26cj" path="res://Assets/Art/elevator_numbers.png" id="13_2cqfq"]
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
+
+[sub_resource type="Resource" id="Resource_1u8w0"]
+script = ExtResource("2_82xsv")
+name = "Dude"
+texture = ExtResource("4_ryguw")
+dialogue = "uid://ngrmyl8ijcdv"
+metadata/_custom_type_script = "uid://buc8htkfrmars"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
 atlas = ExtResource("1_ig7tw")
@@ -96,6 +106,13 @@ _data = {
 &"Drop_Ball": SubResource("Animation_2cqfq"),
 &"RESET": SubResource("Animation_yaehf")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_getpj"]
+atlas = ExtResource("11_yaehf")
+region = Rect2(0, 0, 96, 100)
+
+[sub_resource type="Theme" id="Theme_cegan"]
+TooltipLabel/font_sizes/font_size = 30
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
 atlas = ExtResource("3_h2yge")
@@ -265,6 +282,7 @@ _data = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_074og")
+people = Array[ExtResource("2_82xsv")]([SubResource("Resource_1u8w0")])
 
 [node name="AreaHandler" type="Node" parent="."]
 unique_name_in_owner = true
@@ -281,6 +299,7 @@ parts_location = NodePath("../CanvasLayer/Background/Parts_Location")
 layer = -1
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -350,6 +369,30 @@ polygon = PackedVector2Array(476.63, 179.971, 1299.44, 150.674, 1836.28, 807.778
 unique_name_in_owner = true
 y_sort_enabled = true
 
+[node name="People" type="TextureRect" parent="CanvasLayer/Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = -4.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_getpj")
+stretch_mode = 5
+
+[node name="TalkButton" type="TextureButton" parent="CanvasLayer/Background/People"]
+offset_left = 311.0
+offset_top = 43.0
+offset_right = 804.0
+offset_bottom = 369.0
+tooltip_text = "Talk"
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_cegan")
+ignore_texture_size = true
+
 [node name="Tabletop" type="TextureRect" parent="CanvasLayer/Background"]
 layout_mode = 1
 anchors_preset = 15
@@ -357,6 +400,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_7mycd")
 metadata/_edit_lock_ = true
 
@@ -367,6 +411,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("AtlasTexture_1bvp3")
 metadata/_edit_lock_ = true
 
@@ -589,6 +634,7 @@ polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
 
 [connection signal="changed_drawer_layer" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_changed_drawer_layer"]
 [connection signal="drawer_opened_closed" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_drawer_opened_closed"]
+[connection signal="pressed" from="CanvasLayer/Background/People/TalkButton" to="." method="_on_talk_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Background/Button_Drawer_Open" to="CanvasLayer/Background" method="_on_button_drawer_open_pressed"]
 [connection signal="pressed" from="CanvasLayer/Background/Button_Drawer_Close" to="CanvasLayer/Background" method="_on_button_drawer_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/Background/Button_Cover_Up" to="CanvasLayer/Background" method="_on_button_cover_up_pressed"]

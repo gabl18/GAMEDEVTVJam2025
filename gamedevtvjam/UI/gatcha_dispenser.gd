@@ -14,13 +14,13 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 				$Path2D.curve.set_point_position(2,Vector2(randf_range(720,780),randf_range(400,460)))
 				$Path2D/PathFollow2D.add_child(new_ball)
 				balls.pop_front()
-				if balls.is_empty():
-					$Sprite2D2.hide()
+				$Sprite2D2.visible = not balls.is_empty()
 				$AnimationPlayer.play("Drop_Ball")
 				await $AnimationPlayer.animation_finished
 				new_ball.reparent(self)
 				new_ball.breakable = true
-
+func _ready() -> void:
+	$Sprite2D2.visible = not balls.is_empty()
 
 func generate_balls(amount:int):
 	
@@ -32,4 +32,6 @@ func generate_balls(amount:int):
 		
 		balls.append(ball)
 		$Sprite2D2.show()
+	
+	$Sprite2D2.visible = not balls.is_empty()
 		

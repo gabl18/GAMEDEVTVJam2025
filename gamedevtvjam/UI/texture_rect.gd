@@ -20,56 +20,65 @@ var cover_button_cooldown = false
 signal changed_drawer_layer(value:int)
 signal drawer_opened_closed(open:bool)
 
+var lock_drawer := false:
+	set(value):
+		_on_button_drawer_close_pressed()
+		lock_drawer = value
+
 func _on_button_drawer_open_pressed() -> void:
-	if not drawer_button_cooldown:
-		if not drawer_is_open:
-			drawer_button_cooldown = true
-			animation_player.play("Opening_Closing_Drawer")
-			await animation_player.animation_finished
-			animation_player.play("Opening_Closing_Cover")
-			drawer_is_open = true
-			drawer_button_cooldown = false
-			
-		button_drawer_open.visible = false
-		button_drawer_close.visible = true
+	if not lock_drawer:
+		if not drawer_button_cooldown:
+			if not drawer_is_open:
+				drawer_button_cooldown = true
+				animation_player.play("Opening_Closing_Drawer")
+				await animation_player.animation_finished
+				animation_player.play("Opening_Closing_Cover")
+				drawer_is_open = true
+				drawer_button_cooldown = false
+				
+			button_drawer_open.visible = false
+			button_drawer_close.visible = true
 	
 
 
 func _on_button_drawer_close_pressed() -> void:
-	if not drawer_button_cooldown:
-		if drawer_is_open:
-			drawer_is_open = false
-			drawer_button_cooldown = true
-			animation_player.play_backwards("Opening_Closing_Cover")
-			await animation_player.animation_finished
-			animation_player.play_backwards("Opening_Closing_Drawer")
-			drawer_button_cooldown = false
-			
-		button_drawer_close.visible = false
-		button_drawer_open.visible = true
+	if not lock_drawer:
+		if not drawer_button_cooldown:
+			if drawer_is_open:
+				drawer_is_open = false
+				drawer_button_cooldown = true
+				animation_player.play_backwards("Opening_Closing_Cover")
+				await animation_player.animation_finished
+				animation_player.play_backwards("Opening_Closing_Drawer")
+				drawer_button_cooldown = false
+				
+			button_drawer_close.visible = false
+			button_drawer_open.visible = true
 	
 
 
 func _on_button_cover_up_pressed() -> void:
-	if drawer_is_open:
-		if not cover_button_cooldown:
-			cover_button_cooldown = true
+	if not lock_drawer:
+		if drawer_is_open:
+			if not cover_button_cooldown:
+				cover_button_cooldown = true
 
-			animation_player.play_backwards("Opening_Closing_Cover")
-			await animation_player.animation_finished
-			changed_drawer_layer.emit(-1)
-			animation_player.play("Opening_Closing_Cover")
-			await animation_player.animation_finished
-			cover_button_cooldown = false
+				animation_player.play_backwards("Opening_Closing_Cover")
+				await animation_player.animation_finished
+				changed_drawer_layer.emit(-1)
+				animation_player.play("Opening_Closing_Cover")
+				await animation_player.animation_finished
+				cover_button_cooldown = false
 
 
 func _on_button_cover_down_pressed() -> void:
-	if drawer_is_open:
-		if not cover_button_cooldown:
-			cover_button_cooldown = true
-			animation_player.play_backwards("Opening_Closing_Cover")
-			await animation_player.animation_finished
-			changed_drawer_layer.emit(1)
-			animation_player.play("Opening_Closing_Cover")
-			await animation_player.animation_finished
-			cover_button_cooldown = false
+	if not lock_drawer:
+		if drawer_is_open:
+			if not cover_button_cooldown:
+				cover_button_cooldown = true
+				animation_player.play_backwards("Opening_Closing_Cover")
+				await animation_player.animation_finished
+				changed_drawer_layer.emit(1)
+				animation_player.play("Opening_Closing_Cover")
+				await animation_player.animation_finished
+				cover_button_cooldown = false

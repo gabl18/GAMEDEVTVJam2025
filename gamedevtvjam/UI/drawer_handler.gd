@@ -19,12 +19,14 @@ var active_layer = 0:
 		%ElevatorNumbers.change_number_to(value+1,abs(value-active_layer))
 		active_layer = value
 
-var opened = false:
+var opened = false
+
+var lock_drawer:= false:
 	set(value):
-		opened = value
-		
-func _ready() -> void:
-	randomize()
+		if value:
+			_on_texture_rect_drawer_opened_closed(false)
+		lock_drawer = value
+
 
 func _on_drawer_area_2d_area_entered(area: Area2D) -> void:
 	if opened:
@@ -48,21 +50,25 @@ func _on_drawer_area_2d_area_exited(area: Area2D) -> void:
 
 
 func _on_texture_rect_changed_drawer_layer(value: int) -> void:
-	if wrapi(active_layer + value, 0, layers.size()) != active_layer:
-		var scuffed = active_layer
-		active_layer = wrapi(active_layer + value, 0, layers.size())
-		show_layer(active_layer)
-		#await get_tree().create_timer(0.25).timeout
-		hide_layer(scuffed)
+	if not lock_drawer:
+		if wrapi(active_layer + value, 0, layers.size()) != active_layer:
+			var scuffed = active_layer
+			active_layer = wrapi(active_layer + value, 0, layers.size())
+			show_layer(active_layer)
+			#await get_tree().create_timer(0.25).timeout
+			hide_layer(scuffed)
 
 
 func _on_texture_rect_drawer_opened_closed(open: bool) -> void:
-	opened = open
-	if opened:
-		show_layer(active_layer)
-	else:
-		await get_tree().create_timer(0.25).timeout
-		hide_layer(active_layer)
+
+	if not lock_drawer:
+		print(1)
+		opened = open
+		if opened:
+			show_layer(active_layer)
+		else:
+			await get_tree().create_timer(0.25).timeout
+			hide_layer(active_layer)
 
 
 func show_layer(layerindex: int):
@@ -78,7 +84,7 @@ func hide_layer(layerindex: int):
 
 
 func generate_new_stuff(globe_amount:int):
-
+	randomize()
 	var points := get_random_points_in_polygon(drawer_collision_polygon.polygon,globe_amount,20.0)
 
 	for x in range(globe_amount):
@@ -118,6 +124,7 @@ func generate_new_stuff(globe_amount:int):
 	hide_layer(1)
 
 func tidy_everything_away():
+	randomize()
 	var layer_points: Array[Array]
 	var globe_points := get_random_points_in_polygon(globe_collision_polygon.polygon,parts_location.get_children().filter(func(x): return x is AssemblyGlobe).size(),50.0)
 	for layer in layers:
