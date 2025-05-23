@@ -601,11 +601,11 @@ collision_mask = 256
 polygon = PackedVector2Array(0, 329, 1, 567, 1153, 571, 1156, 328)
 
 [node name="Drawer_Area2D" type="Area2D" parent="CanvasLayer"]
+visible = false
 collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Drawer_Area2D"]
-visible = false
 polygon = PackedVector2Array(275, 618, 863, 619, 934, 774, 190, 775)
 
 [node name="Garbage_Area2D" type="Area2D" parent="CanvasLayer"]
