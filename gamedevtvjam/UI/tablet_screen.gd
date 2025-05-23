@@ -1,7 +1,7 @@
 extends TextureRect
 
 @onready var tablet_animationplayer: AnimationPlayer = $Tablet_Animationplayer
-@onready var parts: Node2D = $"../Background/Parts"
+@onready var parts: Node2D = %Parts_Location
 
 enum Screens {
 	Home,Rating,Email,Tutorial,Settings,Credits

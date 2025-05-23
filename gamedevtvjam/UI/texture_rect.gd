@@ -57,7 +57,7 @@ func _on_button_cover_up_pressed() -> void:
 
 			animation_player.play_backwards("Opening_Closing_Cover")
 			await animation_player.animation_finished
-			changed_drawer_layer.emit(1)
+			changed_drawer_layer.emit(-1)
 			animation_player.play("Opening_Closing_Cover")
 			await animation_player.animation_finished
 			cover_button_cooldown = false
@@ -69,7 +69,7 @@ func _on_button_cover_down_pressed() -> void:
 			cover_button_cooldown = true
 			animation_player.play_backwards("Opening_Closing_Cover")
 			await animation_player.animation_finished
-			changed_drawer_layer.emit(-1)
+			changed_drawer_layer.emit(1)
 			animation_player.play("Opening_Closing_Cover")
 			await animation_player.animation_finished
 			cover_button_cooldown = false

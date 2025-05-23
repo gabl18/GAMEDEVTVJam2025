@@ -13,11 +13,15 @@ var layer_3: Array[GlobePart]
 var layer_4: Array[GlobePart]
 var layers = [layer_1,layer_2,layer_3,layer_4]
 
-var active_layer = 0
+var active_layer = 0:
+	set(value):
+		
+		%ElevatorNumbers.change_number_to(value+1,abs(value-active_layer))
+		active_layer = value
+
 var opened = false:
 	set(value):
 		opened = value
-		generate_new_stuff(1)
 		
 func _ready() -> void:
 	randomize()
@@ -74,10 +78,10 @@ func hide_layer(layerindex: int):
 
 
 func generate_new_stuff(globe_amount:int):
-	
-	var points := get_random_points_in_polygon(drawer_collision_polygon.polygon,globe_amount + 1,20.0)
 
-	for x in range(globe_amount + 1):
+	var points := get_random_points_in_polygon(drawer_collision_polygon.polygon,globe_amount,20.0)
+
+	for x in range(globe_amount):
 		var new_part = GLOBE_PART.instantiate()
 		new_part.global_position = points.pick_random()
 		points.erase(new_part.global_position)
@@ -92,10 +96,11 @@ func generate_new_stuff(globe_amount:int):
 		new_part.under_table = true
 		new_part.scale = Vector2.ONE * 3
 		parts_location.add_child(new_part)
+		
 	hide_layer(0)
-	points = get_random_points_in_polygon(drawer_collision_polygon.polygon,globe_amount + 1,20.0)
+	points = get_random_points_in_polygon(drawer_collision_polygon.polygon,globe_amount,20.0)
 
-	for x in range(globe_amount + 1):
+	for x in range(globe_amount):
 		var new_part = GLOBE_PART.instantiate()
 		new_part.global_position = points.pick_random()
 		points.erase(new_part.global_position)
@@ -114,11 +119,12 @@ func generate_new_stuff(globe_amount:int):
 
 func tidy_everything_away():
 	var layer_points: Array[Array]
-	var globe_points := get_random_points_in_polygon(globe_collision_polygon.polygon,6,50.0)
+	var globe_points := get_random_points_in_polygon(globe_collision_polygon.polygon,parts_location.get_children().filter(func(x): return x is AssemblyGlobe).size(),50.0)
 	for layer in layers:
-		layer_points.append(get_random_points_in_polygon(drawer_collision_polygon.polygon,15,20.0))
+		layer_points.append(get_random_points_in_polygon(drawer_collision_polygon.polygon,parts_location.get_children().filter(func(x): return x is GlobePart).size(),20.0))
 		
 	for body in parts_location.get_children():
+		print(12)
 		if body is AssemblyGlobe:
 			body.global_position = globe_points.pick_random()
 			globe_points.erase(body.global_position)
@@ -151,6 +157,7 @@ func tidy_everything_away():
 			layers[x].append(body)
 			body.z_index = 0
 			body.no_merge = true
+			print(1)
 			body.scale = Vector2.ONE * 3
 	
 	for x in range(0, layers.size()):

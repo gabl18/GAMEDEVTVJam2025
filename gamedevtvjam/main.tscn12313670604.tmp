@@ -336,15 +336,14 @@ script = ExtResource("5_dg77c")
 tablet_animation_player = NodePath("../../TabletScreen/Tablet_Animationplayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background/Tablet"]
-position = Vector2(-20.5, -10)
-scale = Vector2(4.82, 4.5)
+scale = Vector2(4, 4)
 texture = ExtResource("5_efxa6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Background/Tablet"]
 visible = false
 position = Vector2(-235, -123)
 scale = Vector2(0.199316, 0.238927)
-polygon = PackedVector2Array(476.63, 179.971, 1299.44, 150.674, 1836.28, 807.778, 963.294, 845.447)
+polygon = PackedVector2Array(672.301, 263.679, 1354.64, 226.01, 1836.28, 807.778, 1123.85, 858.003)
 
 [node name="Parts_Location" type="Node2D" parent="CanvasLayer/Background"]
 unique_name_in_owner = true

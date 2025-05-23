@@ -23,7 +23,9 @@ MouseState="*res://mouse_state.gd"
 
 window/size/viewport_height=748
 window/stretch/mode="viewport"
-mouse_cursor/custom_image="uid://cdmaieu2745k7"
+mouse_cursor/custom_image="uid://8gjktpw586ky"
+mouse_cursor/custom_image_hotspot=Vector2(0, 1)
+mouse_cursor/tooltip_position_offset=Vector2(10, 11)
 
 [rendering]
 

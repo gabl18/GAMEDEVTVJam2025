@@ -30,7 +30,12 @@ var part_sequence: Array[Parts] = [
 	Parts.Inside:inside
 }
 
-var is_dragged := false
+var is_dragged := false:
+	set(value):
+		is_dragged = value
+		MouseState.moues_state = MouseState.Mouse_States.idle
+		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
+		
 var mouse_offset := Vector2.ZERO
 var in_drawer := false
 
@@ -58,7 +63,19 @@ func _process(_delta: float) -> void:
 			var y = -global_position.y
 			var scale_factor = -0.005 * y + 2.0
 			scale = Vector2.ONE * scale_factor
+			
+func _mouse_enter() -> void:
+	MouseState.Mouse_Hovers.append(self)
+	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
 
+		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor3.png"))
+
+
+func _mouse_exit() -> void:
+	MouseState.Mouse_Hovers.erase(self)
+	if not MouseState.moues_state == MouseState.Mouse_States.dragging and not MouseState.Mouse_Hovers:
+		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
+		
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if not lock_movement:
 		if event is InputEventMouseButton:
@@ -79,6 +96,10 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 					is_dragged = true
 					mouse_offset = event.global_position - global_position 
 					get_viewport().set_input_as_handled()
+					
+					MouseState.moues_state = MouseState.Mouse_States.dragging
+					Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor4.png"))
+				
 				else:
 					if dropable:
 						is_dragged = false
@@ -98,6 +119,7 @@ func add_part(part:GlobePart) -> GlobePart:
 		
 		owned_parts.set(part.parttype,part.info)
 		part_sprites[part.parttype].texture = part.texture
+		MouseState.Mouse_Hovers.erase(part)
 		part.queue_free()
 		
 		return null
@@ -125,6 +147,7 @@ func remove_part() -> GlobePart:
 				new_part2.info = owned_parts.get(Parts.Base)
 				new_part2.global_position = global_position
 				get_parent().add_child(new_part2)
+				MouseState.Mouse_Hovers.erase(self)
 				self.queue_free()
 			
 			return new_part

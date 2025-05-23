@@ -2,7 +2,7 @@ extends Area2D
 
 
 @export var tablet_animation_player: AnimationPlayer
-@onready var parts: Node2D = $"../Parts"
+@onready var parts: Node2D = %Parts_Location
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:

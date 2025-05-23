@@ -100,17 +100,15 @@ func _process(_delta: float) -> void:
 
 
 func _mouse_enter() -> void:
-	print(12)
 	MouseState.Mouse_Hovers.append(self)
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
-		print(13)
+
 		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor3.png"))
 
 
 func _mouse_exit() -> void:
 	MouseState.Mouse_Hovers.erase(self)
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging and not MouseState.Mouse_Hovers:
-		print(23)
 		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
 
 
@@ -201,6 +199,7 @@ func get_closest_body(position_: Vector2, bodies: Array) -> Node2D:
 
 func try_merge():
 	if closest_merge_body:
+		MouseState.Mouse_Hovers.erase(self)
 		closest_merge_body.modulate.r = 1
 		closest_merge_body.modulate.b = 1
 		if closest_merge_body is GlobePart:

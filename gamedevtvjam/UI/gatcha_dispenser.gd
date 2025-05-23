@@ -22,16 +22,13 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 				new_ball.breakable = true
 
 
-func _ready() -> void:
-	generate_balls(4)
-
 func generate_balls(amount:int):
 	
 	for x in range(amount):
 		var ball = GATCHA.instantiate()
 		ball.info = Resource.new()
 		ball.texture = load("res://Assets/Art/Globes/Inside/Inside2.png")
-		ball.Spawn_Location = $"../Parts"
+		ball.Spawn_Location = %Parts_Location
 		
 		balls.append(ball)
 		$Sprite2D2.show()

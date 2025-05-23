@@ -29,3 +29,14 @@ func break_apart():
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
 		break_apart()
+
+
+func _mouse_enter() -> void:
+	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
+
+		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor2.png"))
+
+
+func _mouse_exit() -> void:
+	if not MouseState.moues_state == MouseState.Mouse_States.dragging and not MouseState.Mouse_Hovers:
+		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
