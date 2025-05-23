@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://ciw3lgb8rkx2r" path="res://UI/tablet_screen.gd" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cs5bax42dujiq" path="res://Assets/Art/gacha_röhre.png" id="6_yaehf"]
 [ext_resource type="Texture2D" uid="uid://b3grh1oit67k6" path="res://Assets/Art/gacha_ball.png" id="7_yaehf"]
-[ext_resource type="Texture2D" uid="uid://8smesy5ta88t" path="res://Assets/Art/people_sheet.png" id="11_yaehf"]
+[ext_resource type="Texture2D" uid="uid://bp8idme00h7gh" path="res://Assets/Art/all_people_sheet.png" id="11_yaehf"]
 [ext_resource type="Texture2D" uid="uid://cupi24po26cj" path="res://Assets/Art/elevator_numbers.png" id="13_2cqfq"]
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
 
@@ -384,6 +384,7 @@ texture = SubResource("AtlasTexture_getpj")
 stretch_mode = 5
 
 [node name="TalkButton" type="TextureButton" parent="CanvasLayer/Background/People"]
+layout_mode = 0
 offset_left = 311.0
 offset_top = 43.0
 offset_right = 804.0
