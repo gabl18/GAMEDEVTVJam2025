@@ -34,25 +34,25 @@ func _ready() -> void:
 
 
 func gamecycle():
-	active_state = GameStates.building
-	
-	%DrawerHandler.lock_drawer = false
-	%Background.lock_drawer = false
-	%People.visible = false
-	%DrawerHandler.tidy_everything_away()
-	%DrawerHandler.generate_new_stuff(6)
-	%Gatcha_Dispenser.generate_balls(7)
-	
-	# -------------------------------
-	#active_state = GameStates.selling
-	#%DrawerHandler.lock_drawer = true
-	#%Background.lock_drawer = true
-	#active_person = people.pick_random()
-	#people.erase(active_person)
-	#taken_people.append(active_person)
+	#active_state = GameStates.building
 	#
-	#%People.texture = active_person.texture
-	#%People.visible = true
+	#%DrawerHandler.lock_drawer = false
+	#%Background.lock_drawer = false
+	#%People.visible = false
+	#%DrawerHandler.tidy_everything_away()
+	#%DrawerHandler.generate_new_stuff(6)
+	#%Gatcha_Dispenser.generate_balls(7)
+	#
+	# -------------------------------
+	active_state = GameStates.selling
+	%DrawerHandler.lock_drawer = true
+	%Background.lock_drawer = true
+	active_person = people.pick_random()
+	people.erase(active_person)
+	taken_people.append(active_person)
+	
+	%People.texture = active_person.texture
+	%People.visible = true
 	%EmailApp.send_email(load("res://people/mails/testmail1.tres"))
 	#DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"start")
 	
