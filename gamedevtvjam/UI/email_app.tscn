@@ -1,9 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://druvq1gmefjpo"]
+[gd_scene load_steps=15 format=3 uid="uid://druvq1gmefjpo"]
 
-[ext_resource type="Theme" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="1_dtc0v"]
-[ext_resource type="Script" path="res://UI/email_slider.gd" id="2_51ibo"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="1_dtc0v"]
+[ext_resource type="Texture2D" uid="uid://c7mlh0bxggl3s" path="res://Assets/Art/bar_icons.png" id="2_4c1u8"]
+[ext_resource type="Script" uid="uid://b6jpm67qk70rg" path="res://UI/email_slider.gd" id="2_51ibo"]
+[ext_resource type="Script" uid="uid://c77vvsilng304" path="res://UI/email_app.gd" id="2_tf253"]
+[ext_resource type="Texture2D" uid="uid://bs4qcbihvl8ci" path="res://Assets/Art/email_icons.png" id="3_d6d47"]
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="4_27cml"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6d47"]
+atlas = ExtResource("3_d6d47")
+region = Rect2(0, 0, 17, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwy14"]
+atlas = ExtResource("3_d6d47")
+region = Rect2(17, 0, 17, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aflk"]
+atlas = ExtResource("3_d6d47")
+region = Rect2(34, 0, 17, 14)
+
+[sub_resource type="Resource" id="Resource_oycym"]
+script = ExtResource("4_27cml")
+from = "office@tinyglob.es"
+to = "office@tinyglob.es"
+subject = "Reminder for tomorrow"
+text = "Hi future me!
+I wrote this email because I am very forgetting. Today you will (as every day) build your globes first, be carefull what you build, bacause once the store is open you cant take them apart anymore. My customers are very picky, but usually they write emails before they visit, so you can prepare.
+by lad!"
+metadata/_custom_type_script = "uid://brlife1n53d64"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tf253"]
+atlas = ExtResource("2_4c1u8")
 region = Rect2(18, 0, 9, 9)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6d47"]
@@ -14,6 +41,7 @@ atlas = SubResource("CompressedTexture2D_d6d47")
 region = Rect2(9, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oycym"]
+atlas = ExtResource("2_4c1u8")
 region = Rect2(0, 0, 9, 9)
 
 [node name="EmailApp" type="Panel"]
@@ -22,7 +50,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_dtc0v")
+script = ExtResource("2_tf253")
+icon_email_normal = SubResource("AtlasTexture_d6d47")
+icon_email_open = SubResource("AtlasTexture_cwy14")
+icon_email_new = SubResource("AtlasTexture_8aflk")
+starter_email = SubResource("Resource_oycym")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -101,14 +136,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ItemList" type="ItemList" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="EmailList" type="ItemList" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_dtc0v")
-item_count = 2
 same_column_width = true
-item_0/text = "Hi"
-item_1/text = "wdasd"
+icon_scale = 2.5
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -123,22 +157,22 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="Email_Space" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_dtc0v")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space"]
 layout_mode = 2
 theme = ExtResource("1_dtc0v")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer"]
 layout_mode = 2
 size_flags_stretch_ratio = 1.3
 theme = ExtResource("1_dtc0v")
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.33
@@ -146,24 +180,25 @@ theme = ExtResource("1_dtc0v")
 text = "From: "
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="From_Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_dtc0v")
 text = "example@fuck.you"
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_dtc0v")
 theme_override_constants/separation = 25
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
 theme = ExtResource("1_dtc0v")
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.33
@@ -171,24 +206,25 @@ theme = ExtResource("1_dtc0v")
 text = "To:"
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="To_Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_dtc0v")
 text = "me@suck.ma"
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_dtc0v")
 theme_override_constants/separation = 25
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
 theme = ExtResource("1_dtc0v")
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.33
@@ -196,21 +232,26 @@ theme = ExtResource("1_dtc0v")
 text = "Subject:"
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="Subject_Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_dtc0v")
 text = "ORDER! IMPORTANT"
 
-[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space"]
 layout_mode = 2
 theme = ExtResource("1_dtc0v")
 theme_override_constants/separation = 25
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="Email_Text_Block" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/Email_Space"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_dtc0v")
 theme_override_constants/line_separation = 5
+theme_override_font_sizes/normal_font_size = 25
 text = "Hello this is a example textHello tis is a example textHell this is a xampe textHllo his is a example textHello this is a example texHello ti is a example textHello tis is a xmpe extHellothis is a example textHello this is a exmpletextello ths is a example textHello this i a examle tetHello this is a example text"
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/EmailList" to="." method="_on_item_list_item_selected"]

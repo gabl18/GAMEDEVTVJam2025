@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cqwtsgu3070pw"]
 
-[ext_resource type="Texture2D" uid="uid://qwyowf6h74k4" path="res://Themes/Classic311/Styles/Scroll/vgrabber.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://qwyowf6h74k4" path="res://Assets/Themes/Classic311/Styles/Scroll/vgrabber.png" id="1"]
 
 [resource]
 content_margin_left = 0.0

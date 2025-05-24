@@ -48,7 +48,8 @@ func gamecycle():
 	
 	%People.texture = active_person.texture
 	%People.visible = true
-	DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"start")
+	%EmailApp.send_email(load("res://people/mails/testmail1.tres"))
+	#DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"start")
 	
 
 func _dialogue_started(__):

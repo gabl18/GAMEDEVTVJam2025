@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailRes" load_steps=2 format=3 uid="uid://cpb17fu7pd2gl"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_ir3bw"]
+
+[resource]
+script = ExtResource("1_ir3bw")
+from = "nateXoXo@gmx.com"
+to = "office@tinyglob.es"
+subject = "What have you got?"
+text = "Hi man!
+Hey I am looking for some neat decor 4 my room. A am basicly fine with anything, but it needs to be cool. I´m sure you can give me a hand on that. 
+byby
+Nate "
+metadata/_custom_type_script = "uid://brlife1n53d64"

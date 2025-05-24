@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dup8vohhyjm22"]
 
-[ext_resource type="Texture2D" uid="uid://c5ow35our2c6p" path="res://Themes/Classic311/Styles/Panel/TabDisabled.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c5ow35our2c6p" path="res://Assets/Themes/Classic311/Styles/Panel/TabDisabled.png" id="1"]
 
 [resource]
 content_margin_left = 10.0

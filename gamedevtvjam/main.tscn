@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=43 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bp8idme00h7gh" path="res://Assets/Art/all_people_sheet.png" id="11_yaehf"]
 [ext_resource type="Texture2D" uid="uid://cupi24po26cj" path="res://Assets/Art/elevator_numbers.png" id="13_2cqfq"]
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
+[ext_resource type="PackedScene" uid="uid://druvq1gmefjpo" path="res://UI/email_app.tscn" id="20_82xsv"]
 
 [sub_resource type="Resource" id="Resource_1u8w0"]
 script = ExtResource("2_82xsv")
@@ -218,6 +219,10 @@ region = Rect2(0, 0, 6, 7)
 atlas = ExtResource("5_ycdy4")
 region = Rect2(0, 0, 150, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
+atlas = ExtResource("5_ycdy4")
+region = Rect2(1200, 0, 150, 100)
+
 [sub_resource type="Animation" id="Animation_w48qg"]
 length = 0.001
 tracks/0/type = "value"
@@ -243,6 +248,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TabletBorder:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Apps:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ycdy4"]
@@ -272,6 +301,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TabletBorder:visible")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.38, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Apps:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.38, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vivmo"]
@@ -514,31 +567,6 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_w48qg")
 script = ExtResource("6_w48qg")
 
-[node name="Close_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
-z_index = 11
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.909722
-anchor_top = -0.0013369
-anchor_right = 1.0
-anchor_bottom = 0.998663
-grow_horizontal = 0
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Return_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.000868056
-anchor_top = 0.800802
-anchor_right = 0.140035
-anchor_bottom = 1.0022
-offset_right = -0.32
-offset_bottom = 0.355999
-mouse_default_cursor_shape = 2
-metadata/_edit_use_anchors_ = true
-
 [node name="Tutorial_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
 layout_mode = 1
 anchors_preset = -1
@@ -553,7 +581,6 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Email_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
 layout_mode = 0
@@ -585,6 +612,66 @@ offset_left = 834.0
 offset_top = 523.0
 offset_right = 1021.0
 offset_bottom = 679.0
+mouse_default_cursor_shape = 2
+
+[node name="Apps" type="TextureRect" parent="CanvasLayer/TabletScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 44.0
+offset_right = -107.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EmailApp" parent="CanvasLayer/TabletScreen/Apps" instance=ExtResource("20_82xsv")]
+unique_name_in_owner = true
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Closing_Button" type="TextureButton" parent="CanvasLayer/TabletScreen/Apps"]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 17.0
+offset_right = 956.0
+offset_bottom = 85.0
+mouse_default_cursor_shape = 2
+
+[node name="TabletBorder" type="TextureRect" parent="CanvasLayer/TabletScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_ryguw")
+
+[node name="Return_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000868056
+anchor_top = 0.800802
+anchor_right = 0.140035
+anchor_bottom = 1.0022
+offset_right = -0.320007
+offset_bottom = 0.356018
+mouse_default_cursor_shape = 2
+
+[node name="Close_Button" type="TextureButton" parent="CanvasLayer/TabletScreen"]
+z_index = 11
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.909722
+anchor_top = -0.0013369
+anchor_right = 1.0
+anchor_bottom = 0.998663
+grow_horizontal = 0
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 
 [node name="Tablet_Animationplayer" type="AnimationPlayer" parent="CanvasLayer/TabletScreen"]
@@ -644,13 +731,14 @@ polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
 [connection signal="area_exited" from="CanvasLayer/Background/Off_Table_Area2d" to="AreaHandler" method="_on_off_table_area_2d_area_exited"]
 [connection signal="area_entered" from="CanvasLayer/Background/Off_Table_Area2d_Globes" to="AreaHandler" method="_on_off_table_area_2d_globes_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/Background/Off_Table_Area2d_Globes" to="AreaHandler" method="_on_off_table_area_2d_globes_area_exited"]
-[connection signal="pressed" from="CanvasLayer/TabletScreen/Close_Button" to="CanvasLayer/TabletScreen" method="_on_close_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TabletScreen/Return_Button" to="CanvasLayer/TabletScreen" method="_on_return_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Tutorial_Button" to="CanvasLayer/TabletScreen" method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Email_Button" to="CanvasLayer/TabletScreen" method="_on_email_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Rating_Button" to="CanvasLayer/TabletScreen" method="_on_rating_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Credits_Button" to="CanvasLayer/TabletScreen" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Settings_Button" to="CanvasLayer/TabletScreen" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Apps/Closing_Button" to="CanvasLayer/TabletScreen" method="_on_closing_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Return_Button" to="CanvasLayer/TabletScreen" method="_on_return_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabletScreen/Close_Button" to="CanvasLayer/TabletScreen" method="_on_close_button_pressed"]
 [connection signal="area_entered" from="CanvasLayer/Table_Area2D" to="AreaHandler" method="_on_table_area_2d_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/Table_Area2D" to="AreaHandler" method="_on_table_area_2d_area_exited"]
 [connection signal="area_entered" from="CanvasLayer/Drawer_Area2D" to="DrawerHandler" method="_on_drawer_area_2d_area_entered"]

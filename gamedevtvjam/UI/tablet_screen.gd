@@ -3,11 +3,18 @@ extends TextureRect
 @onready var tablet_animationplayer: AnimationPlayer = $Tablet_Animationplayer
 @onready var parts: Node2D = %Parts_Location
 
+@onready var email_app: Panel = $Apps/EmailApp
+
+@onready var apps: Array= [email_app]
+
 enum Screens {
 	Home,Rating,Email,Tutorial,Settings,Credits
 }
 
 var active_screen: Screens = Screens.Home
+
+func _ready() -> void:
+	_hide_all_apps()
 
 func _on_close_button_pressed() -> void:
 	tablet_animationplayer.play_backwards("Tablet_Startup")
@@ -17,7 +24,6 @@ func _on_close_button_pressed() -> void:
 
 
 func _on_return_button_pressed() -> void:
-	print(1)
 	if active_screen == Screens.Home:
 		tablet_animationplayer.play_backwards("Tablet_Startup")
 
@@ -27,6 +33,7 @@ func _on_return_button_pressed() -> void:
 	else:
 		active_screen = Screens.Home
 		print('opened home')
+		_hide_all_apps()
 
 
 func _on_tutorial_button_pressed() -> void:
@@ -35,8 +42,9 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_email_button_pressed() -> void:
-	print("opened email")
 	active_screen = Screens.Email
+	_hide_all_apps()
+	email_app.show()
 
 
 func _on_rating_button_pressed() -> void:
@@ -52,3 +60,13 @@ func _on_credits_button_pressed() -> void:
 func _on_settings_button_pressed() -> void:
 	print("opened settings")
 	active_screen = Screens.Settings
+
+
+func _on_closing_button_pressed() -> void:
+	active_screen = Screens.Home
+	_hide_all_apps()
+	print('opened home')
+
+func _hide_all_apps():
+	for x in apps:
+		x.hide()

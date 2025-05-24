@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=91 format=3 uid="uid://tmjagednd5mo"]
+[gd_resource type="Theme" load_steps=96 format=3 uid="uid://tmjagednd5mo"]
 
 [ext_resource type="StyleBox" uid="uid://bggvl1nc2d0w" path="res://Assets/Themes/waste_no_space/styleboxes/button_disabled.tres" id="1_huh5m"]
 [ext_resource type="StyleBox" uid="uid://8qocokwxk22q" path="res://Assets/Themes/waste_no_space/styleboxes/button_focus.tres" id="2_gg7tm"]
@@ -23,7 +23,6 @@
 [ext_resource type="StyleBox" uid="uid://bfy0gr3hk7nwr" path="res://Assets/Themes/waste_no_space/styleboxes/h_scroll_bg.tres" id="21_m81pa"]
 [ext_resource type="StyleBox" uid="uid://ev7cojkpss7n" path="res://Assets/Themes/waste_no_space/styleboxes/h_slider_bg.tres" id="22_qbp2x"]
 [ext_resource type="Texture2D" uid="uid://bmw3ft38mob4u" path="res://Assets/Themes/waste_no_space/textures/icons/greater_than.tres" id="23_5ufhl"]
-[ext_resource type="StyleBox" uid="uid://ct7iog5kim2xn" path="res://Assets/Themes/waste_no_space/styleboxes/item_square_disabled.tres" id="24_484l3"]
 [ext_resource type="StyleBox" uid="uid://8i42om0so486" path="res://Assets/Themes/waste_no_space/styleboxes/item_square_hover.tres" id="25_25qxj"]
 [ext_resource type="FontFile" uid="uid://pntlljl77f2n" path="res://Assets/Themes/waste_no_space/fonts/Poco.ttf" id="26_4asuu"]
 [ext_resource type="Texture2D" uid="uid://chd4r68l7q3br" path="res://Assets/Themes/waste_no_space/textures/icons/close.tres" id="27_6uxw2"]
@@ -87,11 +86,51 @@ atlas = ExtResource("9_npev8")
 region = Rect2(63, 32, 1, 10)
 margin = Rect2(0, -1, 0, 0)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jgn3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i72ss"]
+bg_color = Color(0.61, 0.61, 0.61, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44, 0.44, 0.44, 1)
+expand_margin_top = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wq0j0"]
+bg_color = Color(0.67, 0.67, 0.67, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.31, 0.31, 0.31, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ks5g4"]
+bg_color = Color(0.79, 0.79, 0.79, 1)
+border_width_top = 4
+border_width_bottom = 4
+border_color = Color(0.37, 0.37, 0.37, 1)
+expand_margin_top = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgn3k"]
+bg_color = Color(0.79, 0.79, 0.79, 1)
+border_width_top = 4
+border_width_bottom = 4
+border_color = Color(0.37, 0.37, 0.37, 1)
+expand_margin_top = 5.0
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nct5h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsgx8"]
 atlas = ExtResource("9_npev8")
 region = Rect2(1, 58, 8, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjjlo"]
+bg_color = Color(0.55, 0.5335, 0.5335, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_7csx4"]
 content_margin_top = 1.0
@@ -273,13 +312,17 @@ HSlider/styles/grabber_area_highlight = ExtResource("19_uq5ry")
 HSlider/styles/slider = ExtResource("22_qbp2x")
 HSplitContainer/constants/separation = 2
 HSplitContainer/icons/grabber = ExtResource("23_5ufhl")
+ItemList/colors/font_color = Color(0.14, 0.14, 0.14, 1)
+ItemList/colors/font_hovered_color = Color(0.16, 0.16, 0.16, 1)
+ItemList/colors/font_hovered_selected_color = Color(0.41, 0.41, 0.41, 1)
 ItemList/colors/guide_color = Color(0.701961, 0.701961, 0.701961, 0)
 ItemList/constants/h_separation = 4
 ItemList/constants/v_separation = 1
-ItemList/styles/focus = ExtResource("2_gg7tm")
-ItemList/styles/panel = ExtResource("5_rwojv")
-ItemList/styles/selected = ExtResource("24_484l3")
-ItemList/styles/selected_focus = ExtResource("25_25qxj")
+ItemList/styles/focus = SubResource("StyleBoxTexture_jgn3k")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_i72ss")
+ItemList/styles/panel = SubResource("StyleBoxFlat_wq0j0")
+ItemList/styles/selected = SubResource("StyleBoxFlat_ks5g4")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_jgn3k")
 Label/constants/line_spacing = 1
 Label/styles/normal = SubResource("StyleBoxEmpty_nct5h")
 LineEdit/colors/caret_color = Color(0.94902, 0.94902, 0.94902, 0.686275)
@@ -311,7 +354,7 @@ OptionButton/styles/focus = ExtResource("2_gg7tm")
 OptionButton/styles/hover = ExtResource("3_p1bcg")
 OptionButton/styles/normal = ExtResource("4_nkw2c")
 OptionButton/styles/pressed = ExtResource("5_rwojv")
-Panel/styles/panel = ExtResource("28_fo14n")
+Panel/styles/panel = SubResource("StyleBoxFlat_qjjlo")
 PanelContainer/styles/panel = ExtResource("28_fo14n")
 PopupMenu/constants/h_separation = 2
 PopupMenu/constants/indent = 8
