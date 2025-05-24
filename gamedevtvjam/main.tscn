@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=44 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cupi24po26cj" path="res://Assets/Art/elevator_numbers.png" id="13_2cqfq"]
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
 [ext_resource type="PackedScene" uid="uid://druvq1gmefjpo" path="res://UI/email_app.tscn" id="20_82xsv"]
+[ext_resource type="AudioStream" uid="uid://brrithgiqtfbs" path="res://Assets/Audio/Music/soundtrack.mp3" id="21_getpj"]
 
 [sub_resource type="Resource" id="Resource_1u8w0"]
 script = ExtResource("2_82xsv")
@@ -719,6 +720,15 @@ polygon = PackedVector2Array(358, 659, 313, 734, 806, 730, 769, 661)
 [node name="Globe_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
 visible = false
 polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_getpj")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="changed_drawer_layer" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_changed_drawer_layer"]
 [connection signal="drawer_opened_closed" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_drawer_opened_closed"]

@@ -52,3 +52,6 @@ visible = false
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_ydmwo")
 debug_color = Color(0.811039, 0.354325, 0.548496, 0.42)
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

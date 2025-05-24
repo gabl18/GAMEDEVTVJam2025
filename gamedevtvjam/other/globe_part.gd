@@ -3,6 +3,10 @@ extends CharacterBody2D
 class_name GlobePart
 
 const ASSEMBLY_GLOBE = preload("res://other/assembly_globe.tscn")
+@onready var sfx: AudioStreamPlayer = $SFX
+
+var pickup1 = preload("res://Assets/Audio/SFX/pickup2.mp3")
+var pickup2 = preload("res://Assets/Audio/SFX/pickup1.mp3")
 
 enum Parts {
 	Globe,
@@ -120,6 +124,8 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 
 			if event.is_pressed():
+				sfx.stream = pickup1
+				sfx.play()
 				want_dropped = false
 				is_dragged = true
 				mouse_offset = event.global_position - global_position 
@@ -161,9 +167,10 @@ func check_for_merging(area: Area2D):
 		var body = area.get_parent()
 		if body is GlobePart:
 			if parttype == Parts.Base and body.parttype == Parts.Globe or parttype == Parts.Globe and body.parttype == Parts.Base:
-				
 				merge_bodies.append(body)
 				colorin_closest_body()
+				sfx.stream = pickup2
+				sfx.play()
 				
 				modulate.r = 0.5
 				modulate.b = 0.5
@@ -173,7 +180,9 @@ func check_for_merging(area: Area2D):
 				
 				merge_bodies.append(body)
 				colorin_closest_body()
-
+				sfx.stream = pickup2
+				sfx.play()
+				
 				modulate.r = 0.5
 				modulate.b = 0.5
 

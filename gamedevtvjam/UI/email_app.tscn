@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="1_dtc0v"]
 [ext_resource type="Texture2D" uid="uid://c7mlh0bxggl3s" path="res://Assets/Art/bar_icons.png" id="2_4c1u8"]
-[ext_resource type="Script" uid="uid://b6jpm67qk70rg" path="res://UI/email_slider.gd" id="2_51ibo"]
+[ext_resource type="Script" path="res://UI/email_slider.gd" id="2_51ibo"]
 [ext_resource type="Script" uid="uid://c77vvsilng304" path="res://UI/email_app.gd" id="2_tf253"]
 [ext_resource type="Texture2D" uid="uid://bs4qcbihvl8ci" path="res://Assets/Art/email_icons.png" id="3_d6d47"]
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="4_27cml"]

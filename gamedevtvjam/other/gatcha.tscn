@@ -85,3 +85,6 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_w81qd")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
