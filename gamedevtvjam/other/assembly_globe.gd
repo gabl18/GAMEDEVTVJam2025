@@ -1,7 +1,10 @@
 extends CharacterBody2D
 class_name AssemblyGlobe
+@onready var sfx: AudioStreamPlayer = $SFX
 
 const GLOBE_PART = preload("res://other/globe_part.tscn")
+var disassemble = preload("res://Assets/Audio/SFX/disassemble.mp3")
+var assemble = preload("res://Assets/Audio/SFX/assemble.mp3")
 
 enum Parts {
 	Globe,
@@ -116,7 +119,8 @@ func add_part(part:GlobePart) -> GlobePart:
 	var scale_factor = -0.005 * y + 2.0
 	scale = Vector2.ONE * scale_factor
 	if owned_parts.get(part.parttype) == null:
-		
+		sfx.stream = assemble
+		sfx.play()
 		owned_parts.set(part.parttype,part.info)
 		part_sprites[part.parttype].texture = part.texture
 		MouseState.Mouse_Hovers.erase(part)
@@ -126,6 +130,8 @@ func add_part(part:GlobePart) -> GlobePart:
 	else: return part
 
 func remove_part() -> GlobePart:
+	sfx.stream = disassemble
+	sfx.play()
 	for i in range(part_sequence.size()-1, -1, -1): #why the fuck is there no reverse()
 		if owned_parts.get(part_sequence[i]) != null:
 			var new_part = GLOBE_PART.instantiate()
@@ -136,7 +142,6 @@ func remove_part() -> GlobePart:
 			
 			part_sprites[part_sequence[i]].texture = null
 			owned_parts[part_sequence[i]] = null
-			
 			
 			
 			if owned_parts.values().filter(func(v):return v != null).size() == 1:

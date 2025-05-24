@@ -1,7 +1,9 @@
 extends CharacterBody2D
 class_name GatchaBall
+@onready var sfx: AudioStreamPlayer = $SFX
 
 const GLOBE_PART = preload("res://other/globe_part.tscn")
+var disassemble = preload("res://Assets/Audio/SFX/disassemble.mp3")
 
 var info: Resource
 var texture: Texture2D:
@@ -13,6 +15,8 @@ var breakable := false
 
 func break_apart():
 	if breakable:
+		sfx.stream = disassemble
+		sfx.play()
 		breakable = false
 		var new_part = GLOBE_PART.instantiate()
 		new_part.global_position = global_position

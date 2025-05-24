@@ -3,6 +3,12 @@ extends TextureRect
 @onready var button_drawer_open: = $Button_Drawer_Open
 @onready var button_drawer_close: = $Button_Drawer_Close
 @onready var animation_player: AnimationPlayer = $Desk_AnimationPlayer
+@onready var sfx: AudioStreamPlayer = $"../../SFX"
+
+var open_drawer = preload("res://Assets/Audio/SFX/drawer-open.mp3")
+var change_drawer = preload("res://Assets/Audio/SFX/drawer-change.mp3")
+var button_drawer = preload("res://Assets/Audio/SFX/drawer-button.mp3")
+
 
 var drawer_is_open := false:
 	set(value):
@@ -28,6 +34,8 @@ var lock_drawer := false:
 func _on_button_drawer_open_pressed() -> void:
 	if not lock_drawer:
 		if not drawer_button_cooldown:
+			sfx.stream = open_drawer
+			sfx.play()
 			if not drawer_is_open:
 				drawer_button_cooldown = true
 				animation_player.play("Opening_Closing_Drawer")
@@ -45,6 +53,8 @@ func _on_button_drawer_close_pressed() -> void:
 	if not lock_drawer:
 		if not drawer_button_cooldown:
 			if drawer_is_open:
+				sfx.stream = open_drawer
+				sfx.play()
 				drawer_is_open = false
 				drawer_button_cooldown = true
 				animation_player.play_backwards("Opening_Closing_Cover")
@@ -61,8 +71,9 @@ func _on_button_cover_up_pressed() -> void:
 	if not lock_drawer:
 		if drawer_is_open:
 			if not cover_button_cooldown:
+				sfx.stream = change_drawer
+				sfx.play()
 				cover_button_cooldown = true
-
 				animation_player.play_backwards("Opening_Closing_Cover")
 				await animation_player.animation_finished
 				changed_drawer_layer.emit(-1)
@@ -75,6 +86,8 @@ func _on_button_cover_down_pressed() -> void:
 	if not lock_drawer:
 		if drawer_is_open:
 			if not cover_button_cooldown:
+				sfx.stream = change_drawer
+				sfx.play()
 				cover_button_cooldown = true
 				animation_player.play_backwards("Opening_Closing_Cover")
 				await animation_player.animation_finished

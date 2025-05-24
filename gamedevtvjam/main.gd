@@ -13,6 +13,10 @@ var taken_people: Array[Person]
 var active_person: Person
 var is_dialogue_active: bool
 
+@onready var sfx: AudioStreamPlayer = $SFX
+@onready var music: AudioStreamPlayer = $Music
+
+
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_dialogue_ended)
@@ -25,6 +29,7 @@ func _ready() -> void:
 	@warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match")
 	Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor4.png"),4) # Hand close
 	await get_tree().process_frame
+	music.play()
 	gamecycle()
 
 
@@ -61,6 +66,9 @@ func gamecycle():
 
 func _dialogue_started(__):
 	is_dialogue_active = true
+	var hello = preload("res://Assets/Audio/SFX/hello-81683.mp3")
+	sfx.stream = hello
+	sfx.play()
 	
 func _dialogue_ended(__):
 	is_dialogue_active = false
