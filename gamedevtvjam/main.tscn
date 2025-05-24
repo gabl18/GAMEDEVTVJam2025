@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=46 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://druvq1gmefjpo" path="res://UI/email_app.tscn" id="20_82xsv"]
 [ext_resource type="Texture2D" uid="uid://dpmuhmxthqygn" path="res://Assets/Art/Notification.png" id="20_ryguw"]
 [ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
+[ext_resource type="AudioStream" uid="uid://brrithgiqtfbs" path="res://Assets/Audio/Music/soundtrack.mp3" id="23_d13ii"]
 
 [sub_resource type="Resource" id="Resource_1u8w0"]
 script = ExtResource("2_82xsv")
@@ -739,14 +740,11 @@ visible = false
 polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_getpj")
+stream = ExtResource("23_d13ii")
 volume_db = 10.4
 autoplay = true
-bus = &"Music"
-parameters/looping = true
 
 [connection signal="changed_drawer_layer" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_changed_drawer_layer"]
 [connection signal="drawer_opened_closed" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_drawer_opened_closed"]

@@ -52,7 +52,6 @@ visible = false
 shape = ExtResource("2_efdfx")
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
 
 [connection signal="area_entered" from="Merge_Area2D" to="." method="_on_merge_area_2d_area_entered"]
 [connection signal="area_exited" from="Merge_Area2D" to="." method="_on_merge_area_2d_area_exited"]

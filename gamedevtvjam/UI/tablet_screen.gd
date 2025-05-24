@@ -5,8 +5,8 @@ extends TextureRect
 
 @onready var email_app: Panel = $Apps/EmailApp
 @onready var my_store_app: Panel = %myStoreApp
+@onready var apps: Array= [email_app,my_store_app]
 
-@onready var apps: Array= [email_app]
 @onready var sfx: AudioStreamPlayer = $"../../SFX"
 var click = preload("res://Assets/Audio/SFX/click.mp3")
 var close = preload("res://Assets/Audio/SFX/close.mp3")
