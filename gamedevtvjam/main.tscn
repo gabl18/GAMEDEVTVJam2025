@@ -24,7 +24,7 @@
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
 [ext_resource type="PackedScene" uid="uid://druvq1gmefjpo" path="res://UI/email_app.tscn" id="20_82xsv"]
 [ext_resource type="Texture2D" uid="uid://dpmuhmxthqygn" path="res://Assets/Art/Notification.png" id="20_ryguw"]
-[ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" path="res://UI/my_store_app.tscn" id="21_getpj"]
 [ext_resource type="AudioStream" uid="uid://brrithgiqtfbs" path="res://Assets/Audio/Music/soundtrack.mp3" id="23_d13ii"]
 
 [sub_resource type="Resource" id="Resource_a6jrf"]
@@ -771,11 +771,13 @@ visible = false
 polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_d13ii")
 volume_db = 10.4
-parameters/looping = true
+autoplay = true
+bus = &"Music"
 
 [connection signal="changed_drawer_layer" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_changed_drawer_layer"]
 [connection signal="drawer_opened_closed" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_drawer_opened_closed"]
