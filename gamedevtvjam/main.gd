@@ -49,8 +49,8 @@ var all_mails: Array
 func prepare_game():
 	for day in range(day_people_numbers.size()):
 		var todays_mails: Array[EmailRes]
-		var todays_people: Array[Person]
-		while todays_people.size() < day_people_numbers[day]:
+		var _todays_people: Array[Person]
+		while _todays_people.size() < day_people_numbers[day]:
 			var person: Person = people.pick_random()
 			
 			if person.only_after:
@@ -84,9 +84,9 @@ func prepare_game():
 			
 			people.erase(person)
 			taken_people.append(person)
-			todays_people.append(person)
+			_todays_people.append(person)
 				
-		all_people.append(todays_people)
+		all_people.append(_todays_people)
 		all_mails.append(todays_mails)
 
 var todays_people
