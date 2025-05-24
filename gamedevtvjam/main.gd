@@ -37,7 +37,7 @@ func gamecycle():
 	active_state = GameStates.building
 	
 	%EmailApp.send_email(load("res://people/mails/testmail1.tres"))
-	
+	%Gatcha_Dispenser.locked = false
 	%DrawerHandler.lock_drawer = false
 	%Background.lock_drawer = false
 	%People.visible = false
@@ -50,6 +50,7 @@ func gamecycle():
 	
 	# -------------------------------
 	active_state = GameStates.selling
+	%Gatcha_Dispenser.locked = true
 	%Gatcha_Dispenser.break_all_balls()
 	%DrawerHandler.tidy_everything_away()
 	%DrawerHandler.lock_drawer = true
