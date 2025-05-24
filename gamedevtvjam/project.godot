@@ -34,7 +34,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://people/dialogue/test1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://People/dialogue/test1.dialogue")
 
 [rendering]
 

@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://coepueusuau1m"]
+[gd_scene load_steps=19 format=3 uid="uid://coepueusuau1m"]
 
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="1_5rm0b"]
 [ext_resource type="Script" uid="uid://dbfw1f8sorpra" path="res://UI/my_store_app.gd" id="2_gw27l"]
 [ext_resource type="Texture2D" uid="uid://c7mlh0bxggl3s" path="res://Assets/Art/bar_icons.png" id="3_oi3o8"]
+[ext_resource type="Texture2D" uid="uid://bn87rdpjwadry" path="res://Assets/Art/logo.png" id="4_gw27l"]
+[ext_resource type="Texture2D" uid="uid://ccp04odxvmufh" path="res://Assets/Art/open_close_btn.png" id="5_oi3o8"]
+[ext_resource type="Texture2D" uid="uid://bksauyjd1rour" path="res://Assets/Art/starts.png" id="5_spj7x"]
+[ext_resource type="ButtonGroup" uid="uid://bogbstcn33na" path="res://UI/open_close_btngroup.tres" id="6_pmmrs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spj7x"]
 atlas = ExtResource("3_oi3o8")
@@ -18,6 +22,34 @@ region = Rect2(9, 0, 9, 9)
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4l2f"]
 atlas = ExtResource("3_oi3o8")
 region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th6ur"]
+atlas = ExtResource("5_spj7x")
+region = Rect2(0, 0, 97, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oac03"]
+atlas = ExtResource("5_oi3o8")
+region = Rect2(46, 0, 46, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi3o8"]
+atlas = ExtResource("5_oi3o8")
+region = Rect2(0, 0, 46, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nuy5"]
+atlas = ExtResource("5_oi3o8")
+region = Rect2(92, 0, 46, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vxfi"]
+atlas = ExtResource("5_oi3o8")
+region = Rect2(184, 0, 46, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl20e"]
+atlas = ExtResource("5_oi3o8")
+region = Rect2(138, 0, 46, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nota7"]
+atlas = ExtResource("5_oi3o8")
+region = Rect2(230, 0, 46, 26)
 
 [node name="myStoreApp" type="Panel"]
 anchors_preset = 15
@@ -85,21 +117,52 @@ layout_mode = 2
 theme = ExtResource("1_5rm0b")
 theme_override_constants/separation = 6
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_gw27l")
+stretch_mode = 5
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.23
+alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "day"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="NumberLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "#1"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/side_margin = 50
 current_tab = 1
 
-[node name="Rating" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+[node name="Rating" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Rating"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Rating"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,14 +170,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Rating/CenterContainer"]
+[node name="StarsTexture" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Rating/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(650, 200)
 layout_mode = 2
+texture = SubResource("AtlasTexture_th6ur")
+stretch_mode = 5
 
-[node name="Controlpanel" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+[node name="Controlpanel" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Controlpanel"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Controlpanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,9 +189,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Controlpanel/CenterContainer"]
-custom_minimum_size = Vector2(500, 100)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Controlpanel/CenterContainer"]
 layout_mode = 2
-text = "Open Store"
+theme_override_constants/separation = 10
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Controlpanel/CenterContainer/Button" to="." method="_on_button_pressed"]
+[node name="OpenButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Controlpanel/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_pmmrs")
+texture_normal = SubResource("AtlasTexture_oac03")
+texture_pressed = SubResource("AtlasTexture_oi3o8")
+texture_disabled = SubResource("AtlasTexture_8nuy5")
+stretch_mode = 5
+
+[node name="CloseButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Controlpanel/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("6_pmmrs")
+texture_normal = SubResource("AtlasTexture_7vxfi")
+texture_pressed = SubResource("AtlasTexture_cl20e")
+texture_disabled = SubResource("AtlasTexture_nota7")
+stretch_mode = 5
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Controlpanel/CenterContainer/HBoxContainer/OpenButton" to="." method="_on_open_button_toggled"]

@@ -26,6 +26,7 @@ subject = "Reminder for tomorrow"
 text = "Hi future me!
 I wrote this email because I am very forgetting. Today you will (as every day) build your globes first, be carefull what you build, bacause once the store is open you cant take them apart anymore. My customers are very picky, but usually they write emails before they visit, so you can prepare.
 by lad!"
+days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tf253"]

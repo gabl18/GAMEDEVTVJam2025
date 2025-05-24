@@ -6,6 +6,8 @@ const GLOBE_PART = preload("res://other/globe_part.tscn")
 var disassemble = preload("res://Assets/Audio/SFX/disassemble.mp3")
 var assemble = preload("res://Assets/Audio/SFX/assemble.mp3")
 
+signal finished_unfinished(globe:AssemblyGlobe,finished:bool)
+
 enum Parts {
 	Globe,
 	Base,
@@ -126,6 +128,9 @@ func add_part(part:GlobePart) -> GlobePart:
 		MouseState.Mouse_Hovers.erase(part)
 		part.queue_free()
 		
+		if owned_parts.values().all(func(v):return v != null):
+			finished_unfinished.emit(self,true)
+		
 		return null
 	else: return part
 
@@ -134,6 +139,11 @@ func remove_part() -> GlobePart:
 	sfx.play()
 	for i in range(part_sequence.size()-1, -1, -1): #why the fuck is there no reverse()
 		if owned_parts.get(part_sequence[i]) != null:
+			
+			if owned_parts.values().all(func(v):return v != null):
+				finished_unfinished.emit(self,false)
+			
+			
 			var new_part = GLOBE_PART.instantiate()
 			new_part.parttype = part_sequence[i]
 			new_part.texture = part_sprites[part_sequence[i]].texture
@@ -156,5 +166,6 @@ func remove_part() -> GlobePart:
 				self.queue_free()
 			
 			return new_part
+	
 	
 	return null
