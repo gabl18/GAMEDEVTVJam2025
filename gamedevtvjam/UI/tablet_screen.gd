@@ -4,8 +4,9 @@ extends TextureRect
 @onready var parts: Node2D = %Parts_Location
 
 @onready var email_app: Panel = $Apps/EmailApp
+@onready var my_store_app: Panel = %myStoreApp
 
-@onready var apps: Array= [email_app]
+@onready var apps: Array= [email_app,my_store_app]
 
 enum Screens {
 	Home,Rating,Email,Tutorial,Settings,Credits
@@ -48,8 +49,9 @@ func _on_email_button_pressed() -> void:
 
 
 func _on_rating_button_pressed() -> void:
-	print("opened rating")
 	active_screen = Screens.Rating
+	_hide_all_apps()
+	my_store_app.show()
 
 
 func _on_credits_button_pressed() -> void:
@@ -70,3 +72,7 @@ func _on_closing_button_pressed() -> void:
 func _hide_all_apps():
 	for x in apps:
 		x.hide()
+
+
+func _on_email_app_notification_status_changed(on: bool) -> void:
+	$Apps/Email_Notification.visible = on

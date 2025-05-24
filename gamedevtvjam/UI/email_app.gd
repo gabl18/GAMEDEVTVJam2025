@@ -14,6 +14,9 @@ extends Panel
 @export var starter_email: EmailRes
 
 var previous_selected_id: int
+var unchecked_emails: Array[EmailRes]
+
+signal notification_status_changed(on:bool)
 
 func _ready() -> void:
 	send_email(starter_email)
@@ -22,6 +25,9 @@ func _ready() -> void:
 func send_email(email:EmailRes):
 	var idx = email_list.add_item(email.subject,icon_email_new)
 	email_list.set_item_metadata(idx,email)
+	if unchecked_emails.is_empty():
+		notification_status_changed.emit(true)
+	unchecked_emails.append(email)
 
 func _on_item_list_item_selected(index: int) -> void:
 	if previous_selected_id != null:
@@ -29,11 +35,16 @@ func _on_item_list_item_selected(index: int) -> void:
 		
 	email_list.set_item_icon(index,icon_email_open)
 	var email: EmailRes = email_list.get_item_metadata(index)
+	unchecked_emails.erase(email)
 	from_label.text = email.from
 	to_label.text = email.to
 	subject_label.text = email.subject
 	email_text_block.text = email.text
 	previous_selected_id = index
+	
+	if unchecked_emails.is_empty():
+		notification_status_changed.emit(false)
+	
 	
 
 	

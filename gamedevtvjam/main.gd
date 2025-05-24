@@ -29,17 +29,22 @@ func _ready() -> void:
 
 
 func gamecycle():
-	#active_state = GameStates.building
-	#
-	#%DrawerHandler.lock_drawer = false
-	#%Background.lock_drawer = false
-	#%People.visible = false
-	#%DrawerHandler.tidy_everything_away()
-	#%DrawerHandler.generate_new_stuff(6)
-	#%Gatcha_Dispenser.generate_balls(7)
+	active_state = GameStates.building
+	
+	%DrawerHandler.lock_drawer = false
+	%Background.lock_drawer = false
+	%People.visible = false
+	%DrawerHandler.tidy_everything_away()
+	%DrawerHandler.generate_new_stuff(6)
+	%Gatcha_Dispenser.generate_balls(7)
+	
+	await %myStoreApp.store_open_pressed
+	
 	
 	# -------------------------------
 	active_state = GameStates.selling
+	%Gatcha_Dispenser.break_all_balls()
+	%DrawerHandler.tidy_everything_away()
 	%DrawerHandler.lock_drawer = true
 	%Background.lock_drawer = true
 	active_person = people.pick_random()

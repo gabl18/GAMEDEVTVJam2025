@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://coepueusuau1m"]
+
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="1_5rm0b"]
+[ext_resource type="Script" uid="uid://dbfw1f8sorpra" path="res://UI/my_store_app.gd" id="2_gw27l"]
+[ext_resource type="Texture2D" uid="uid://c7mlh0bxggl3s" path="res://Assets/Art/bar_icons.png" id="3_oi3o8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spj7x"]
+atlas = ExtResource("3_oi3o8")
+region = Rect2(18, 0, 9, 9)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6d47"]
+load_path = "res://.godot/imported/bar_icons.png-c7bb1ccebcb256eec76fb7d53980f2e2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmmrs"]
+atlas = SubResource("CompressedTexture2D_d6d47")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4l2f"]
+atlas = ExtResource("3_oi3o8")
+region = Rect2(0, 0, 9, 9)
+
+[node name="myStoreApp" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5rm0b")
+script = ExtResource("2_gw27l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5rm0b")
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_5rm0b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_5rm0b")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_5rm0b")
+text = "Store Controlboard"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_5rm0b")
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("1_5rm0b")
+texture_normal = SubResource("AtlasTexture_spj7x")
+stretch_mode = 4
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("1_5rm0b")
+texture_normal = SubResource("AtlasTexture_pmmrs")
+stretch_mode = 4
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("1_5rm0b")
+texture_normal = SubResource("AtlasTexture_b4l2f")
+stretch_mode = 4
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_5rm0b")
+theme_override_constants/separation = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/side_margin = 50
+current_tab = 1
+
+[node name="Rating" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Rating"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Rating/CenterContainer"]
+layout_mode = 2
+
+[node name="Controlpanel" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Controlpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Controlpanel/CenterContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "Open Store"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Controlpanel/CenterContainer/Button" to="." method="_on_button_pressed"]

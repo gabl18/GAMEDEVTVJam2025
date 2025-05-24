@@ -3,7 +3,6 @@ extends Area2D
 const GATCHA = preload("res://other/gatcha.tscn")
 
 var balls: Array[GatchaBall]
-
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
@@ -19,8 +18,14 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 				await $AnimationPlayer.animation_finished
 				new_ball.reparent(self)
 				new_ball.breakable = true
+				
 func _ready() -> void:
 	$Sprite2D2.visible = not balls.is_empty()
+
+func break_all_balls():
+	for child in get_children():
+		if child is GatchaBall:
+			child.break_apart()
 
 func generate_balls(amount:int):
 	

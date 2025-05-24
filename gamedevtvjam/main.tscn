@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=45 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://cupi24po26cj" path="res://Assets/Art/elevator_numbers.png" id="13_2cqfq"]
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
 [ext_resource type="PackedScene" uid="uid://druvq1gmefjpo" path="res://UI/email_app.tscn" id="20_82xsv"]
+[ext_resource type="Texture2D" uid="uid://dpmuhmxthqygn" path="res://Assets/Art/Notification.png" id="20_ryguw"]
+[ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
 
 [sub_resource type="Resource" id="Resource_1u8w0"]
 script = ExtResource("2_82xsv")
@@ -627,10 +629,26 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Email_Notification" type="TextureRect" parent="CanvasLayer/TabletScreen/Apps"]
+visible = false
+layout_mode = 0
+offset_left = 388.0
+offset_top = 6.0
+offset_right = 428.0
+offset_bottom = 46.0
+scale = Vector2(1.47599, 1.50836)
+texture = ExtResource("20_ryguw")
+
 [node name="EmailApp" parent="CanvasLayer/TabletScreen/Apps" instance=ExtResource("20_82xsv")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="myStoreApp" parent="CanvasLayer/TabletScreen/Apps" instance=ExtResource("21_getpj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [node name="Closing_Button" type="TextureButton" parent="CanvasLayer/TabletScreen/Apps"]
 layout_mode = 0
@@ -736,6 +754,7 @@ polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Rating_Button" to="CanvasLayer/TabletScreen" method="_on_rating_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Credits_Button" to="CanvasLayer/TabletScreen" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Settings_Button" to="CanvasLayer/TabletScreen" method="_on_settings_button_pressed"]
+[connection signal="notification_status_changed" from="CanvasLayer/TabletScreen/Apps/EmailApp" to="CanvasLayer/TabletScreen" method="_on_email_app_notification_status_changed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Apps/Closing_Button" to="CanvasLayer/TabletScreen" method="_on_closing_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Return_Button" to="CanvasLayer/TabletScreen" method="_on_return_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Close_Button" to="CanvasLayer/TabletScreen" method="_on_close_button_pressed"]
