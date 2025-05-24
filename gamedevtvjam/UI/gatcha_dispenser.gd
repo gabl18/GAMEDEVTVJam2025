@@ -1,14 +1,19 @@
 extends Area2D
 
 const GATCHA = preload("res://other/gatcha.tscn")
+@onready var sfx: AudioStreamPlayer = $"../../../SFX"
 
 var balls: Array[GatchaBall]
+var lever = preload("res://Assets/Audio/SFX/lever.mp3")
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			if balls and $AnimationPlayer.current_animation == '':
+				sfx.stream = lever
+				sfx.play()
 				print(balls)
+				var disassemble = preload("res://Assets/Audio/SFX/disassemble.mp3")
 				randomize()
 				var new_ball = balls[0]
 				$Path2D.curve.set_point_position(2,Vector2(randf_range(720,780),randf_range(400,460)))
