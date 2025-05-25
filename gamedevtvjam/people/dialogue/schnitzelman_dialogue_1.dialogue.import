@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://bh3e77r608ug1"
-path="res://.godot/imported/schnitzelman_dialogue_1.dialogue-9c89d48df1e4e318af4cb556d2f3e22c.tres"
+path="res://.godot/imported/schnitzelman_dialogue_1.dialogue-4658a1bcb4e51bdf4f78a9ceae2bcd56.tres"
 
 [deps]
 
-source_file="res://People/dialogue/schnitzelman_dialogue_1.dialogue"
-dest_files=["res://.godot/imported/schnitzelman_dialogue_1.dialogue-9c89d48df1e4e318af4cb556d2f3e22c.tres"]
+source_file="res://people/dialogue/schnitzelman_dialogue_1.dialogue"
+dest_files=["res://.godot/imported/schnitzelman_dialogue_1.dialogue-4658a1bcb4e51bdf4f78a9ceae2bcd56.tres"]
 
 [params]
 

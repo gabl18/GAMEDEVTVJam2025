@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo3r0n7infx0u"]
+[gd_scene load_steps=8 format=3 uid="uid://ddcfnj85mwh7y"]
 
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="1_tawwh"]
 [ext_resource type="Script" uid="uid://mwu5r8tel6gv" path="res://UI/credits_app.gd" id="2_2fstt"]
@@ -29,7 +29,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_tawwh")
 script = ExtResource("2_2fstt")
-Credits = Array[String](["test", "adsfasdf", "asdfas", "asdf", "f23r", "12"])
+Credits = Array[String](["", "#Programmer: Michael", "https://sir-lordmike.itch.io/", "#Artist: Gabriel", "https://gabl18.itch.io/", "#Music: Melanie", "https://ilemthcelhcs.itch.io/", "", "Testers: Stefan, Noah, Felix and Melanie", "", "Sound Effects: https://pixabay.com/", "Font:  quaver - by caffinate", "", "Tools used: Godot Engine, Aseprite, Bandlab", "", "", "Made for GamedevTV2025Jam", "with the theme: Tiny World", "", "Links:", "https://itch.io/jam/gamedevtv-jam-2025", "https://godotengine.org/", "https://www.aseprite.org/", "https://www.bandlab.com/", "https://caffinate.itch.io/quaver ", "https://pixabay.com/sound-effects/guitar-pick-up-from-chair-281047/", "https://pixabay.com/sound-effects/crowd-talking-138493/", "https://pixabay.com/sound-effects/plopping-plop-popping-41836/", "https://pixabay.com/sound-effects/pop-1-35897/", "https://pixabay.com/sound-effects/hello-81683/", "https://pixabay.com/sound-effects/writingpensignaturepaper-102967/", "https://pixabay.com/sound-effects/drawer-open-mid-84663/", "https://pixabay.com/sound-effects/old-radio-button-click-97549/", "https://pixabay.com/sound-effects/automatic-garage-roller-door-opening-33346/", "https://pixabay.com/sound-effects/new-notification-7-210334/", "https://pixabay.com/sound-effects/keyboard-click-327728/", "https://pixabay.com/sound-effects/error-5-199276/", "https://pixabay.com/sound-effects/plop-sound-made-with-my-mouth-100690/", "https://pixabay.com/sound-effects/clank1-91862/", "", "Thanks for playing!"])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -53,7 +53,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("1_tawwh")
-text = "Outview"
+text = "Credits"
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
