@@ -68,11 +68,14 @@ func prepare_game():
 			var person: Person = people.pick_random()
 			
 			
-			if day == 5:
+			if day == 4:
 				person = load("res://People/botrizz.tres")
-				
+				person.emails.shuffle()
 				for mail in person.emails:
-					all_mails[person.emails.find(mail)].append(mail)
+					if person.emails.find(mail) == 0:
+						todays_mails.append(mail)
+					else:
+						all_mails[person.emails.find(mail)-1].append(mail)
 					people.erase(person)
 					taken_people.append(person)
 					_todays_people.append(person)
@@ -141,8 +144,8 @@ func gamecycle():
 	%People.visible = false
 	%DrawerHandler.tidy_everything_away()
 	
-	var todays_bases = pick_random_unique_elements(globe_parts_base, todays_people.size()+1)
-	var todays_insides = pick_random_unique_elements(globe_parts_inside, todays_people.size()+2)
+	var todays_bases = pick_random_unique_elements(globe_parts_base, todays_people.size()+2)
+	var todays_insides = pick_random_unique_elements(globe_parts_inside, todays_people.size()+3)
 	var todays_globes: Array[GlobePartRes]
 	for x in range(todays_people.size()):
 		todays_globes.append(globe_parts_globe.pick_random())

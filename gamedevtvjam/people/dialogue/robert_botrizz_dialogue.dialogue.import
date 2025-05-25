@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://clvlvh5asbta0"
-path="res://.godot/imported/robert_botrizz_dialogue.dialogue-8116cfb22b7142bc07d9a73b52c9f3ce.tres"
+path="res://.godot/imported/robert_botrizz_dialogue.dialogue-fd7300082ff74cbc76d2604d2d59be63.tres"
 
 [deps]
 
-source_file="res://people/dialogue/robert_botrizz_dialogue.dialogue"
-dest_files=["res://.godot/imported/robert_botrizz_dialogue.dialogue-8116cfb22b7142bc07d9a73b52c9f3ce.tres"]
+source_file="res://People/dialogue/robert_botrizz_dialogue.dialogue"
+dest_files=["res://.godot/imported/robert_botrizz_dialogue.dialogue-fd7300082ff74cbc76d2604d2d59be63.tres"]
 
 [params]
 

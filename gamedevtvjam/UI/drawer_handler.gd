@@ -10,8 +10,7 @@ const GLOBE_PART = preload("res://other/globe_part.tscn")
 var layer_1: Array[GlobePart]
 var layer_2: Array[GlobePart]
 var layer_3: Array[GlobePart]
-var layer_4: Array[GlobePart]
-var layers = [layer_1,layer_2,layer_3,layer_4]
+var layers = [layer_1,layer_2,layer_3]
 
 var active_layer = 0:
 	set(value):
