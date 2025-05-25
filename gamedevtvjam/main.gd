@@ -68,7 +68,7 @@ func prepare_game():
 			var person: Person = people.pick_random()
 			
 			
-			if day == 4:
+			if day == 5:
 				person = load("res://People/botrizz.tres")
 				
 				for mail in person.emails:
@@ -193,6 +193,7 @@ func gamecycle():
 		await DialogueManager.dialogue_ended
 	
 	print('done?')
+	gamecycle()
 
 func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
 	var stats: PeopleStat = person.stats

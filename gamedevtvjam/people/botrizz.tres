@@ -1,17 +1,123 @@
-[gd_resource type="Resource" script_class="Person" load_steps=5 format=3 uid="uid://bxcytp81705hw"]
+[gd_resource type="Resource" script_class="Person" load_steps=22 format=3 uid="uid://nwcal736fha5"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_7y7i1"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_ypxvc"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_ypxvc"]
 [ext_resource type="Texture2D" uid="uid://dxtct2ryc5em8" path="res://Assets/Art/people/person4.png" id="3_eqix6"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_v0sa0"]
+[ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="4_74o87"]
+[ext_resource type="Texture2D" uid="uid://blckbynpfddlc" path="res://Assets/Art/Globes/Base/Base2.png" id="5_segyg"]
+[ext_resource type="Texture2D" uid="uid://btxwo0bn5jo5s" path="res://Assets/Art/Globes/Inside/inside9.png" id="6_flvls"]
+[ext_resource type="Texture2D" uid="uid://bhfeythh4kv2q" path="res://Assets/Art/Globes/Inside/Inside4.png" id="7_qdofw"]
+[ext_resource type="Texture2D" uid="uid://c8hm52qol42v" path="res://Assets/Art/Globes/Inside/Inside1.png" id="8_frs3r"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="9_dksgn"]
 
 [sub_resource type="Resource" id="Resource_gngh3"]
 script = ExtResource("1_7y7i1")
-from = ""
+from = "robert_botrizz@bot.com"
 to = "office@tinyglob.es"
-subject = ""
-text = ""
+subject = "the AllPhone dropped"
+text = "This is definetly not an automated message managed by a bot.
+
+Our great new AllPhone dropped! You can order today -69% off at 20$! This is definetly not a scam, so please buy now! 
+
+Offer while supplies last."
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_44p0w"]
+script = ExtResource("1_7y7i1")
+from = "robert_botrizz@bot.com"
+to = "office@tinyglob.es"
+subject = "YOU WON A UNICORN"
+text = "This is definitely not an automated message managed by a bot.
+
+🚨 URGENT NEWS! 🚨 You have been randomly selected by the Internet to receive a FREE UNICORN (shipping not included, unicorn may be invisible). Click now to claim before the unicorn explodes!!! 🦄
+
+P.S. This is definitely not malware.
+"
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_ed64v"]
+script = ExtResource("1_7y7i1")
+from = "robert_botrizz@bot.com"
+to = "office@tinyglob.es"
+subject = "i lost my money"
+text = "This is definetly not an automated message managed by a bot.
+
+Hello Mum/Dad I lost my wallet and my phone got stolen. I had to get a credit of 100000$ to get a phone and a new number. Please send me the Money as soon as possible I need that so bad. 
+Love, your Son/Daughter."
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_da3i5"]
+script = ExtResource("1_7y7i1")
+from = "robert_botrizz@bot.com"
+to = "office@tinyglob.es"
+subject = "Your Storage is 999% full!"
+text = "This is definitely not an automated message managed by a bot.
+
+We regret to inform you that your cloud storage is 999% full. Your files will be transferred to the moon unless you pay a small fee of 3,000 moon credits. Don’t lose your precious cat memes. The moon has no Wi-Fi."
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_e5wne"]
+script = ExtResource("1_7y7i1")
+from = "robert_botrizz@bot.com"
+to = "office@tinyglob.es"
+subject = "long lost friend"
+text = "This is definetly not an automated message managed by a bot.
+
+Hey Best Friend, remember me? We met once in that dream you had when you were five. I need 437 dollars immediately to buy a submarine sandwich (and also a submarine). I promise to pay you back in loyalty.
+Please make me a snowglobe with just an average black base and like a robot inside it - just as empty as I am. "
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_gqgeh"]
+script = ExtResource("3_v0sa0")
+type = 1
+texture = ExtResource("4_74o87")
+name = "Base1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_ojcsa"]
+script = ExtResource("3_v0sa0")
+type = 1
+texture = ExtResource("5_segyg")
+name = "Base2"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_uwokq"]
+script = ExtResource("3_v0sa0")
+type = 2
+texture = ExtResource("6_flvls")
+name = "inside9"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_bhx0g"]
+script = ExtResource("3_v0sa0")
+type = 2
+texture = ExtResource("7_qdofw")
+name = "Inside4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_s6v0s"]
+script = ExtResource("3_v0sa0")
+type = 2
+texture = ExtResource("8_frs3r")
+name = "Inside1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_a4aif"]
+script = ExtResource("9_dksgn")
+inside_ranks = Array[ExtResource("3_v0sa0")]([SubResource("Resource_uwokq"), SubResource("Resource_bhx0g"), SubResource("Resource_s6v0s")])
+base_ranks = Array[ExtResource("3_v0sa0")]([SubResource("Resource_gqgeh"), SubResource("Resource_ojcsa")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]
 script = ExtResource("2_ypxvc")
@@ -20,5 +126,6 @@ texture = ExtResource("3_eqix6")
 dialogue = null
 earliest_day = 0
 latest_day = 10
-emails = Array[ExtResource("1_7y7i1")]([SubResource("Resource_gngh3")])
+emails = Array[ExtResource("1_7y7i1")]([SubResource("Resource_gngh3"), SubResource("Resource_44p0w"), SubResource("Resource_ed64v"), SubResource("Resource_da3i5"), SubResource("Resource_e5wne")])
+stats = SubResource("Resource_a4aif")
 metadata/_custom_type_script = "uid://buc8htkfrmars"

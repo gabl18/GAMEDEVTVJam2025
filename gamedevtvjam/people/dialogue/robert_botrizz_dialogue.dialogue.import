@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clvlvh5asbta0"
+path="res://.godot/imported/robert_botrizz_dialogue.dialogue-8116cfb22b7142bc07d9a73b52c9f3ce.tres"
+
+[deps]
+
+source_file="res://people/dialogue/robert_botrizz_dialogue.dialogue"
+dest_files=["res://.godot/imported/robert_botrizz_dialogue.dialogue-8116cfb22b7142bc07d9a73b52c9f3ce.tres"]
+
+[params]
+
+defaults=true

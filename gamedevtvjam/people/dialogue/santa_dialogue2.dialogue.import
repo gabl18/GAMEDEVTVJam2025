@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://dblmd4xxubjpn"
-path="res://.godot/imported/santa_dialogue2.dialogue-f58a008dbe65eda5cc5d237cd40a8f9e.tres"
+path="res://.godot/imported/santa_dialogue2.dialogue-b28c132af7f693fcaa7aba5b1d8999ff.tres"
 
 [deps]
 
-source_file="res://People/dialogue/santa_dialogue2.dialogue"
-dest_files=["res://.godot/imported/santa_dialogue2.dialogue-f58a008dbe65eda5cc5d237cd40a8f9e.tres"]
+source_file="res://people/dialogue/santa_dialogue2.dialogue"
+dest_files=["res://.godot/imported/santa_dialogue2.dialogue-b28c132af7f693fcaa7aba5b1d8999ff.tres"]
 
 [params]
 

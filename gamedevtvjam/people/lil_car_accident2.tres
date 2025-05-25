@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Person" load_steps=12 format=3 uid="uid://e3hb1xc02417"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_o8rkn"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_apwud"]
-[ext_resource type="Resource" uid="uid://cljknnmddly5" path="res://People/lil_car_accident1.tres" id="2_c4u3s"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_apwud"]
+[ext_resource type="Resource" uid="uid://cljknnmddly5" path="res://people/lil_car_accident1.tres" id="2_c4u3s"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_c4u3s"]
 [ext_resource type="Resource" uid="uid://jwd6u03qk0m3" path="res://GlobeParts/part2.tres" id="5_obbbf"]
 [ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="6_ryui0"]
