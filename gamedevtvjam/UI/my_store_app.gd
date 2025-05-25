@@ -2,6 +2,12 @@ extends Panel
 
 signal store_open_closed_pressed
 
+var current_rating := 5
+var current_rating_amount := 0
+
+func _ready() -> void:
+	set_rating(current_rating)
+
 func set_day(daynumber:int):
 	%NumberLabel.text = '#'+str(daynumber)
 
@@ -9,6 +15,17 @@ func set_day(daynumber:int):
 func set_rating(rating:int):
 	rating = clamp(rating,0,10)
 	%StarsTexture.texture.region.position.y = 20*(10-rating)
+
+
+## set rating from 0 to 10
+func add_rating(rating:int):
+	current_rating_amount += 1
+	
+	rating = clamp(rating,0,10)
+	@warning_ignore("integer_division")
+	current_rating = (current_rating * current_rating_amount + rating) / (current_rating_amount+1)
+	print(current_rating,current_rating_amount)
+	%StarsTexture.texture.region.position.y = 20*(10-current_rating)
 
 func unlock_btns():
 	%CloseButton.disabled = false

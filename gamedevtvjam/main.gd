@@ -84,6 +84,9 @@ func prepare_game():
 					_todays_people.append(person)
 					continue
 			
+			if person == load("res://People/botrizz.tres"):
+				continue
+			
 			if person.only_after:
 				if person.only_after not in taken_people:
 					continue
@@ -187,10 +190,11 @@ func gamecycle():
 		
 		await _sold_globe
 		
-		print('sold')
 		%Building_Poly.disabled = false
 		
 		var rating = rate_globe(active_person,selling_globe)
+		print('rating: '+str(rating))
+		%myStoreApp.add_rating(rating)
 		
 		DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"bye")
 		
@@ -201,6 +205,7 @@ func gamecycle():
 		await DialogueManager.dialogue_ended
 	
 	
+	%myStoreApp.unlock_btns()
 	%myStoreApp.reset_btns()
 	print('done?')
 	gamecycle()
