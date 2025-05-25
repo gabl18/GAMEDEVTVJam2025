@@ -4,7 +4,7 @@ extends Panel
 
 func _ready() -> void:
 	for x in Credits:
-		var new_label = %CreditsLabel.duplicate()
+		var new_label: Label = %CreditsLabel.duplicate()
 		
 		%CreditsLocation.add_child(new_label)
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=89 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://cq6v4aavnaov8" path="res://UI/texture_rect.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://b8e1n3m6wdlyx" path="res://UI/drawer_handler.gd" id="2_5vw27"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_82xsv"]
-[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="3_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dqqi5n6c7p3dw" path="res://Assets/Art/main_scene_cover_sheet.png" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://dcuxn8pxio3k3" path="res://UI/gatcha_dispenser.gd" id="5_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bnv1dhcl7q278" path="res://Assets/Art/main_scene_tabeltop.png" id="5_7mycd"]
@@ -36,6 +35,7 @@
 [ext_resource type="Resource" uid="uid://cxyesuwvyd02j" path="res://People/lucas.tres" id="20_d2t1y"]
 [ext_resource type="Resource" uid="uid://dtqe5hv5ka51h" path="res://People/hank.tres" id="20_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://dpmuhmxthqygn" path="res://Assets/Art/Notification.png" id="20_ryguw"]
+[ext_resource type="Resource" uid="uid://co1nsk7vxqcif" path="res://People/trump.tres" id="21_b17eg"]
 [ext_resource type="Resource" uid="uid://cljknnmddly5" path="res://People/lil_car_accident1.tres" id="21_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
 [ext_resource type="Resource" uid="uid://e3hb1xc02417" path="res://People/lil_car_accident2.tres" id="22_gngh3"]
@@ -47,7 +47,6 @@
 [ext_resource type="Resource" uid="uid://jwd6u03qk0m3" path="res://GlobeParts/part2.tres" id="26_sm6fg"]
 [ext_resource type="Resource" uid="uid://dhm8xfg3toxru" path="res://GlobeParts/part3.tres" id="27_b17eg"]
 [ext_resource type="Resource" uid="uid://c4y2kuxceoup4" path="res://GlobeParts/part4.tres" id="28_ntx8l"]
-[ext_resource type="Texture2D" uid="uid://cjqikptnuuy3h" path="res://Assets/Art/people/person6.png" id="28_uypp3"]
 [ext_resource type="Resource" uid="uid://cyvhdqx7n3wtp" path="res://GlobeParts/part5.tres" id="29_uatky"]
 [ext_resource type="Resource" uid="uid://dp0l5naicgvdf" path="res://GlobeParts/part6.tres" id="30_rqtf5"]
 [ext_resource type="Resource" uid="uid://mxepxip08wv5" path="res://GlobeParts/part7.tres" id="31_1vm84"]
@@ -65,25 +64,6 @@
 [ext_resource type="Texture2D" uid="uid://dmr4ayax1dhxf" path="res://Assets/Art/Globes/Globe/Globe2.png" id="43_ntx8l"]
 [ext_resource type="Texture2D" uid="uid://bh5oal5sj4y2g" path="res://Assets/Art/Globes/Globe/Globe3.png" id="44_uatky"]
 [ext_resource type="PackedScene" uid="uid://bo3r0n7infx0u" path="res://UI/credits_app.tscn" id="64_ntx8l"]
-
-[sub_resource type="Resource" id="Resource_d2t1y"]
-script = ExtResource("3_1u8w0")
-from = ""
-to = "office@tinyglob.es"
-subject = ""
-text = ""
-days_earlier = 0
-metadata/_custom_type_script = "uid://brlife1n53d64"
-
-[sub_resource type="Resource" id="Resource_uit24"]
-script = ExtResource("2_82xsv")
-name = "Senor T."
-texture = ExtResource("28_uypp3")
-dialogue = null
-earliest_day = 0
-latest_day = 10
-emails = Array[ExtResource("3_1u8w0")]([SubResource("Resource_d2t1y")])
-metadata/_custom_type_script = "uid://buc8htkfrmars"
 
 [sub_resource type="Resource" id="Resource_rqtf5"]
 script = ExtResource("24_rm4vd")
@@ -416,7 +396,7 @@ _data = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_074og")
-people = Array[ExtResource("2_82xsv")]([ExtResource("7_xuqvo"), ExtResource("8_qsp4k"), ExtResource("9_qsp4k"), ExtResource("10_ok6jj"), ExtResource("11_ok6jj"), ExtResource("12_facbu"), ExtResource("13_facbu"), ExtResource("14_4k2k6"), ExtResource("15_0rl1p"), ExtResource("16_4lmeg"), ExtResource("17_d2t1y"), ExtResource("18_d2t1y"), ExtResource("19_gngh3"), ExtResource("20_h8e4i"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("20_d2t1y"), SubResource("Resource_uit24"), ExtResource("23_ntx8l")])
+people = Array[ExtResource("2_82xsv")]([ExtResource("7_xuqvo"), ExtResource("8_qsp4k"), ExtResource("9_qsp4k"), ExtResource("10_ok6jj"), ExtResource("11_ok6jj"), ExtResource("12_facbu"), ExtResource("13_facbu"), ExtResource("14_4k2k6"), ExtResource("15_0rl1p"), ExtResource("16_4lmeg"), ExtResource("17_d2t1y"), ExtResource("18_d2t1y"), ExtResource("19_gngh3"), ExtResource("20_h8e4i"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("20_d2t1y"), ExtResource("21_b17eg"), ExtResource("23_ntx8l")])
 day_people_numbers = Array[int]([2, 4, 3, 5, 5])
 globe_parts = Array[ExtResource("24_rm4vd")]([ExtResource("25_pjyto"), ExtResource("26_sm6fg"), ExtResource("27_b17eg"), ExtResource("28_ntx8l"), ExtResource("29_uatky"), ExtResource("30_rqtf5"), ExtResource("31_1vm84"), ExtResource("32_wu3dr"), ExtResource("33_cyx1q"), ExtResource("34_0dhbp"), ExtResource("35_jx0wj"), ExtResource("36_kkkcx"), ExtResource("37_34ol3"), ExtResource("38_c2n8d"), ExtResource("39_wy5fy"), ExtResource("40_gx4rg"), ExtResource("41_5dllo"), SubResource("Resource_rqtf5"), SubResource("Resource_1vm84"), SubResource("Resource_wu3dr")])
 

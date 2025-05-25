@@ -1,0 +1,15 @@
+~ start
+Señor T.: [[Hola|Buenos días|Hey amigo]], I am just a *totally normal* Mexican man, looking for a beautiful snowglobe. The best snowglobe. Tremendous.
+Señor T.: Do you have any?
+- Of Course, I have snowglobes.
+	Señor T.: Fantastic. I love snowglobes. Very classy. Very cool — literally!
+- Of Course, I have snowglobes, Sir!
+	Señor T.: I am not a sir, I am not a american!
+
+Señor T.: Well, sell me your Snowglobe then...
+=> END
+
+~ bye
+Señor T.: Thanks Sir!
+Señor T.: You have bee tremedous!
+Señor T.: [[Adiós|Gracias]]!

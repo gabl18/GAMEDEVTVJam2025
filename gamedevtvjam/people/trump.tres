@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Person" load_steps=5 format=3 uid="uid://co1nsk7vxqcif"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_6jyln"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_6yfkb"]
+[ext_resource type="Texture2D" uid="uid://cjqikptnuuy3h" path="res://Assets/Art/people/person6.png" id="3_4ous6"]
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("1_6jyln")
+from = ""
+to = "office@tinyglob.es"
+subject = ""
+text = ""
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[resource]
+script = ExtResource("2_6yfkb")
+name = "Señor T."
+texture = ExtResource("3_4ous6")
+dialogue = "<null>"
+earliest_day = 0
+latest_day = 10
+emails = Array[ExtResource("1_6jyln")]([SubResource("Resource_d2t1y")])
+metadata/_custom_type_script = "uid://buc8htkfrmars"

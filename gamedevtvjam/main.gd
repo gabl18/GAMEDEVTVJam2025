@@ -191,6 +191,7 @@ func gamecycle():
 		DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"bye")
 		
 		selling_globe.queue_free()
+		finished_globes.erase(selling_globe)
 		selling_globe = null
 		
 		await DialogueManager.dialogue_ended
