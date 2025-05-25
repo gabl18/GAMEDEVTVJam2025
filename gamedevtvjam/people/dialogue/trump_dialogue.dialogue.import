@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://cmp8lnljr37yh"
-path="res://.godot/imported/trump_dialogue.dialogue-bed8e275cac8aa6232bc476d252a9587.tres"
+path="res://.godot/imported/trump_dialogue.dialogue-bd255dbde7d561c3aeb95701afee9f3c.tres"
 
 [deps]
 
-source_file="res://People/dialogue/trump_dialogue.dialogue"
-dest_files=["res://.godot/imported/trump_dialogue.dialogue-bed8e275cac8aa6232bc476d252a9587.tres"]
+source_file="res://people/dialogue/trump_dialogue.dialogue"
+dest_files=["res://.godot/imported/trump_dialogue.dialogue-bd255dbde7d561c3aeb95701afee9f3c.tres"]
 
 [params]
 

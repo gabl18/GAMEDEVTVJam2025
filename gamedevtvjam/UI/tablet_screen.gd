@@ -3,10 +3,11 @@ extends TextureRect
 @onready var tablet_animationplayer: AnimationPlayer = $Tablet_Animationplayer
 @onready var parts: Node2D = %Parts_Location
 
+@onready var tutorial_app: Panel = %TutorialApp
 @onready var email_app: Panel = $Apps/EmailApp
 @onready var my_store_app: Panel = %myStoreApp
 @onready var credits_app: Panel = %CreditsApp
-@onready var apps: Array= [email_app,my_store_app,credits_app]
+@onready var apps: Array= [email_app,my_store_app,credits_app,tutorial_app]
 
 @onready var sfx: AudioStreamPlayer = $"../../SFX"
 var click = preload("res://Assets/Audio/SFX/click.mp3")
@@ -48,8 +49,9 @@ func _on_return_button_pressed() -> void:
 func _on_tutorial_button_pressed() -> void:
 	sfx.stream = click
 	sfx.play()
-	print("opened tutorial")
 	active_screen = Screens.Tutorial
+	_hide_all_apps()
+	tutorial_app.show()
 
 
 func _on_email_button_pressed() -> void:
