@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://bgjnkorljk1rl"
-path="res://.godot/imported/dr.stone_dialogue.dialogue-fe3d682c91fa9d89a549b8821db7af08.tres"
+path="res://.godot/imported/dr.stone_dialogue.dialogue-b4e84d473ddc3c17f1981c73f890d221.tres"
 
 [deps]
 
-source_file="res://people/dialogue/dr.stone_dialogue.dialogue"
-dest_files=["res://.godot/imported/dr.stone_dialogue.dialogue-fe3d682c91fa9d89a549b8821db7af08.tres"]
+source_file="res://People/dialogue/dr.stone_dialogue.dialogue"
+dest_files=["res://.godot/imported/dr.stone_dialogue.dialogue-b4e84d473ddc3c17f1981c73f890d221.tres"]
 
 [params]
 

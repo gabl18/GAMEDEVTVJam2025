@@ -20,3 +20,6 @@ func _on_open_button_toggled(toggled_on: bool) -> void:
 		%CloseButton.disabled = true
 	else:
 		%OpenButton.disabled = true
+		
+func reset_btns():
+	%CloseButton.button_pressed = true

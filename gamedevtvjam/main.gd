@@ -160,8 +160,7 @@ func gamecycle():
 	%myStoreApp.unlock_btns()
 	
 	## GABL: sound effect when you have made enough globes
-	sfx.stream = done
-	sfx.play()
+
 	
 	await %myStoreApp.store_open_closed_pressed
 
@@ -201,6 +200,8 @@ func gamecycle():
 		
 		await DialogueManager.dialogue_ended
 	
+	
+	%myStoreApp.reset_btns()
 	print('done?')
 	gamecycle()
 
@@ -244,6 +245,8 @@ func globe_finished_unfinished(globe,finished:bool):
 		
 	if finished_globes.size() >= todays_people.size():
 		_enough_globes_done.emit()
+		sfx.stream = done
+		sfx.play()
 
 
 func _on_parts_location_child_entered_tree(node: Node) -> void:
