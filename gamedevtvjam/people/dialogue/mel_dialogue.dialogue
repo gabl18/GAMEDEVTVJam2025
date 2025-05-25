@@ -1,0 +1,11 @@
+~ start
+Mel: [Hello|Hi], so happy to see you!!
+Mel: Your work looks so good :D
+- thanks
+	Mel: No worries, I mean it.
+	Mel: Could I get one of yours?
+- idc
+	Mel: uhm, okay?
+	Mel: I wanted to pick up my order.
+Mel: Thanks
+=> END

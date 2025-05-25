@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Person" load_steps=12 format=3 uid="uid://b001rfuvn301u"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_kexf8"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_qtwp1"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_3n1od"]
+[ext_resource type="Texture2D" uid="uid://bhl7k53decb87" path="res://Assets/Art/Globes/Base/Base3.png" id="4_tjylg"]
+[ext_resource type="Texture2D" uid="uid://bdq7v4kodycx7" path="res://Assets/Art/Globes/Inside/inside8.png" id="5_e2tc7"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="6_45x4n"]
+[ext_resource type="Texture2D" uid="uid://br35aajxextdt" path="res://Assets/Art/people/person13.png" id="7_8n2r7"]
+
+[sub_resource type="Resource" id="Resource_v8tpy"]
+script = ExtResource("1_kexf8")
+from = "tableeater@studios.com"
+to = "office@tinyglob.es"
+subject = "Lil Car Accident order"
+text = "What's up dawg? 
+It's me the one and only **Lil Car Accident**. I wanted to reach out to you for a snowglobe cuz I just realeased my new album \"Accident in every Country\" and I hoped you could do a globe for me with the great wall of China to symbolize my new album, cuz I know how much I fw with shop. I will pick it up today.
+Thanks brother."
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_rmq26"]
+script = ExtResource("3_3n1od")
+type = 1
+texture = ExtResource("4_tjylg")
+name = "Base3"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_q485g"]
+script = ExtResource("3_3n1od")
+type = 2
+texture = ExtResource("5_e2tc7")
+name = "inside8"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_a2nws"]
+script = ExtResource("6_45x4n")
+inside_ranks = Array[ExtResource("3_3n1od")]([SubResource("Resource_q485g")])
+globe_ranks = Array[ExtResource("3_3n1od")]([])
+base_ranks = Array[ExtResource("3_3n1od")]([SubResource("Resource_rmq26")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_qtwp1")
+name = "lil car accident"
+texture = ExtResource("7_8n2r7")
+dialogue = "uid://cxxpm02d8xufi"
+earliest_day = 2
+latest_day = 5
+emails = Array[ExtResource("1_kexf8")]([SubResource("Resource_v8tpy")])
+stats = SubResource("Resource_a2nws")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

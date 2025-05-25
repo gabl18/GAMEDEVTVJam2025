@@ -1,0 +1,10 @@
+~ start
+Lucas: Hello!
+Lucas: School has been really hard lately...
+Lucas: But at least I its over soon. Just need to finish this one project.
+- nice
+	Lucas: yeah, I wanted to pickup a globe for that, do you have one?
+- whats it about?
+	Lucas: Its about how we would build in space and also how plants would look and grow there.
+	Lucas: I just need the snowglobe to finish it.
+=> END

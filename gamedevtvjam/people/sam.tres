@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://d2go7uvswmkk6"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_cykk2"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_nl5ye"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_pdts8"]
+[ext_resource type="Texture2D" uid="uid://c6ruihatclyux" path="res://Assets/Art/Globes/Base/Base6.png" id="4_b57rd"]
+[ext_resource type="Texture2D" uid="uid://coh6r6hdtoyi0" path="res://Assets/Art/Globes/Base/Base5.png" id="5_bw4gn"]
+[ext_resource type="Texture2D" uid="uid://c8hm52qol42v" path="res://Assets/Art/Globes/Inside/Inside1.png" id="6_408ll"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_wvqw0"]
+[ext_resource type="Texture2D" uid="uid://b47y8sncpllxf" path="res://Assets/Art/people/person1.png" id="8_sfffj"]
+
+[sub_resource type="Resource" id="Resource_come4"]
+script = ExtResource("1_cykk2")
+from = "not_pam@hmail.com"
+to = "office@tinyglob.es"
+subject = "globe order"
+text = "Good day,
+hope everything is going along well. I would like to order a globe for my brother Sam. Its his birthday today! He loves landscapes over everything, hes always playing some roleplay games with his friends. I think he could make a great use of this snowglobe in his campaign. Maybe he would also apprechiate a wooden base, yeah that would be great.
+Thanks in advance,
+Pam"
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_h8e4i"]
+script = ExtResource("3_pdts8")
+type = 1
+texture = ExtResource("4_b57rd")
+name = "Base6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_4lmeg"]
+script = ExtResource("3_pdts8")
+type = 1
+texture = ExtResource("5_bw4gn")
+name = "Base5"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_0cp0l"]
+script = ExtResource("3_pdts8")
+type = 2
+texture = ExtResource("6_408ll")
+name = "Inside1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("7_wvqw0")
+inside_ranks = Array[ExtResource("3_pdts8")]([SubResource("Resource_0cp0l")])
+globe_ranks = Array[ExtResource("3_pdts8")]([])
+base_ranks = Array[ExtResource("3_pdts8")]([SubResource("Resource_h8e4i"), SubResource("Resource_4lmeg")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_nl5ye")
+name = "Sam"
+texture = ExtResource("8_sfffj")
+dialogue = "uid://1wmaxhf6w24j"
+earliest_day = 0
+latest_day = 5
+emails = Array[ExtResource("1_cykk2")]([SubResource("Resource_come4")])
+stats = SubResource("Resource_d2t1y")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

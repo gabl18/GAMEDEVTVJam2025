@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Person" load_steps=22 format=3 uid="uid://cb0tic6a0aekm"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_l2jcd"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_136hp"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_dwx6x"]
+[ext_resource type="Texture2D" uid="uid://bhl7k53decb87" path="res://Assets/Art/Globes/Base/Base3.png" id="4_136hp"]
+[ext_resource type="Texture2D" uid="uid://cv65jg11ur6y2" path="res://Assets/Art/Globes/Base/Base7.png" id="4_aa1o7"]
+[ext_resource type="Texture2D" uid="uid://bt32kkifmpgse" path="res://Assets/Art/Globes/Inside/inside7.png" id="5_atnd3"]
+[ext_resource type="Texture2D" uid="uid://bdq7v4kodycx7" path="res://Assets/Art/Globes/Inside/inside8.png" id="6_tehiy"]
+[ext_resource type="Texture2D" uid="uid://ckomcxt57rb65" path="res://Assets/Art/Globes/Inside/inside6.png" id="7_td6f5"]
+[ext_resource type="Texture2D" uid="uid://bjssorsrhfmga" path="res://Assets/Art/Globes/Inside/Inside5.png" id="8_pysvx"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="9_2xxkn"]
+[ext_resource type="Texture2D" uid="uid://cfohb44m77lea" path="res://Assets/Art/Globes/Inside/inside10.png" id="10_dwx6x"]
+[ext_resource type="Texture2D" uid="uid://c1vdgktw2ptln" path="res://Assets/Art/people/person2.png" id="10_fb6lr"]
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("1_l2jcd")
+from = "mel@idiotn.di"
+to = "office@tinyglob.es"
+subject = "another globe"
+text = "Heey, my Friends loved the globe you made last time and asked if you could make another one? Maybe just get like a more green base or something similar because thats more Noras favourite. I wont have time to pick it up today, but would it be fine if I get it like tomorrow?
+Best wishes,
+Mel"
+days_earlier = -1
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_dwx6x"]
+script = ExtResource("3_dwx6x")
+type = 1
+texture = ExtResource("4_136hp")
+name = "Base3"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_gngh3"]
+script = ExtResource("3_dwx6x")
+type = 1
+texture = ExtResource("4_aa1o7")
+name = "Base7"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_0n3wm"]
+script = ExtResource("3_dwx6x")
+type = 2
+texture = ExtResource("5_atnd3")
+name = "inside7"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_qnost"]
+script = ExtResource("3_dwx6x")
+type = 2
+texture = ExtResource("6_tehiy")
+name = "inside8"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_wnkbs"]
+script = ExtResource("3_dwx6x")
+type = 2
+texture = ExtResource("7_td6f5")
+name = "inside6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_f6a44"]
+script = ExtResource("3_dwx6x")
+type = 2
+texture = ExtResource("8_pysvx")
+name = "Inside5"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_aa1o7"]
+script = ExtResource("3_dwx6x")
+type = 2
+texture = ExtResource("10_dwx6x")
+name = "inside10"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_0cbny"]
+script = ExtResource("9_2xxkn")
+inside_ranks = Array[ExtResource("3_dwx6x")]([SubResource("Resource_0n3wm"), SubResource("Resource_qnost"), SubResource("Resource_wnkbs"), SubResource("Resource_f6a44"), SubResource("Resource_aa1o7")])
+globe_ranks = Array[ExtResource("3_dwx6x")]([])
+base_ranks = Array[ExtResource("3_dwx6x")]([SubResource("Resource_dwx6x"), SubResource("Resource_gngh3")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_136hp")
+name = "Mel"
+texture = ExtResource("10_fb6lr")
+dialogue = "uid://cd3by1eb31ho1"
+earliest_day = 0
+latest_day = 5
+emails = Array[ExtResource("1_l2jcd")]([SubResource("Resource_d2t1y")])
+stats = SubResource("Resource_0cbny")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

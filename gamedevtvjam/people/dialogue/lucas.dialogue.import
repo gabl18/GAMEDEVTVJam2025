@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://56msew3xy6e3"
+path="res://.godot/imported/lucas.dialogue-a9cc214d191271a5276c6069f59dd292.tres"
+
+[deps]
+
+source_file="res://people/dialogue/lucas.dialogue"
+dest_files=["res://.godot/imported/lucas.dialogue-a9cc214d191271a5276c6069f59dd292.tres"]
+
+[params]
+
+defaults=true

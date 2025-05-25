@@ -1,0 +1,8 @@
+~ start
+Santa: Ho Ho Ho
+Santa: did you see my letter?
+- Yes
+	Santa: Phew, thanks - I really need that present for a child
+- No
+	Santa: Oh oh, do you still have a globe that fits my needs?
+=> END

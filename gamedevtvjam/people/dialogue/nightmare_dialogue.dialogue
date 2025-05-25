@@ -1,0 +1,11 @@
+~ start
+Nightmare: Hi.
+Nightmare: Can I have my globe already?
+- sure
+	Nightmare: T-thanks (my speaking levels arent that high yet)
+- busy?
+	Nightmare: yeah
+	Nightmare: I gotta go back to my gamer cave
+	Nightmare: no one can see me out here in the wilds
+Nightmare: My Stalkers will love this unboxing!!
+=> END

@@ -1,64 +1,67 @@
-[gd_scene load_steps=52 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=67 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
 [ext_resource type="Texture2D" uid="uid://d1dfmber6ydek" path="res://Assets/Art/main_scene_sheet.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cq6v4aavnaov8" path="res://UI/texture_rect.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://b8e1n3m6wdlyx" path="res://UI/drawer_handler.gd" id="2_5vw27"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_82xsv"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_82xsv"]
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="3_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dqqi5n6c7p3dw" path="res://Assets/Art/main_scene_cover_sheet.png" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="4_lswn8"]
-[ext_resource type="Texture2D" uid="uid://b47y8sncpllxf" path="res://Assets/Art/people/person1.png" id="4_ryguw"]
 [ext_resource type="Script" uid="uid://dcuxn8pxio3k3" path="res://UI/gatcha_dispenser.gd" id="5_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bnv1dhcl7q278" path="res://Assets/Art/main_scene_tabeltop.png" id="5_7mycd"]
-[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="5_a6jrf"]
 [ext_resource type="Script" uid="uid://bl21a0nsgimnq" path="res://UI/tablet.gd" id="5_dg77c"]
 [ext_resource type="Texture2D" uid="uid://e0gaf5s8si8a" path="res://Assets/Art/Tablet_big.png" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cu04txq31cqlg" path="res://Assets/Art/tablet_spritesheet.png" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://ciw3lgb8rkx2r" path="res://UI/tablet_screen.gd" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cs5bax42dujiq" path="res://Assets/Art/gacha_röhre.png" id="6_yaehf"]
+[ext_resource type="Resource" uid="uid://br3vdjxppdti" path="res://people/timmy1.tres" id="7_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://b3grh1oit67k6" path="res://Assets/Art/gacha_ball.png" id="7_yaehf"]
+[ext_resource type="Resource" uid="uid://bede6bi3p4dkp" path="res://people/timmy2.tres" id="8_qsp4k"]
+[ext_resource type="Resource" uid="uid://ckk5ufeieoyv5" path="res://people/timmy3.tres" id="9_qsp4k"]
+[ext_resource type="Resource" uid="uid://pl8xjh3xslth" path="res://people/nightmare.tres" id="10_ok6jj"]
+[ext_resource type="Resource" uid="uid://cb0tic6a0aekm" path="res://people/mel1.tres" id="11_ok6jj"]
 [ext_resource type="Texture2D" uid="uid://bp8idme00h7gh" path="res://Assets/Art/all_people_sheet.png" id="11_yaehf"]
+[ext_resource type="Resource" uid="uid://gbcsbj7wtpxp" path="res://people/mel2.tres" id="12_facbu"]
 [ext_resource type="Texture2D" uid="uid://cupi24po26cj" path="res://Assets/Art/elevator_numbers.png" id="13_2cqfq"]
+[ext_resource type="Resource" uid="uid://pt8pahv6dgc1" path="res://people/vanessa.tres" id="13_facbu"]
+[ext_resource type="Resource" uid="uid://b254lm1fcgwbh" path="res://people/schnitzelman1.tres" id="14_4k2k6"]
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
+[ext_resource type="Resource" uid="uid://cbs3mxms68ype" path="res://people/schnitzelman2.tres" id="15_0rl1p"]
+[ext_resource type="Resource" uid="uid://d2go7uvswmkk6" path="res://people/sam.tres" id="16_4lmeg"]
+[ext_resource type="Resource" uid="uid://dfb407fh7pb36" path="res://people/pam.tres" id="17_d2t1y"]
+[ext_resource type="Resource" uid="uid://bnmeg8lc1qn2h" path="res://people/santa1.tres" id="18_d2t1y"]
+[ext_resource type="Resource" uid="uid://c5lybsttp85k1" path="res://people/santa2.tres" id="19_gngh3"]
 [ext_resource type="PackedScene" uid="uid://druvq1gmefjpo" path="res://UI/email_app.tscn" id="20_82xsv"]
+[ext_resource type="Resource" uid="uid://b3tvnyffx77wa" path="res://people/lucas.tres" id="20_d2t1y"]
+[ext_resource type="Resource" uid="uid://cst3rq7040g0g" path="res://people/hank.tres" id="20_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://dpmuhmxthqygn" path="res://Assets/Art/Notification.png" id="20_ryguw"]
+[ext_resource type="Resource" uid="uid://b001rfuvn301u" path="res://people/lil_car_accident1.tres" id="21_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
+[ext_resource type="Resource" uid="uid://bjv1bl2g0tofh" path="res://people/lil_car_accident2.tres" id="22_gngh3"]
+[ext_resource type="Resource" uid="uid://bxxvw46abhkcw" path="res://people/dr.stone.tres" id="23_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://brrithgiqtfbs" path="res://Assets/Audio/Music/soundtrack.mp3" id="23_d13ii"]
+[ext_resource type="Texture2D" uid="uid://cjqikptnuuy3h" path="res://Assets/Art/people/person6.png" id="28_uypp3"]
+[ext_resource type="Texture2D" uid="uid://dxtct2ryc5em8" path="res://Assets/Art/people/person4.png" id="29_blkrb"]
 
-[sub_resource type="Resource" id="Resource_a6jrf"]
-script = ExtResource("3_1u8w0")
-from = ""
-to = "office@tinyglob.es"
-subject = ""
-text = ""
-days_earlier = 0
-metadata/_custom_type_script = "uid://brlife1n53d64"
-
-[sub_resource type="Resource" id="Resource_qsp4k"]
-script = ExtResource("4_lswn8")
-type = 0
-name = ""
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_kq58d"]
-script = ExtResource("5_a6jrf")
-inside_ranks = Array[ExtResource("4_lswn8")]([SubResource("Resource_qsp4k"), null, null])
-globe_ranks = Array[ExtResource("4_lswn8")]([])
-base_ranks = Array[ExtResource("4_lswn8")]([])
-metadata/_custom_type_script = "uid://csbqj0pebdsua"
-
-[sub_resource type="Resource" id="Resource_lswn8"]
+[sub_resource type="Resource" id="Resource_uit24"]
 script = ExtResource("2_82xsv")
-name = "Dude1"
-texture = ExtResource("4_ryguw")
-dialogue = "uid://ngrmyl8ijcdv"
+name = "Senor T."
+texture = ExtResource("28_uypp3")
+dialogue = null
 earliest_day = 0
 latest_day = 10
-emails = Array[ExtResource("3_1u8w0")]([SubResource("Resource_a6jrf")])
-stats = SubResource("Resource_kq58d")
+emails = Array[ExtResource("3_1u8w0")]([])
+metadata/_custom_type_script = "uid://buc8htkfrmars"
+
+[sub_resource type="Resource" id="Resource_ruth0"]
+script = ExtResource("2_82xsv")
+name = "Robert Botrizz"
+texture = ExtResource("29_blkrb")
+dialogue = null
+earliest_day = 0
+latest_day = 10
+emails = Array[ExtResource("3_1u8w0")]([])
 metadata/_custom_type_script = "uid://buc8htkfrmars"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
@@ -368,8 +371,8 @@ _data = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_074og")
-people = Array[ExtResource("2_82xsv")]([SubResource("Resource_lswn8"), SubResource("Resource_lswn8"), SubResource("Resource_lswn8"), SubResource("Resource_lswn8")])
-day_people_numbers = Array[int]([1, 1, 1])
+people = Array[ExtResource("2_82xsv")]([ExtResource("7_xuqvo"), ExtResource("8_qsp4k"), ExtResource("9_qsp4k"), ExtResource("10_ok6jj"), ExtResource("11_ok6jj"), ExtResource("12_facbu"), ExtResource("13_facbu"), ExtResource("14_4k2k6"), ExtResource("15_0rl1p"), ExtResource("16_4lmeg"), ExtResource("17_d2t1y"), ExtResource("18_d2t1y"), ExtResource("19_gngh3"), ExtResource("20_h8e4i"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("20_d2t1y"), SubResource("Resource_uit24"), SubResource("Resource_ruth0")])
+day_people_numbers = Array[int]([2, 4, 3, 5, 5])
 
 [node name="AreaHandler" type="Node" parent="."]
 unique_name_in_owner = true
@@ -776,7 +779,9 @@ bus = &"SFX"
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_d13ii")
 volume_db = 10.4
+autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [connection signal="changed_drawer_layer" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_changed_drawer_layer"]
 [connection signal="drawer_opened_closed" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_drawer_opened_closed"]

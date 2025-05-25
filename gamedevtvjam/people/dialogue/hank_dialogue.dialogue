@@ -1,0 +1,9 @@
+~ start
+Hank: Give me all your money! Now!
+Hank: please...?
+- sure
+	Hank: T-thanks :D 
+- uhm no?
+	Hank: oh, aw man, gotta try that robbery next time then
+Hank: Can I have my snow globe?
+=> END

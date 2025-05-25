@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Person" load_steps=16 format=3 uid="uid://dfb407fh7pb36"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_mnhkl"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_qnxk3"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_i421j"]
+[ext_resource type="Texture2D" uid="uid://blckbynpfddlc" path="res://Assets/Art/Globes/Base/Base2.png" id="4_6rsry"]
+[ext_resource type="Texture2D" uid="uid://d7jrkf1e5odw" path="res://Assets/Art/Globes/Base/Base4.png" id="5_dfm6w"]
+[ext_resource type="Texture2D" uid="uid://bhfeythh4kv2q" path="res://Assets/Art/Globes/Inside/Inside4.png" id="6_iv45p"]
+[ext_resource type="Texture2D" uid="uid://c8hm52qol42v" path="res://Assets/Art/Globes/Inside/Inside1.png" id="7_uxsdc"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="8_b1olr"]
+[ext_resource type="Texture2D" uid="uid://dgkicrg3vmnmq" path="res://Assets/Art/people/person12.png" id="9_ne456"]
+
+[sub_resource type="Resource" id="Resource_qnost"]
+script = ExtResource("1_mnhkl")
+from = "sammy_lover@emil.es"
+to = "office@tinyglob.es"
+subject = "Earth Snowglobe"
+text = "Dear Sir or Madam,
+I would like to order one of your delightful snowglobes for my Sister. She loves Space, Moons, the stars and everything else thats out there. I saw that you have something that could fit her preferences perfectly. Other than that, she loves the color orange and also pink. Hope you will be able to deliver something she will like.
+Greetings,
+Sam"
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_wnkbs"]
+script = ExtResource("3_i421j")
+type = 1
+texture = ExtResource("4_6rsry")
+name = "Base2"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_f6a44"]
+script = ExtResource("3_i421j")
+type = 1
+texture = ExtResource("5_dfm6w")
+name = "Base4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_0cbny"]
+script = ExtResource("3_i421j")
+type = 2
+texture = ExtResource("6_iv45p")
+name = "Inside4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_hrvbo"]
+script = ExtResource("3_i421j")
+type = 2
+texture = ExtResource("7_uxsdc")
+name = "Inside1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_uypp3"]
+script = ExtResource("8_b1olr")
+inside_ranks = Array[ExtResource("3_i421j")]([SubResource("Resource_0cbny"), SubResource("Resource_hrvbo")])
+globe_ranks = Array[ExtResource("3_i421j")]([])
+base_ranks = Array[ExtResource("3_i421j")]([SubResource("Resource_wnkbs"), SubResource("Resource_f6a44")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_qnxk3")
+name = "Pam"
+texture = ExtResource("9_ne456")
+dialogue = "uid://b1jjwjjwyubym"
+earliest_day = 0
+latest_day = 5
+emails = Array[ExtResource("1_mnhkl")]([SubResource("Resource_qnost")])
+stats = SubResource("Resource_uypp3")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

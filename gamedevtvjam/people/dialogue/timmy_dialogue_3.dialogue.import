@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c2stb6gaext1f"
+path="res://.godot/imported/timmy_dialogue_3.dialogue-05b98ff4ab63640fe4f9dbaed7792e36.tres"
+
+[deps]
+
+source_file="res://people/dialogue/timmy_dialogue_3.dialogue"
+dest_files=["res://.godot/imported/timmy_dialogue_3.dialogue-05b98ff4ab63640fe4f9dbaed7792e36.tres"]
+
+[params]
+
+defaults=true

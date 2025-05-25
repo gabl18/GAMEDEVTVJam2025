@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="Person" load_steps=15 format=3 uid="uid://cbs3mxms68ype"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_mko5t"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_myjck"]
+[ext_resource type="Resource" uid="uid://b254lm1fcgwbh" path="res://people/schnitzelman1.tres" id="2_p0krk"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_p0krk"]
+[ext_resource type="Texture2D" uid="uid://bhl7k53decb87" path="res://Assets/Art/Globes/Base/Base3.png" id="4_jcoqf"]
+[ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="5_3khey"]
+[ext_resource type="Texture2D" uid="uid://bt32kkifmpgse" path="res://Assets/Art/Globes/Inside/inside7.png" id="6_hewre"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_da51p"]
+[ext_resource type="Texture2D" uid="uid://cso25blkq7dc8" path="res://Assets/Art/people/person3.png" id="8_sp2kq"]
+
+[sub_resource type="Resource" id="Resource_4lmeg"]
+script = ExtResource("1_mko5t")
+from = "schnitzelfactory@next.door"
+to = "office@tinyglob.es"
+subject = "schnitzel-tastic order"
+text = "Hallo, ich wünsche Ihnen einen schnitzel-tastischen Tag!
+Wir kontaktieren Sie aus der Schnitzelfabrik neben Ihrem Geschäft und möchten eine Schneekugel bestellen. Bitte verwenden sie auch die graue oder grüne Basis. Wir würden uns sehr freuen, wenn die Schneekugel ähnlich zu der anderen wäre.
+Wir schicken morgen einen Mitarbeiter, um die Kugel abzuholen.
+Haben Sie noch einen wunderschönen Tag!"
+days_earlier = -1
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_0cp0l"]
+script = ExtResource("3_p0krk")
+type = 1
+texture = ExtResource("4_jcoqf")
+name = "Base3"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("3_p0krk")
+type = 1
+texture = ExtResource("5_3khey")
+name = "Base1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_gngh3"]
+script = ExtResource("3_p0krk")
+type = 2
+texture = ExtResource("6_hewre")
+name = "inside7"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_0n3wm"]
+script = ExtResource("7_da51p")
+inside_ranks = Array[ExtResource("3_p0krk")]([SubResource("Resource_gngh3")])
+globe_ranks = Array[ExtResource("3_p0krk")]([])
+base_ranks = Array[ExtResource("3_p0krk")]([SubResource("Resource_0cp0l"), SubResource("Resource_d2t1y")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_myjck")
+name = "Schnitzelman"
+texture = ExtResource("8_sp2kq")
+dialogue = "uid://cu4hmhiyuwfdc"
+earliest_day = 3
+latest_day = 5
+only_after = ExtResource("2_p0krk")
+emails = Array[ExtResource("1_mko5t")]([SubResource("Resource_4lmeg")])
+stats = SubResource("Resource_0n3wm")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

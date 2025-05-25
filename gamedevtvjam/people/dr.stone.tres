@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="Person" load_steps=18 format=3 uid="uid://bxxvw46abhkcw"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_fp571"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_h2rti"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_bml1d"]
+[ext_resource type="Texture2D" uid="uid://d7jrkf1e5odw" path="res://Assets/Art/Globes/Base/Base4.png" id="4_6fvuh"]
+[ext_resource type="Texture2D" uid="uid://bjssorsrhfmga" path="res://Assets/Art/Globes/Inside/Inside5.png" id="5_8vrbu"]
+[ext_resource type="Texture2D" uid="uid://bhfeythh4kv2q" path="res://Assets/Art/Globes/Inside/Inside4.png" id="6_fov4j"]
+[ext_resource type="Texture2D" uid="uid://c8hm52qol42v" path="res://Assets/Art/Globes/Inside/Inside1.png" id="7_lk2pb"]
+[ext_resource type="Texture2D" uid="uid://bt32kkifmpgse" path="res://Assets/Art/Globes/Inside/inside7.png" id="8_jk57e"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="9_cfxej"]
+[ext_resource type="Texture2D" uid="uid://d4igo4cenpyi6" path="res://Assets/Art/people/person14.png" id="10_fp571"]
+
+[sub_resource type="Resource" id="Resource_wybaj"]
+script = ExtResource("1_fp571")
+from = "dr.stone@office.com"
+to = "office@tinyglob.es"
+subject = "Globe for dr. stone"
+text = "Greetings, 
+someone in my dental practice recommended this shop to me and this made me want to come check out this store. I would like either like a building or something space themed with some kind of pink flair to it, maybe like a pink base. Just like my office floor.
+Sincerly,
+dr. Stone"
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_k3dhu"]
+script = ExtResource("3_bml1d")
+type = 1
+texture = ExtResource("4_6fvuh")
+name = "Base4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_1rs2t"]
+script = ExtResource("3_bml1d")
+type = 2
+texture = ExtResource("5_8vrbu")
+name = "Inside5"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_5yuak"]
+script = ExtResource("3_bml1d")
+type = 2
+texture = ExtResource("6_fov4j")
+name = "Inside4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_o8md8"]
+script = ExtResource("3_bml1d")
+type = 2
+texture = ExtResource("7_lk2pb")
+name = "Inside1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_bos1d"]
+script = ExtResource("3_bml1d")
+type = 2
+texture = ExtResource("8_jk57e")
+name = "inside7"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_n51u2"]
+script = ExtResource("9_cfxej")
+inside_ranks = Array[ExtResource("3_bml1d")]([SubResource("Resource_1rs2t"), SubResource("Resource_5yuak"), SubResource("Resource_o8md8"), SubResource("Resource_bos1d")])
+globe_ranks = Array[ExtResource("3_bml1d")]([])
+base_ranks = Array[ExtResource("3_bml1d")]([SubResource("Resource_k3dhu")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_h2rti")
+name = "dr. Stone"
+texture = ExtResource("10_fp571")
+dialogue = "uid://bgjnkorljk1rl"
+earliest_day = 0
+latest_day = 5
+emails = Array[ExtResource("1_fp571")]([SubResource("Resource_wybaj")])
+stats = SubResource("Resource_n51u2")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

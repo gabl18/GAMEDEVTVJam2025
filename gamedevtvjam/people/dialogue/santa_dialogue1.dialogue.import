@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c3d8g5fhgjmb4"
+path="res://.godot/imported/santa_dialogue1.dialogue-38b0d1c0250ef3e132e69525b27ffac2.tres"
+
+[deps]
+
+source_file="res://people/dialogue/santa_dialogue1.dialogue"
+dest_files=["res://.godot/imported/santa_dialogue1.dialogue-38b0d1c0250ef3e132e69525b27ffac2.tres"]
+
+[params]
+
+defaults=true

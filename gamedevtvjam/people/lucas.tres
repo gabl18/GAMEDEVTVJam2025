@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="Person" load_steps=16 format=3 uid="uid://b3tvnyffx77wa"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_2bkt5"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_5lyhg"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_djqxe"]
+[ext_resource type="Texture2D" uid="uid://c6ruihatclyux" path="res://Assets/Art/Globes/Base/Base6.png" id="4_hwimj"]
+[ext_resource type="Texture2D" uid="uid://bhfeythh4kv2q" path="res://Assets/Art/Globes/Inside/Inside4.png" id="5_3asw5"]
+[ext_resource type="Texture2D" uid="uid://ladgr1yo22ff" path="res://Assets/Art/Globes/Inside/Inside3.png" id="6_ug7bt"]
+[ext_resource type="Texture2D" uid="uid://bdq7v4kodycx7" path="res://Assets/Art/Globes/Inside/inside8.png" id="7_tb37j"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="8_uwaq4"]
+[ext_resource type="Texture2D" uid="uid://dfjyavqnp63p1" path="res://Assets/Art/people/person7.png" id="9_eoon1"]
+
+[sub_resource type="Resource" id="Resource_abqjc"]
+script = ExtResource("1_2bkt5")
+from = "eamil@eamil.com"
+to = "office@tinyglob.es"
+subject = "order #81"
+text = "Hello,
+I still go to college and saw that this store makes custom snow globes, thats why I would like to order one for my school project. Also if thats possible I would prefer a small base so that the main piece can stand out more. I hope that I can afford it. But if you could make this, I would be very happy. 
+Thanks."
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_6iyjs"]
+script = ExtResource("3_djqxe")
+type = 1
+texture = ExtResource("4_hwimj")
+name = "Base6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_4w656"]
+script = ExtResource("3_djqxe")
+type = 2
+texture = ExtResource("5_3asw5")
+name = "Inside4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_e71vb"]
+script = ExtResource("3_djqxe")
+type = 2
+texture = ExtResource("6_ug7bt")
+name = "Inside3"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_rnkwl"]
+script = ExtResource("3_djqxe")
+type = 2
+texture = ExtResource("7_tb37j")
+name = "inside8"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_vke2r"]
+script = ExtResource("8_uwaq4")
+inside_ranks = Array[ExtResource("3_djqxe")]([SubResource("Resource_4w656"), SubResource("Resource_e71vb"), SubResource("Resource_rnkwl")])
+globe_ranks = Array[ExtResource("3_djqxe")]([])
+base_ranks = Array[ExtResource("3_djqxe")]([SubResource("Resource_6iyjs")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_5lyhg")
+name = "Lucas"
+texture = ExtResource("9_eoon1")
+dialogue = "uid://56msew3xy6e3"
+earliest_day = 0
+latest_day = 5
+emails = Array[ExtResource("1_2bkt5")]([SubResource("Resource_abqjc")])
+stats = SubResource("Resource_vke2r")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

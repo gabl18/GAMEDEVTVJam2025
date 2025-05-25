@@ -1,0 +1,12 @@
+~ start
+Schnitzelman: Hallo, I am here to pick up the globe.
+Schnitzelman: I was sent here by the "Schnitzel Factory" 
+Schnitzelman: because they always send me for the dumb shit. 
+- are you fine?
+- uhm, okay
+- End conversation
+	=> END
+Schnitzelman: After my wife left me and took the kids there's not much more to live for... 
+Schnitzelman: Why am I even talking to you?
+Schnitzelman: I should go see a therapist but I am broke.. 
+=> END

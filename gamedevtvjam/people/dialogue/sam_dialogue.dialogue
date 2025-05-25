@@ -1,0 +1,16 @@
+~ start
+Sam: Howdy!
+- Hello
+	Sam: Everything going well?
+	Sam: I got sent to pick something up.
+- Happy Birthday!!
+	Sam: OMG, thanks!! :D
+	Sam: Pam didnt even congratulate me today..
+	- she left you something
+		Sam: oh really?! 
+		Sam: THANKS!
+	- oof
+		Sam: nah, its fine I guess..
+		Sam: Is there an order for me?
+		Sam: looks awesome! Thanks
+=> END

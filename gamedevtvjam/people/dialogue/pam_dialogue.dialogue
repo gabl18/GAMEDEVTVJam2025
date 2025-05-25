@@ -1,0 +1,13 @@
+~ start
+Pam: Good day!
+Pam: My brother sent me.
+- coming right up
+	Pam: Thanks :D
+	Pam: Looks awesome
+- what?
+	Pam: What?! Was this one of his pranks again?!
+	- nah, im playin
+		Pam: aah, thanks - looks great!
+	- idk
+		Pam: this guy.. 
+=> END

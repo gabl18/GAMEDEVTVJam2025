@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://pt8pahv6dgc1"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_l1ma3"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_abof3"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_y51ut"]
+[ext_resource type="Texture2D" uid="uid://coh6r6hdtoyi0" path="res://Assets/Art/Globes/Base/Base5.png" id="4_hscr1"]
+[ext_resource type="Texture2D" uid="uid://c6ruihatclyux" path="res://Assets/Art/Globes/Base/Base6.png" id="5_gh11t"]
+[ext_resource type="Texture2D" uid="uid://ckomcxt57rb65" path="res://Assets/Art/Globes/Inside/inside6.png" id="6_fa35o"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_2entn"]
+[ext_resource type="Texture2D" uid="uid://ce3a0jmghsj2p" path="res://Assets/Art/people/person9.png" id="8_6pj85"]
+
+[sub_resource type="Resource" id="Resource_4lmeg"]
+script = ExtResource("1_l1ma3")
+from = "frank_wood@inlook.com"
+to = "office@tinyglob.es"
+subject = "Gift for my F-Friend"
+text = "Uhm, hello... This is kinda akward - but I would want to order one of your uhm, globes for my girlf- uhm just friend I mean, I uuh think she really likes Paris, so maybe you have something like France themed or sth like that. Uhm, I am also almost certain that she would like a wodden base for the globe. T- thanks for doing that. I will meet her like tomorrow, so she can come pick it up the day after that. Maybe she will lo- uhm like me more with that gift.
+Greetings,
+Frank"
+days_earlier = -2
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_0cp0l"]
+script = ExtResource("3_y51ut")
+type = 1
+texture = ExtResource("4_hscr1")
+name = "Base5"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("3_y51ut")
+type = 1
+texture = ExtResource("5_gh11t")
+name = "Base6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_gngh3"]
+script = ExtResource("3_y51ut")
+type = 2
+texture = ExtResource("6_fa35o")
+name = "inside6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_0n3wm"]
+script = ExtResource("7_2entn")
+inside_ranks = Array[ExtResource("3_y51ut")]([SubResource("Resource_gngh3")])
+globe_ranks = Array[ExtResource("3_y51ut")]([])
+base_ranks = Array[ExtResource("3_y51ut")]([SubResource("Resource_0cp0l"), SubResource("Resource_d2t1y")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_abof3")
+name = "Vanessa"
+texture = ExtResource("8_6pj85")
+dialogue = "uid://bc4q11w7sjufd"
+earliest_day = 0
+latest_day = 5
+emails = Array[ExtResource("1_l1ma3")]([SubResource("Resource_4lmeg")])
+stats = SubResource("Resource_0n3wm")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailRes" load_steps=2 format=3 uid="uid://cp0b1vt3etxud"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_kkgoi"]
+
+[resource]
+script = ExtResource("1_kkgoi")
+from = "ajjdunebajsjd@ejlas.dkf"
+to = "office@tinyglob.es"
+subject = "asjdfolienalsdf"
+text = "Hewo, me luove carz vey muci,cwould you meak a snouo glwab wiht a kar .Alsoo mu favoorite coluor iz ororonge.
+Twankz vury mach."
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"

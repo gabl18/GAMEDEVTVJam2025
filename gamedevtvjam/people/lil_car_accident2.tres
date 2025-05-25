@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="Person" load_steps=15 format=3 uid="uid://bjv1bl2g0tofh"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_o8rkn"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_apwud"]
+[ext_resource type="Resource" uid="uid://b001rfuvn301u" path="res://people/lil_car_accident1.tres" id="2_c4u3s"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_c4u3s"]
+[ext_resource type="Texture2D" uid="uid://blckbynpfddlc" path="res://Assets/Art/Globes/Base/Base2.png" id="4_f5n5x"]
+[ext_resource type="Texture2D" uid="uid://bhl7k53decb87" path="res://Assets/Art/Globes/Base/Base3.png" id="5_klqer"]
+[ext_resource type="Texture2D" uid="uid://cfohb44m77lea" path="res://Assets/Art/Globes/Inside/inside10.png" id="6_atfdh"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_rhhf8"]
+[ext_resource type="Texture2D" uid="uid://br35aajxextdt" path="res://Assets/Art/people/person13.png" id="8_twi2v"]
+
+[sub_resource type="Resource" id="Resource_v8tpy"]
+script = ExtResource("1_o8rkn")
+from = "tableeater@studios.com"
+to = "office@tinyglob.es"
+subject = "Lil Car Accident order"
+text = "What's good my dude? 
+Called you again cuz I tought you could solve one of my homeboyz problem with a globe, you see his girls birthday is tomorrow so I calld you cuz you can solve any stuff. I sugest you make a globe with money inside, cuz she likes spending it. 
+Thank you so much again dawg, ill drop by tomorrow to take it. 
+Peace out,
+lil car accident"
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_jf78a"]
+script = ExtResource("3_c4u3s")
+type = 1
+texture = ExtResource("4_f5n5x")
+name = "Base2"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_rmq26"]
+script = ExtResource("3_c4u3s")
+type = 1
+texture = ExtResource("5_klqer")
+name = "Base3"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_7i2lf"]
+script = ExtResource("3_c4u3s")
+type = 2
+texture = ExtResource("6_atfdh")
+name = "inside10"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_a2nws"]
+script = ExtResource("7_rhhf8")
+inside_ranks = Array[ExtResource("3_c4u3s")]([SubResource("Resource_7i2lf")])
+globe_ranks = Array[ExtResource("3_c4u3s")]([])
+base_ranks = Array[ExtResource("3_c4u3s")]([SubResource("Resource_jf78a"), SubResource("Resource_rmq26")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
+
+[resource]
+script = ExtResource("2_apwud")
+name = "lil car accident"
+texture = ExtResource("8_twi2v")
+dialogue = "uid://dx2hgfbgnowhj"
+earliest_day = 2
+latest_day = 5
+only_after = ExtResource("2_c4u3s")
+emails = Array[ExtResource("1_o8rkn")]([SubResource("Resource_v8tpy")])
+stats = SubResource("Resource_a2nws")
+metadata/_custom_type_script = "uid://buc8htkfrmars"

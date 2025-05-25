@@ -1,0 +1,10 @@
+~ start
+Timmy: [[Hi|Hewo|Ello]], I am here for my toy.
+Timmy: Can I hav it?
+- Yes
+	Timmy: Yipppiee.
+- What?
+	Timmy: I love carz, give me!
+- End the conversation => END
+Timmy: Twanks very muchi, hev a gut day!
+=> END

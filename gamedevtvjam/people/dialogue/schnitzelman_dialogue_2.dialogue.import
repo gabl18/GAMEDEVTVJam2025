@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cu4hmhiyuwfdc"
+path="res://.godot/imported/schnitzelman_dialogue_2.dialogue-3284615b8d4e86f06812f00f52644419.tres"
+
+[deps]
+
+source_file="res://people/dialogue/schnitzelman_dialogue_2.dialogue"
+dest_files=["res://.godot/imported/schnitzelman_dialogue_2.dialogue-3284615b8d4e86f06812f00f52644419.tres"]
+
+[params]
+
+defaults=true

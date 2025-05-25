@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bc4q11w7sjufd"
+path="res://.godot/imported/vanessa_dialogue.dialogue-0409570e91ddadd752a722f1f9489811.tres"
+
+[deps]
+
+source_file="res://people/dialogue/vanessa_dialogue.dialogue"
+dest_files=["res://.godot/imported/vanessa_dialogue.dialogue-0409570e91ddadd752a722f1f9489811.tres"]
+
+[params]
+
+defaults=true
