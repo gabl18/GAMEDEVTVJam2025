@@ -29,6 +29,9 @@ var finished_globes: Array[AssemblyGlobe]
 @onready var sfx: AudioStreamPlayer = $SFX
 @onready var music: AudioStreamPlayer = $Music
 
+var hello = preload("res://Assets/Audio/SFX/hello-81683.mp3")
+var done = preload("res://Assets/Audio/SFX/notification.mp3")
+
 signal _enough_globes_done
 signal _sold_globe(globe)
 
@@ -157,6 +160,8 @@ func gamecycle():
 	%myStoreApp.unlock_btns()
 	
 	## GABL: sound effect when you have made enough globes
+	sfx.stream = done
+	sfx.play()
 	
 	await %myStoreApp.store_open_closed_pressed
 
@@ -217,7 +222,6 @@ func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
 
 func _dialogue_started(__):
 	is_dialogue_active = true
-	var hello = preload("res://Assets/Audio/SFX/hello-81683.mp3")
 	sfx.stream = hello
 	sfx.play()
 
