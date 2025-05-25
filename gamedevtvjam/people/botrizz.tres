@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Person" load_steps=5 format=3 uid="uid://bxcytp81705hw"]
+
+[ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_7y7i1"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_ypxvc"]
+[ext_resource type="Texture2D" uid="uid://dxtct2ryc5em8" path="res://Assets/Art/people/person4.png" id="3_eqix6"]
+
+[sub_resource type="Resource" id="Resource_gngh3"]
+script = ExtResource("1_7y7i1")
+from = ""
+to = "office@tinyglob.es"
+subject = ""
+text = ""
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[resource]
+script = ExtResource("2_ypxvc")
+name = "Robert Botrizz"
+texture = ExtResource("3_eqix6")
+dialogue = null
+earliest_day = 0
+latest_day = 10
+emails = Array[ExtResource("1_7y7i1")]([SubResource("Resource_gngh3")])
+metadata/_custom_type_script = "uid://buc8htkfrmars"

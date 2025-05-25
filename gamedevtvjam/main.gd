@@ -67,6 +67,17 @@ func prepare_game():
 		while _todays_people.size() < day_people_numbers[day]:
 			var person: Person = people.pick_random()
 			
+			
+			if day == 4:
+				person = load("res://People/botrizz.tres")
+				
+				for mail in person.emails:
+					all_mails[person.emails.find(mail)].append(mail)
+					people.erase(person)
+					taken_people.append(person)
+					_todays_people.append(person)
+					continue
+			
 			if person.only_after:
 				if person.only_after not in taken_people:
 					continue
@@ -246,7 +257,7 @@ func _on_parts_location_child_exiting_tree(node: Node) -> void:
 
 var selling_globe
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("just_released_mouse"):
 		if selling_globe:
 			_sold_globe.emit(selling_globe)

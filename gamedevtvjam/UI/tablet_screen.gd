@@ -5,7 +5,8 @@ extends TextureRect
 
 @onready var email_app: Panel = $Apps/EmailApp
 @onready var my_store_app: Panel = %myStoreApp
-@onready var apps: Array= [email_app,my_store_app]
+@onready var credits_app: Panel = %CreditsApp
+@onready var apps: Array= [email_app,my_store_app,credits_app]
 
 @onready var sfx: AudioStreamPlayer = $"../../SFX"
 var click = preload("res://Assets/Audio/SFX/click.mp3")
@@ -62,7 +63,6 @@ func _on_email_button_pressed() -> void:
 func _on_rating_button_pressed() -> void:
 	sfx.stream = click
 	sfx.play()
-	print("opened rating")
 	active_screen = Screens.Rating
 	_hide_all_apps()
 	my_store_app.show()
@@ -71,7 +71,8 @@ func _on_rating_button_pressed() -> void:
 func _on_credits_button_pressed() -> void:
 	sfx.stream = click
 	sfx.play()
-	print("opened credits")
+	_hide_all_apps()
+	credits_app.show()
 	active_screen = Screens.Credits
 
 
