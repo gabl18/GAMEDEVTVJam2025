@@ -34,12 +34,12 @@ func break_all_balls():
 		if child is GatchaBall:
 			child.break_apart()
 
-func generate_balls(amount:int):
+func generate_balls(insides:Array[GlobePartRes]):
 	
-	for x in range(amount):
+	for inside_res in insides:
 		var ball = GATCHA.instantiate()
-		ball.info = Resource.new()
-		ball.texture = load("res://Assets/Art/Globes/Inside/Inside2.png")
+		ball.info = inside_res
+		ball.texture = inside_res.texture
 		ball.Spawn_Location = %Parts_Location
 		
 		balls.append(ball)

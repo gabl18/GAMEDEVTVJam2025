@@ -6,5 +6,10 @@ Timmy: Can I hav it?
 - What?
 	Timmy: I love carz, give me!
 - End the conversation => END
-Timmy: Twanks very muchi, hev a gut day!
+Timmy: Twanks very muchi!
+=> END
+
+~ bye
+Timmy: Thanck u!
+Timmy: [[Bye|byebye|by|tschüssi]]
 => END

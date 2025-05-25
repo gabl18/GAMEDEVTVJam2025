@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="Person" load_steps=18 format=3 uid="uid://bnmeg8lc1qn2h"]
+[gd_resource type="Resource" script_class="Person" load_steps=13 format=3 uid="uid://c3j1i013t5gkj"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_nldtf"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_0wh4q"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_0wh4q"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_birsw"]
-[ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="4_o6n4v"]
-[ext_resource type="Texture2D" uid="uid://coh6r6hdtoyi0" path="res://Assets/Art/Globes/Base/Base5.png" id="5_vgc7s"]
-[ext_resource type="Texture2D" uid="uid://c6ruihatclyux" path="res://Assets/Art/Globes/Base/Base6.png" id="6_wgksk"]
-[ext_resource type="Texture2D" uid="uid://cv65jg11ur6y2" path="res://Assets/Art/Globes/Base/Base7.png" id="7_c3kll"]
-[ext_resource type="Texture2D" uid="uid://ladgr1yo22ff" path="res://Assets/Art/Globes/Inside/Inside3.png" id="8_3m3n1"]
+[ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="4_ixvx4"]
+[ext_resource type="Resource" uid="uid://cfssnts7xdku8" path="res://GlobeParts/part11.tres" id="5_rf8ao"]
+[ext_resource type="Resource" uid="uid://bf7fg08g8mbhg" path="res://GlobeParts/part12.tres" id="6_7vbr4"]
+[ext_resource type="Resource" uid="uid://bh1f7ro2k5npp" path="res://GlobeParts/part10.tres" id="7_ixmie"]
+[ext_resource type="Resource" uid="uid://bul4hv3nlkcd4" path="res://GlobeParts/part16.tres" id="8_nth75"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="9_8c7pd"]
 [ext_resource type="Texture2D" uid="uid://b5ick564wuchi" path="res://Assets/Art/people/person11.png" id="10_u6t8l"]
 
@@ -23,51 +23,10 @@ Santa"
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
-[sub_resource type="Resource" id="Resource_wnkbs"]
-script = ExtResource("3_birsw")
-type = 1
-texture = ExtResource("4_o6n4v")
-name = "Base1"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_f6a44"]
-script = ExtResource("3_birsw")
-type = 1
-texture = ExtResource("5_vgc7s")
-name = "Base5"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_0cbny"]
-script = ExtResource("3_birsw")
-type = 1
-texture = ExtResource("6_wgksk")
-name = "Base6"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_hrvbo"]
-script = ExtResource("3_birsw")
-type = 1
-texture = ExtResource("7_c3kll")
-name = "Base7"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_uypp3"]
-script = ExtResource("3_birsw")
-type = 2
-texture = ExtResource("8_3m3n1")
-name = "Inside3"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
 [sub_resource type="Resource" id="Resource_blkrb"]
 script = ExtResource("9_8c7pd")
-inside_ranks = Array[ExtResource("3_birsw")]([SubResource("Resource_uypp3")])
-globe_ranks = Array[ExtResource("3_birsw")]([])
-base_ranks = Array[ExtResource("3_birsw")]([SubResource("Resource_wnkbs"), SubResource("Resource_f6a44"), SubResource("Resource_0cbny"), SubResource("Resource_hrvbo")])
+inside_ranks = Array[ExtResource("3_birsw")]([ExtResource("8_nth75")])
+base_ranks = Array[ExtResource("3_birsw")]([ExtResource("4_ixvx4"), ExtResource("5_rf8ao"), ExtResource("6_7vbr4"), ExtResource("7_ixmie")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]

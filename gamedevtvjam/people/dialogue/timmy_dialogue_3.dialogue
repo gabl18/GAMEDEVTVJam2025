@@ -13,3 +13,8 @@ Timmy: Ma mama told me to go here
 	Timmy: uhm, yes
 	Timmy: Pwease can you gibe me another glooubbe?
 => END
+
+~ bye
+Timmy: Thanck u!
+Timmy: [[Bye|byebye|by|tschüssi]]
+=> END

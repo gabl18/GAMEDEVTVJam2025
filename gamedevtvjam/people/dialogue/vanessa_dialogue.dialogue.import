@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://bc4q11w7sjufd"
-path="res://.godot/imported/vanessa_dialogue.dialogue-0409570e91ddadd752a722f1f9489811.tres"
+path="res://.godot/imported/vanessa_dialogue.dialogue-69db177b93ce471f993580b34b8336de.tres"
 
 [deps]
 
-source_file="res://people/dialogue/vanessa_dialogue.dialogue"
-dest_files=["res://.godot/imported/vanessa_dialogue.dialogue-0409570e91ddadd752a722f1f9489811.tres"]
+source_file="res://People/dialogue/vanessa_dialogue.dialogue"
+dest_files=["res://.godot/imported/vanessa_dialogue.dialogue-69db177b93ce471f993580b34b8336de.tres"]
 
 [params]
 

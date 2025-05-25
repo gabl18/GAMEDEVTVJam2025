@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GlobePartRes" load_steps=3 format=3 uid="uid://c4y2kuxceoup4"]
+
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="1_fsnwe"]
+[ext_resource type="Texture2D" uid="uid://d7jrkf1e5odw" path="res://Assets/Art/Globes/Base/Base4.png" id="2_3om8u"]
+
+[resource]
+script = ExtResource("1_fsnwe")
+type = 1
+texture = ExtResource("2_3om8u")
+name = "Base4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"

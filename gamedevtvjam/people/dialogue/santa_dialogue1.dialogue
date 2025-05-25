@@ -6,3 +6,8 @@ Santa: did you see my letter?
 - No
 	Santa: Oh oh, do you still have a globe that fits my needs?
 => END
+
+~ bye
+Santa: thanks
+Santa: Merry Christmas... uhm... bye
+=> END

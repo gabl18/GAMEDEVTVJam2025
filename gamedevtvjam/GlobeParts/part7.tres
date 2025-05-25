@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GlobePartRes" load_steps=3 format=3 uid="uid://mxepxip08wv5"]
+
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="1_23lnm"]
+[ext_resource type="Texture2D" uid="uid://ckomcxt57rb65" path="res://Assets/Art/Globes/Inside/inside6.png" id="2_2mrpg"]
+
+[resource]
+script = ExtResource("1_23lnm")
+type = 2
+texture = ExtResource("2_2mrpg")
+name = "inside6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"

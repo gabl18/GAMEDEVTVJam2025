@@ -34,7 +34,7 @@ const parts_colliders :={
 
 @export var parttype: Parts
 
-@export var info: Resource
+@export var info: GlobePartRes
 
 var is_dragged := false:
 	set(value):
@@ -68,11 +68,15 @@ var closest_merge_body : CharacterBody2D
 
 
 func _ready() -> void:
+	texture = info.texture
+	parttype = info.type
+	
 	sprite_2d.texture = texture
-	$Sprite2D.position.y = -texture.get_size().y/3
-	$Area2D.position.y = -texture.get_size().y/3
-	$Merge_Area2D.position.y = -texture.get_size().y/3
-	$CollisionShape2D.position.y = -texture.get_size().y/3
+	
+	$Sprite2D.position.y = -texture.get_size().y/4
+	$Area2D.position.y = 0
+	$Merge_Area2D.position.y = -texture.get_size().y/4
+	$CollisionShape2D.position.y = -texture.get_size().y/4
 	$CollisionShape2D.shape = parts_colliders[parttype]
 	
 	await get_tree().process_frame
@@ -144,8 +148,8 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 
 
 func _on_merge_area_2d_area_entered(area: Area2D) -> void:
-
-	check_for_merging(area)
+	if not in_drawer:
+		check_for_merging(area)
 
 
 func _on_merge_area_2d_area_exited(area: Area2D) -> void:

@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://b254lm1fcgwbh"]
+[gd_resource type="Resource" script_class="Person" load_steps=11 format=3 uid="uid://837hbhwxf367"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_6qxtt"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_nwu7d"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_nwu7d"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_cr18q"]
-[ext_resource type="Texture2D" uid="uid://bhl7k53decb87" path="res://Assets/Art/Globes/Base/Base3.png" id="4_e566q"]
-[ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="5_000y1"]
-[ext_resource type="Texture2D" uid="uid://bt32kkifmpgse" path="res://Assets/Art/Globes/Inside/inside7.png" id="6_meund"]
+[ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="4_16ug5"]
+[ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="5_eqpc7"]
+[ext_resource type="Resource" uid="uid://cyvhdqx7n3wtp" path="res://GlobeParts/part5.tres" id="6_4m30t"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_o5mhb"]
 [ext_resource type="Texture2D" uid="uid://cso25blkq7dc8" path="res://Assets/Art/people/person3.png" id="8_tn265"]
 
@@ -21,35 +21,10 @@ Thank you."
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
-[sub_resource type="Resource" id="Resource_0cp0l"]
-script = ExtResource("3_cr18q")
-type = 1
-texture = ExtResource("4_e566q")
-name = "Base3"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_d2t1y"]
-script = ExtResource("3_cr18q")
-type = 1
-texture = ExtResource("5_000y1")
-name = "Base1"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_gngh3"]
-script = ExtResource("3_cr18q")
-type = 2
-texture = ExtResource("6_meund")
-name = "inside7"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_0n3wm"]
+[sub_resource type="Resource" id="Resource_b7j8u"]
 script = ExtResource("7_o5mhb")
-inside_ranks = Array[ExtResource("3_cr18q")]([SubResource("Resource_gngh3")])
-globe_ranks = Array[ExtResource("3_cr18q")]([])
-base_ranks = Array[ExtResource("3_cr18q")]([SubResource("Resource_0cp0l"), SubResource("Resource_d2t1y")])
+inside_ranks = Array[ExtResource("3_cr18q")]([ExtResource("6_4m30t")])
+base_ranks = Array[ExtResource("3_cr18q")]([ExtResource("4_16ug5"), ExtResource("5_eqpc7")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]
@@ -60,5 +35,5 @@ dialogue = "uid://bh3e77r608ug1"
 earliest_day = 0
 latest_day = 5
 emails = Array[ExtResource("1_6qxtt")]([SubResource("Resource_4lmeg")])
-stats = SubResource("Resource_0n3wm")
+stats = SubResource("Resource_b7j8u")
 metadata/_custom_type_script = "uid://buc8htkfrmars"

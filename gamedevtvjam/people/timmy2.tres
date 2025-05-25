@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Person" load_steps=13 format=3 uid="uid://bede6bi3p4dkp"]
+[gd_resource type="Resource" script_class="Person" load_steps=11 format=3 uid="uid://ccquo8jfvpjro"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_x43an"]
-[ext_resource type="Resource" uid="uid://br3vdjxppdti" path="res://people/timmy1.tres" id="2_5lufn"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="3_owyeg"]
+[ext_resource type="Resource" uid="uid://bsklw110bptug" path="res://People/timmy1.tres" id="2_5lufn"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="3_owyeg"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="4_4py1h"]
 [ext_resource type="Texture2D" uid="uid://bmjm0e1knaxsb" path="res://Assets/Art/people/person5.png" id="4_jao88"]
-[ext_resource type="Texture2D" uid="uid://blckbynpfddlc" path="res://Assets/Art/Globes/Base/Base2.png" id="5_1yf6a"]
-[ext_resource type="Texture2D" uid="uid://brady56stiwla" path="res://Assets/Art/Globes/Inside/Inside2.png" id="6_p708m"]
+[ext_resource type="Resource" uid="uid://jwd6u03qk0m3" path="res://GlobeParts/part2.tres" id="5_jaom8"]
+[ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="6_6vryb"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_qvngg"]
 
 [sub_resource type="Resource" id="Resource_8mcfd"]
@@ -22,27 +22,10 @@ Best wishes, Timmy's Mom 😘"
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
-[sub_resource type="Resource" id="Resource_kovui"]
-script = ExtResource("4_4py1h")
-type = null
-texture = ExtResource("5_1yf6a")
-name = "Base2"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
-[sub_resource type="Resource" id="Resource_1pxd5"]
-script = ExtResource("4_4py1h")
-type = 2
-texture = ExtResource("6_p708m")
-name = "Inside2"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
 [sub_resource type="Resource" id="Resource_bcyal"]
 script = ExtResource("7_qvngg")
-inside_ranks = Array[ExtResource("4_4py1h")]([SubResource("Resource_1pxd5")])
-globe_ranks = Array[ExtResource("4_4py1h")]([])
-base_ranks = Array[ExtResource("4_4py1h")]([SubResource("Resource_kovui")])
+inside_ranks = Array[ExtResource("4_4py1h")]([ExtResource("6_6vryb")])
+base_ranks = Array[ExtResource("4_4py1h")]([ExtResource("5_jaom8")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]

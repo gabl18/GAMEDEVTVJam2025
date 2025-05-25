@@ -62,7 +62,6 @@ func _on_texture_rect_changed_drawer_layer(value: int) -> void:
 func _on_texture_rect_drawer_opened_closed(open: bool) -> void:
 
 	if not lock_drawer:
-		print(1)
 		opened = open
 		if opened:
 			show_layer(active_layer)
@@ -75,24 +74,27 @@ func show_layer(layerindex: int):
 	for body in layers[layerindex]:
 		body.visible = true
 		body.sleep = false
+		body.no_merge = true
 
 
 func hide_layer(layerindex: int):
 	for body in layers[layerindex]:
 		body.visible = false
 		body.sleep = true
+		body.no_merge = true
 
 
-func generate_new_stuff(globe_amount:int):
+func generate_new_stuff(globes:Array[GlobePartRes],bases:Array[GlobePartRes]):
 	randomize()
-	var points := get_random_points_in_polygon(drawer_collision_polygon.polygon,globe_amount,20.0)
+	globes.shuffle()
+	bases.shuffle()
+	var points := get_random_points_in_polygon(drawer_collision_polygon.polygon,globes.size(),20.0)
 
-	for x in range(globe_amount):
+	for globe_res in globes:
 		var new_part = GLOBE_PART.instantiate()
 		new_part.global_position = points.pick_random()
 		points.erase(new_part.global_position)
-		new_part.parttype = new_part.Parts.Globe
-		new_part.texture = load("res://Assets/Art/Globes/Globe/Globe1.png")
+		new_part.info = globe_res
 		
 		layers[0].append(new_part)
 		new_part.z_index = 0
@@ -104,14 +106,13 @@ func generate_new_stuff(globe_amount:int):
 		parts_location.add_child(new_part)
 		
 	hide_layer(0)
-	points = get_random_points_in_polygon(drawer_collision_polygon.polygon,globe_amount,20.0)
+	points = get_random_points_in_polygon(drawer_collision_polygon.polygon,bases.size(),20.0)
 
-	for x in range(globe_amount):
+	for base_res in bases:
 		var new_part = GLOBE_PART.instantiate()
 		new_part.global_position = points.pick_random()
 		points.erase(new_part.global_position)
-		new_part.parttype = new_part.Parts.Base
-		new_part.texture = load("res://Assets/Art/Globes/Base/Base1.png")
+		new_part.info = base_res
 		
 		layers[1].append(new_part)
 		new_part.z_index = 0
@@ -131,7 +132,6 @@ func tidy_everything_away():
 		layer_points.append(get_random_points_in_polygon(drawer_collision_polygon.polygon,parts_location.get_children().filter(func(x): return x is GlobePart).size(),20.0))
 		
 	for body in parts_location.get_children():
-		print(12)
 		if body is AssemblyGlobe:
 			body.global_position = globe_points.pick_random()
 			globe_points.erase(body.global_position)
@@ -164,7 +164,10 @@ func tidy_everything_away():
 			layers[x].append(body)
 			body.z_index = 0
 			body.no_merge = true
-			print(1)
+			body.in_drawer = true
+			body.no_merge = true
+			body.under_table = true
+			
 			body.scale = Vector2.ONE * 3
 	
 	for x in range(0, layers.size()):

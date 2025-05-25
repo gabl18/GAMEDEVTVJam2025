@@ -1,11 +1,11 @@
-[gd_scene load_steps=67 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=93 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
 [ext_resource type="Texture2D" uid="uid://d1dfmber6ydek" path="res://Assets/Art/main_scene_sheet.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cq6v4aavnaov8" path="res://UI/texture_rect.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://b8e1n3m6wdlyx" path="res://UI/drawer_handler.gd" id="2_5vw27"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_82xsv"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_82xsv"]
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="3_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dqqi5n6c7p3dw" path="res://Assets/Art/main_scene_cover_sheet.png" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://dcuxn8pxio3k3" path="res://UI/gatcha_dispenser.gd" id="5_2cqfq"]
@@ -15,34 +15,64 @@
 [ext_resource type="Texture2D" uid="uid://cu04txq31cqlg" path="res://Assets/Art/tablet_spritesheet.png" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://ciw3lgb8rkx2r" path="res://UI/tablet_screen.gd" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cs5bax42dujiq" path="res://Assets/Art/gacha_röhre.png" id="6_yaehf"]
-[ext_resource type="Resource" uid="uid://br3vdjxppdti" path="res://people/timmy1.tres" id="7_xuqvo"]
+[ext_resource type="Resource" uid="uid://bsklw110bptug" path="res://People/timmy1.tres" id="7_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://b3grh1oit67k6" path="res://Assets/Art/gacha_ball.png" id="7_yaehf"]
-[ext_resource type="Resource" uid="uid://bede6bi3p4dkp" path="res://people/timmy2.tres" id="8_qsp4k"]
-[ext_resource type="Resource" uid="uid://ckk5ufeieoyv5" path="res://people/timmy3.tres" id="9_qsp4k"]
-[ext_resource type="Resource" uid="uid://pl8xjh3xslth" path="res://people/nightmare.tres" id="10_ok6jj"]
-[ext_resource type="Resource" uid="uid://cb0tic6a0aekm" path="res://people/mel1.tres" id="11_ok6jj"]
+[ext_resource type="Resource" uid="uid://ccquo8jfvpjro" path="res://People/timmy2.tres" id="8_qsp4k"]
+[ext_resource type="Resource" uid="uid://bi5rskh4li2eu" path="res://People/timmy3.tres" id="9_qsp4k"]
+[ext_resource type="Resource" uid="uid://bys2i2sk67prp" path="res://People/nightmare.tres" id="10_ok6jj"]
+[ext_resource type="Resource" uid="uid://c4k87coa112f1" path="res://People/mel1.tres" id="11_ok6jj"]
 [ext_resource type="Texture2D" uid="uid://bp8idme00h7gh" path="res://Assets/Art/all_people_sheet.png" id="11_yaehf"]
-[ext_resource type="Resource" uid="uid://gbcsbj7wtpxp" path="res://people/mel2.tres" id="12_facbu"]
+[ext_resource type="Resource" uid="uid://b5ismc8coew5d" path="res://People/mel2.tres" id="12_facbu"]
 [ext_resource type="Texture2D" uid="uid://cupi24po26cj" path="res://Assets/Art/elevator_numbers.png" id="13_2cqfq"]
-[ext_resource type="Resource" uid="uid://pt8pahv6dgc1" path="res://people/vanessa.tres" id="13_facbu"]
-[ext_resource type="Resource" uid="uid://b254lm1fcgwbh" path="res://people/schnitzelman1.tres" id="14_4k2k6"]
+[ext_resource type="Resource" uid="uid://rylsxttg2kfm" path="res://People/vanessa.tres" id="13_facbu"]
+[ext_resource type="Resource" uid="uid://837hbhwxf367" path="res://People/schnitzelman1.tres" id="14_4k2k6"]
 [ext_resource type="Script" uid="uid://bw0qn4442t3rn" path="res://UI/elevator_numbers.gd" id="14_yaehf"]
-[ext_resource type="Resource" uid="uid://cbs3mxms68ype" path="res://people/schnitzelman2.tres" id="15_0rl1p"]
-[ext_resource type="Resource" uid="uid://d2go7uvswmkk6" path="res://people/sam.tres" id="16_4lmeg"]
-[ext_resource type="Resource" uid="uid://dfb407fh7pb36" path="res://people/pam.tres" id="17_d2t1y"]
-[ext_resource type="Resource" uid="uid://bnmeg8lc1qn2h" path="res://people/santa1.tres" id="18_d2t1y"]
-[ext_resource type="Resource" uid="uid://c5lybsttp85k1" path="res://people/santa2.tres" id="19_gngh3"]
+[ext_resource type="Resource" uid="uid://bdtf30hyldpbq" path="res://People/schnitzelman2.tres" id="15_0rl1p"]
+[ext_resource type="Resource" uid="uid://dguonx7xxetpn" path="res://People/sam.tres" id="16_4lmeg"]
+[ext_resource type="Resource" uid="uid://dwuudqohw51yg" path="res://People/pam.tres" id="17_d2t1y"]
+[ext_resource type="Resource" uid="uid://c3j1i013t5gkj" path="res://People/santa1.tres" id="18_d2t1y"]
+[ext_resource type="Resource" uid="uid://b65hy111xaf5m" path="res://People/santa2.tres" id="19_gngh3"]
 [ext_resource type="PackedScene" uid="uid://druvq1gmefjpo" path="res://UI/email_app.tscn" id="20_82xsv"]
-[ext_resource type="Resource" uid="uid://b3tvnyffx77wa" path="res://people/lucas.tres" id="20_d2t1y"]
-[ext_resource type="Resource" uid="uid://cst3rq7040g0g" path="res://people/hank.tres" id="20_h8e4i"]
+[ext_resource type="Resource" uid="uid://cxyesuwvyd02j" path="res://People/lucas.tres" id="20_d2t1y"]
+[ext_resource type="Resource" uid="uid://dtqe5hv5ka51h" path="res://People/hank.tres" id="20_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://dpmuhmxthqygn" path="res://Assets/Art/Notification.png" id="20_ryguw"]
-[ext_resource type="Resource" uid="uid://b001rfuvn301u" path="res://people/lil_car_accident1.tres" id="21_d2t1y"]
+[ext_resource type="Resource" uid="uid://cljknnmddly5" path="res://People/lil_car_accident1.tres" id="21_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
-[ext_resource type="Resource" uid="uid://bjv1bl2g0tofh" path="res://people/lil_car_accident2.tres" id="22_gngh3"]
-[ext_resource type="Resource" uid="uid://bxxvw46abhkcw" path="res://people/dr.stone.tres" id="23_0n3wm"]
+[ext_resource type="Resource" uid="uid://e3hb1xc02417" path="res://People/lil_car_accident2.tres" id="22_gngh3"]
+[ext_resource type="Resource" uid="uid://b31c1qjg3nb87" path="res://People/dr.stone.tres" id="23_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://brrithgiqtfbs" path="res://Assets/Audio/Music/soundtrack.mp3" id="23_d13ii"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="24_rm4vd"]
+[ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="25_pjyto"]
+[ext_resource type="Resource" uid="uid://jwd6u03qk0m3" path="res://GlobeParts/part2.tres" id="26_sm6fg"]
+[ext_resource type="Resource" uid="uid://dhm8xfg3toxru" path="res://GlobeParts/part3.tres" id="27_b17eg"]
+[ext_resource type="Resource" uid="uid://c4y2kuxceoup4" path="res://GlobeParts/part4.tres" id="28_ntx8l"]
 [ext_resource type="Texture2D" uid="uid://cjqikptnuuy3h" path="res://Assets/Art/people/person6.png" id="28_uypp3"]
 [ext_resource type="Texture2D" uid="uid://dxtct2ryc5em8" path="res://Assets/Art/people/person4.png" id="29_blkrb"]
+[ext_resource type="Resource" uid="uid://cyvhdqx7n3wtp" path="res://GlobeParts/part5.tres" id="29_uatky"]
+[ext_resource type="Resource" uid="uid://dp0l5naicgvdf" path="res://GlobeParts/part6.tres" id="30_rqtf5"]
+[ext_resource type="Resource" uid="uid://mxepxip08wv5" path="res://GlobeParts/part7.tres" id="31_1vm84"]
+[ext_resource type="Resource" uid="uid://df75ixu7klk4s" path="res://GlobeParts/part8.tres" id="32_wu3dr"]
+[ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="33_cyx1q"]
+[ext_resource type="Resource" uid="uid://bh1f7ro2k5npp" path="res://GlobeParts/part10.tres" id="34_0dhbp"]
+[ext_resource type="Resource" uid="uid://cfssnts7xdku8" path="res://GlobeParts/part11.tres" id="35_jx0wj"]
+[ext_resource type="Resource" uid="uid://bf7fg08g8mbhg" path="res://GlobeParts/part12.tres" id="36_kkkcx"]
+[ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="37_34ol3"]
+[ext_resource type="Resource" uid="uid://couw2x17i2nuf" path="res://GlobeParts/part14.tres" id="38_c2n8d"]
+[ext_resource type="Resource" uid="uid://dw82k4lipvxtk" path="res://GlobeParts/part15.tres" id="39_wy5fy"]
+[ext_resource type="Resource" uid="uid://bul4hv3nlkcd4" path="res://GlobeParts/part16.tres" id="40_gx4rg"]
+[ext_resource type="Resource" uid="uid://bqbtlnf45xfcy" path="res://GlobeParts/part17.tres" id="41_5dllo"]
+[ext_resource type="Texture2D" uid="uid://nexl78gm5rfg" path="res://Assets/Art/Globes/Globe/Globe1.png" id="42_b17eg"]
+[ext_resource type="Texture2D" uid="uid://dmr4ayax1dhxf" path="res://Assets/Art/Globes/Globe/Globe2.png" id="43_ntx8l"]
+[ext_resource type="Texture2D" uid="uid://bh5oal5sj4y2g" path="res://Assets/Art/Globes/Globe/Globe3.png" id="44_uatky"]
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("3_1u8w0")
+from = ""
+to = "office@tinyglob.es"
+subject = ""
+text = ""
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
 
 [sub_resource type="Resource" id="Resource_uit24"]
 script = ExtResource("2_82xsv")
@@ -51,8 +81,17 @@ texture = ExtResource("28_uypp3")
 dialogue = null
 earliest_day = 0
 latest_day = 10
-emails = Array[ExtResource("3_1u8w0")]([])
+emails = Array[ExtResource("3_1u8w0")]([SubResource("Resource_d2t1y")])
 metadata/_custom_type_script = "uid://buc8htkfrmars"
+
+[sub_resource type="Resource" id="Resource_gngh3"]
+script = ExtResource("3_1u8w0")
+from = ""
+to = "office@tinyglob.es"
+subject = ""
+text = ""
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
 
 [sub_resource type="Resource" id="Resource_ruth0"]
 script = ExtResource("2_82xsv")
@@ -61,8 +100,32 @@ texture = ExtResource("29_blkrb")
 dialogue = null
 earliest_day = 0
 latest_day = 10
-emails = Array[ExtResource("3_1u8w0")]([])
+emails = Array[ExtResource("3_1u8w0")]([SubResource("Resource_gngh3")])
 metadata/_custom_type_script = "uid://buc8htkfrmars"
+
+[sub_resource type="Resource" id="Resource_rqtf5"]
+script = ExtResource("24_rm4vd")
+type = 0
+texture = ExtResource("42_b17eg")
+name = "Globe1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_1vm84"]
+script = ExtResource("24_rm4vd")
+type = 0
+texture = ExtResource("43_ntx8l")
+name = "Globe2"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_wu3dr"]
+script = ExtResource("24_rm4vd")
+type = 0
+texture = ExtResource("44_uatky")
+name = "Globe3"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
 atlas = ExtResource("1_ig7tw")
@@ -373,6 +436,7 @@ _data = {
 script = ExtResource("1_074og")
 people = Array[ExtResource("2_82xsv")]([ExtResource("7_xuqvo"), ExtResource("8_qsp4k"), ExtResource("9_qsp4k"), ExtResource("10_ok6jj"), ExtResource("11_ok6jj"), ExtResource("12_facbu"), ExtResource("13_facbu"), ExtResource("14_4k2k6"), ExtResource("15_0rl1p"), ExtResource("16_4lmeg"), ExtResource("17_d2t1y"), ExtResource("18_d2t1y"), ExtResource("19_gngh3"), ExtResource("20_h8e4i"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("20_d2t1y"), SubResource("Resource_uit24"), SubResource("Resource_ruth0")])
 day_people_numbers = Array[int]([2, 4, 3, 5, 5])
+globe_parts = Array[ExtResource("24_rm4vd")]([ExtResource("25_pjyto"), ExtResource("26_sm6fg"), ExtResource("27_b17eg"), ExtResource("28_ntx8l"), ExtResource("29_uatky"), ExtResource("30_rqtf5"), ExtResource("31_1vm84"), ExtResource("32_wu3dr"), ExtResource("33_cyx1q"), ExtResource("34_0dhbp"), ExtResource("35_jx0wj"), ExtResource("36_kkkcx"), ExtResource("37_34ol3"), ExtResource("38_c2n8d"), ExtResource("39_wy5fy"), ExtResource("40_gx4rg"), ExtResource("41_5dllo"), SubResource("Resource_rqtf5"), SubResource("Resource_1vm84"), SubResource("Resource_wu3dr")])
 
 [node name="AreaHandler" type="Node" parent="."]
 unique_name_in_owner = true
@@ -563,7 +627,6 @@ libraries = {
 }
 
 [node name="Off_Table_Area2d" type="Area2D" parent="CanvasLayer/Background"]
-visible = false
 collision_layer = 0
 collision_mask = 256
 
@@ -576,12 +639,17 @@ visible = false
 polygon = PackedVector2Array(-15, 308, 1310, 313, 1321, -28, -207, -26, -216, 925, 1400, 923, 1320, 284, 1183, 320, 1161, 498, 1090, 390, 951, 396, 1034, 534, 1178, 571, 897, 568, 793, 569, 882, 813, 263, 811, 366, 602, 799, 605, 794, 573, 382, 572, -19, 574)
 
 [node name="Off_Table_Area2d_Globes" type="Area2D" parent="CanvasLayer/Background"]
-visible = false
 collision_layer = 0
 collision_mask = 256
 
 [node name="Always_Poly" type="CollisionPolygon2D" parent="CanvasLayer/Background/Off_Table_Area2d_Globes"]
-polygon = PackedVector2Array(-15, 308, 1310, 313, 1321, -28, -207, -26, -196, 909, 1345, 893, 1320, 284, 1164, 323, 1157, 485, 1091, 390, 952, 395, 1039, 537, 1171.27, 527.416, 1173, 576, 651, 575, -19, 574)
+visible = false
+polygon = PackedVector2Array(-15, 308, 355, 312, 352, -9, 769, -9, 772, 310, 1310, 313, 1321, -28, -207, -26, -196, 909, 1345, 893, 1320, 284, 1164, 323, 1157, 485, 1091, 390, 952, 395, 1039, 537, 1171.27, 527.416, 1173, 576, 651, 575, -19, 574)
+
+[node name="Building_Poly" type="CollisionPolygon2D" parent="CanvasLayer/Background/Off_Table_Area2d_Globes"]
+unique_name_in_owner = true
+visible = false
+polygon = PackedVector2Array(356, 316, 783, 312, 774, -27, 347, -21)
 
 [node name="ElevatorNumbers" type="TextureRect" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -740,6 +808,15 @@ collision_mask = 256
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Table_Area2D"]
 polygon = PackedVector2Array(0, 329, 1, 567, 1153, 571, 1156, 328)
 
+[node name="Selling_Area2D" type="Area2D" parent="CanvasLayer"]
+visible = false
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Selling_Area2D"]
+visible = false
+polygon = PackedVector2Array(380, 295, 378, -6, 761, -2, 765, 300)
+
 [node name="Drawer_Area2D" type="Area2D" parent="CanvasLayer"]
 visible = false
 collision_layer = 0
@@ -747,15 +824,6 @@ collision_mask = 256
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Drawer_Area2D"]
 polygon = PackedVector2Array(275, 618, 863, 619, 934, 774, 190, 775)
-
-[node name="Garbage_Area2D" type="Area2D" parent="CanvasLayer"]
-visible = false
-collision_layer = 0
-collision_mask = 256
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Garbage_Area2D"]
-position = Vector2(-5, 3)
-polygon = PackedVector2Array(921, 572, 1165, 574, 1224, 795, 1044, 778)
 
 [node name="AboveTable_Area2D" type="Area2D" parent="CanvasLayer"]
 visible = false
@@ -767,7 +835,7 @@ polygon = PackedVector2Array(-75, 591, 1219, 596, 1315, -88, -110, -68)
 
 [node name="Drawer_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
 visible = false
-polygon = PackedVector2Array(358, 659, 313, 734, 806, 730, 769, 661)
+polygon = PackedVector2Array(376, 666, 345, 735, 774, 734, 743, 667)
 
 [node name="Globe_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
 visible = false
@@ -779,7 +847,6 @@ bus = &"SFX"
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_d13ii")
 volume_db = 10.4
-autoplay = true
 bus = &"Music"
 parameters/looping = true
 
@@ -807,9 +874,9 @@ parameters/looping = true
 [connection signal="pressed" from="CanvasLayer/TabletScreen/Close_Button" to="CanvasLayer/TabletScreen" method="_on_close_button_pressed"]
 [connection signal="area_entered" from="CanvasLayer/Table_Area2D" to="AreaHandler" method="_on_table_area_2d_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/Table_Area2D" to="AreaHandler" method="_on_table_area_2d_area_exited"]
+[connection signal="area_entered" from="CanvasLayer/Selling_Area2D" to="." method="_on_selling_area_2d_area_entered"]
+[connection signal="area_exited" from="CanvasLayer/Selling_Area2D" to="." method="_on_selling_area_2d_area_exited"]
 [connection signal="area_entered" from="CanvasLayer/Drawer_Area2D" to="DrawerHandler" method="_on_drawer_area_2d_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/Drawer_Area2D" to="DrawerHandler" method="_on_drawer_area_2d_area_exited"]
-[connection signal="area_entered" from="CanvasLayer/Garbage_Area2D" to="AreaHandler" method="_on_garbage_area_2d_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/Garbage_Area2D" to="AreaHandler" method="_on_garbage_area_2d_area_exited"]
 [connection signal="area_entered" from="CanvasLayer/AboveTable_Area2D" to="AreaHandler" method="_on_above_table_area_2d_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/AboveTable_Area2D" to="AreaHandler" method="_on_above_table_area_2d_area_exited"]

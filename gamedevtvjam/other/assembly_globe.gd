@@ -49,6 +49,8 @@ var dropable := true
 
 var lock_movement := false
 
+var finished := false
+
 func _ready() -> void:
 	await get_tree().process_frame
 
@@ -129,6 +131,7 @@ func add_part(part:GlobePart) -> GlobePart:
 		part.queue_free()
 		
 		if owned_parts.values().all(func(v):return v != null):
+			finished = true
 			finished_unfinished.emit(self,true)
 		
 		return null
@@ -141,6 +144,7 @@ func remove_part() -> GlobePart:
 		if owned_parts.get(part_sequence[i]) != null:
 			
 			if owned_parts.values().all(func(v):return v != null):
+				finished = false
 				finished_unfinished.emit(self,false)
 			
 			

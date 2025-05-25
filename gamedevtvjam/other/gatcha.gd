@@ -21,7 +21,7 @@ func break_apart():
 		var new_part = GLOBE_PART.instantiate()
 		new_part.global_position = global_position
 		new_part.parttype = GlobePart.Parts.Inside
-		new_part.texture = texture
+		new_part.info = info
 		var y = -new_part.global_position.y
 		var scale_factor = -0.005 * y + 2.0
 		new_part.scale = Vector2.ONE * scale_factor

@@ -7,10 +7,13 @@ Sam: Howdy!
 	Sam: OMG, thanks!! :D
 	Sam: Pam didnt even congratulate me today..
 	- she left you something
-		Sam: oh really?! 
-		Sam: THANKS!
+		Sam: oh really?!
 	- oof
 		Sam: nah, its fine I guess..
 		Sam: Is there an order for me?
-		Sam: looks awesome! Thanks
+=> END
+
+~ bye
+Sam: Thanks
+Sam: bye
 => END

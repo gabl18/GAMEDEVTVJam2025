@@ -2,3 +2,8 @@
 Santa: I am in a hurry
 Santa: fast, give me what I need
 => END
+
+~ bye
+Santa: thanks
+Santa: Merry Christmas... uhm... bye
+=> END

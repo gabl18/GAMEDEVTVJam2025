@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://vgyy4ku88pww"
-path="res://.godot/imported/timmy_dialogue_2.dialogue-4d53278d1a1f67bc80bd19917ab8d384.tres"
+path="res://.godot/imported/timmy_dialogue_2.dialogue-18fe6248a619dd5f59026de4fb112e40.tres"
 
 [deps]
 
-source_file="res://people/dialogue/timmy_dialogue_2.dialogue"
-dest_files=["res://.godot/imported/timmy_dialogue_2.dialogue-4d53278d1a1f67bc80bd19917ab8d384.tres"]
+source_file="res://People/dialogue/timmy_dialogue_2.dialogue"
+dest_files=["res://.godot/imported/timmy_dialogue_2.dialogue-18fe6248a619dd5f59026de4fb112e40.tres"]
 
 [params]
 

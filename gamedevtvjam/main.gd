@@ -3,16 +3,20 @@ extends Node2D
 enum GameStates {
 	building, selling
 }
+
 const EXAMPLE_BALLOON = preload("res://UI/example_balloon.tscn")
 
-var active_state: GameStates
 
 @export var people: Array[Person]
 @export var day_people_numbers: Array[int]
+@export var globe_parts: Array[GlobePartRes]
 
+var globe_parts_base: Array[GlobePartRes]
+var globe_parts_inside: Array[GlobePartRes]
+var globe_parts_globe: Array[GlobePartRes]
 
+var active_state: GameStates
 var taken_people: Array[Person]
-
 var active_person: Person
 var is_dialogue_active: bool
 var passed_days := 0
@@ -26,6 +30,7 @@ var finished_globes: Array[AssemblyGlobe]
 @onready var music: AudioStreamPlayer = $Music
 
 signal _enough_globes_done
+signal _sold_globe(globe)
 
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_dialogue_started)
@@ -39,7 +44,16 @@ func _ready() -> void:
 	@warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match")
 	Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor4.png"),4) # Hand close
 	await get_tree().process_frame
-	#music.play()
+	
+	for part in globe_parts:
+		match part.type:
+			0:
+				globe_parts_globe.append(part)
+			1:
+				globe_parts_base.append(part)
+			2:
+				globe_parts_inside.append(part)
+	
 	prepare_game()
 	gamecycle()
 	
@@ -109,13 +123,21 @@ func gamecycle():
 	active_state = GameStates.building
 	
 	## building part of the day
+	%Building_Poly.disabled = false
 	%Gatcha_Dispenser.locked = false
 	%DrawerHandler.lock_drawer = false
 	%Background.lock_drawer = false
 	%People.visible = false
 	%DrawerHandler.tidy_everything_away()
-	%DrawerHandler.generate_new_stuff(todays_people.size()+1)
-	%Gatcha_Dispenser.generate_balls(todays_people.size()+2)
+	
+	var todays_bases = pick_random_unique_elements(globe_parts_base, todays_people.size()+1)
+	var todays_insides = pick_random_unique_elements(globe_parts_inside, todays_people.size()+2)
+	var todays_globes: Array[GlobePartRes]
+	for x in range(todays_people.size()):
+		todays_globes.append(globe_parts_globe.pick_random())
+
+	%DrawerHandler.generate_new_stuff(todays_globes,todays_bases)
+	%Gatcha_Dispenser.generate_balls(todays_insides)
 	
 	await self._enough_globes_done
 	%myStoreApp.unlock_btns()
@@ -133,23 +155,61 @@ func gamecycle():
 	%DrawerHandler.tidy_everything_away()
 	%DrawerHandler.lock_drawer = true
 	%Background.lock_drawer = true
+	
+	for person in todays_people:
+		# screen blackout
+		active_person = person
+		%People.texture = active_person.texture
+		%People.visible = true
+		
+		await DialogueManager.dialogue_started
+		await DialogueManager.dialogue_ended
+		
+		%Building_Poly.disabled = true
+		
+		await _sold_globe
+		
+		print('sold')
+		%Building_Poly.disabled = false
+		
+		var rating = rate_globe(active_person,selling_globe)
+		
+		DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"bye")
+		
+		selling_globe.queue_free()
+		selling_globe = null
+		
+		await DialogueManager.dialogue_ended
+	
+	print('done?')
 
+func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
+	var stats: PeopleStat = person.stats
+	var ranking := 10
+	if globe.owned_parts[globe.Parts.Base] in stats.base_ranks:
+		ranking -= stats.base_ranks.find(globe.owned_parts[globe.Parts.Base])
+	else:
+		ranking -= 3
+		
+	if globe.owned_parts[globe.Parts.Inside] in stats.inside_ranks:
+		ranking -= stats.inside_ranks.find(globe.owned_parts[globe.Parts.Inside])*2
+	else:
+		ranking -= 7
 	
-	%People.texture = active_person.texture
-	%People.visible = true
-	
-	#DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"start")
-	
+	return ranking
+
 
 func _dialogue_started(__):
 	is_dialogue_active = true
 	var hello = preload("res://Assets/Audio/SFX/hello-81683.mp3")
 	sfx.stream = hello
 	sfx.play()
-	
+
+
 func _dialogue_ended(__):
 	is_dialogue_active = false
-	
+
+
 func _on_talk_button_pressed() -> void:
 	if active_state == GameStates.selling:
 		if not is_dialogue_active:
@@ -164,6 +224,7 @@ func globe_finished_unfinished(globe,finished:bool):
 		
 	if finished_globes.size() >= todays_people.size():
 		_enough_globes_done.emit()
+
 
 func _on_parts_location_child_entered_tree(node: Node) -> void:
 	all_objects.append(node)
@@ -181,7 +242,40 @@ func _on_parts_location_child_exiting_tree(node: Node) -> void:
 	elif node is AssemblyGlobe:
 		all_globes.erase(node)
 		finished_globes.erase(node)
-	
-	
-	
-	
+
+
+var selling_globe
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_released("just_released_mouse"):
+		if selling_globe:
+			_sold_globe.emit(selling_globe)
+
+
+func _on_selling_area_2d_area_entered(area: Area2D) -> void:
+	var body = area.get_parent()
+	if body is AssemblyGlobe:
+		if body.dropable:
+			if body.finished:
+				body.modulate.g = 0
+				selling_globe = body
+
+
+func _on_selling_area_2d_area_exited(area: Area2D) -> void:
+	var body = area.get_parent()
+	if body is AssemblyGlobe:
+		if body.dropable:
+			if selling_globe == body:
+				selling_globe.modulate.g = 1
+				selling_globe = null
+
+
+func pick_random_unique_elements(source_array: Array, amount: int) -> Array:
+	# Ensure we don't try to pick more elements than are available
+	if amount > source_array.size():
+		amount = source_array.size()
+
+	var copy = source_array.duplicate()
+	copy.shuffle()
+
+	return copy.slice(0, amount)

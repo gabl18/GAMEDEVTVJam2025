@@ -11,3 +11,8 @@ Pam: My brother sent me.
 	- idk
 		Pam: this guy.. 
 => END
+
+~ bye
+Pam: thanks
+Pam: see ya
+=> END
