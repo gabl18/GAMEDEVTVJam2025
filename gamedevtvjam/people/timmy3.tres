@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Person" load_steps=13 format=3 uid="uid://bi5rskh4li2eu"]
+[gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://bi5rskh4li2eu"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_14jwg"]
 [ext_resource type="Resource" uid="uid://bsklw110bptug" path="res://People/timmy1.tres" id="2_4k4cs"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://jwd6u03qk0m3" path="res://GlobeParts/part2.tres" id="5_g150d"]
 [ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="6_ahp6c"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_a43yw"]
+[ext_resource type="Resource" uid="uid://cmust5fwl4ag4" path="res://GlobeParts/part18.tres" id="7_lt1c3"]
 [ext_resource type="Resource" uid="uid://dw82k4lipvxtk" path="res://GlobeParts/part15.tres" id="8_lt1c3"]
 
 [sub_resource type="Resource" id="Resource_8mcfd"]
@@ -18,7 +19,7 @@ to = "office@tinyglob.es"
 subject = "broken snow globe"
 text = "Hi, this is Timmy's mom and it appears that my son has been bothering you and wasting my money on StUpiD F**** *** * *** ***SNOWY *** * GLOBES. anyways...
 
-I am deeply sorry for any inconvienience that my son may have caused. I looked trough your shop and noticed that you produce great work. 🥰 I would really love if you could produce another globe for little Timmy. Maybe youve got a blue base on hand this time.
+I am deeply sorry for any inconvienience that my son may have caused. I looked trough your shop and noticed that you produce great work. 🥰 I would really love if you could produce another globe for little Timmy. Maybe youve got a blue base on hand this time. He is also OBSESSED with rockets if you like that -
 
 Best wishes, Timmy's Mom 😘"
 days_earlier = 0
@@ -26,7 +27,7 @@ metadata/_custom_type_script = "uid://brlife1n53d64"
 
 [sub_resource type="Resource" id="Resource_tnl3r"]
 script = ExtResource("7_a43yw")
-inside_ranks = Array[ExtResource("4_8mcfd")]([ExtResource("6_ahp6c"), ExtResource("8_lt1c3")])
+inside_ranks = Array[ExtResource("4_8mcfd")]([ExtResource("7_lt1c3"), ExtResource("6_ahp6c"), ExtResource("8_lt1c3")])
 base_ranks = Array[ExtResource("4_8mcfd")]([ExtResource("5_7wub1"), ExtResource("5_g150d")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
