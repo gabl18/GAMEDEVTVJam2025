@@ -31,6 +31,14 @@ var lock_dialogue := false
 @onready var sfx: AudioStreamPlayer = $SFX
 @onready var music: AudioStreamPlayer = $Music
 
+@onready var cursors :Array =[
+	preload("res://Assets/Art/cursors/cursor1.png"),
+	preload("res://Assets/Art/cursors/cursor2.png"),
+	preload("res://Assets/Art/cursors/cursor3.png"),
+	preload("res://Assets/Art/cursors/cursor4.png")
+]
+
+
 var throat_variants: Array[AudioStream] = [
 	preload("res://Assets/Audio/SFX/throat1.mp3"),
 	preload("res://Assets/Audio/SFX/throat2.mp3"),
@@ -43,8 +51,12 @@ var finish = preload("res://Assets/Audio/SFX/finish_day.mp3")
 
 signal _enough_globes_done
 signal _sold_globe(globe)
+signal any_input
 
 func _ready() -> void:
+	
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
 	DialogueManager.dialogue_started.connect(_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_dialogue_ended)
 	@warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match")
@@ -67,10 +79,27 @@ func _ready() -> void:
 				globe_parts_inside.append(part)
 	
 	prepare_game()
+	
 	gamecycle()
+	
+	await any_input
+	%Intro_Player.play("Intro_Fade_out")
 	
 var all_people: Array
 var all_mails: Array
+		
+
+func _process(_delta: float) -> void:
+	%MouseTracer.global_position = get_global_mouse_position() + Vector2(16,16)
+
+	var shape_idx = MouseState.Mouse_idx
+	
+	if shape_idx == 1:
+		shape_idx = Input.get_current_cursor_shape()
+	
+	if shape_idx == 0:
+		shape_idx = 1
+	%MouseTracer.texture = cursors[shape_idx-1]
 
 func prepare_game():
 	for day in range(day_people_numbers.size()):
@@ -237,12 +266,11 @@ func gamecycle():
 		await %Blackscreen.blacked_out
 		
 		
-		
 	sfx.stream = finish
 	sfx.play()
 	
 	%DayLabel.show()
-	%DayLabel.text = 'Day #' + str(passed_days)
+	%DayLabel.text = 'Day #' + str(passed_days+1)
 	
 	%myStoreApp.unlock_btns()
 	%myStoreApp.reset_btns()
@@ -262,6 +290,8 @@ func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
 		ranking -= stats.inside_ranks.find(globe.owned_parts[globe.Parts.Inside])*2
 	else:
 		ranking -= 7
+		
+	ranking = clamp(ranking,0,10)
 	
 	return ranking
 
@@ -318,6 +348,9 @@ func _on_parts_location_child_exiting_tree(node: Node) -> void:
 var selling_globe
 
 func _input(_event: InputEvent) -> void:
+	if Input.is_anything_pressed():
+		emit_signal("any_input")
+	
 	if Input.is_action_just_pressed("Settings"):
 		%TabletScreen._hide_all_apps()
 		%TabletScreen.settings_app.show()

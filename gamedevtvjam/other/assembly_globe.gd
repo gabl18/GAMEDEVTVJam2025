@@ -39,7 +39,7 @@ var is_dragged := false:
 	set(value):
 		is_dragged = value
 		MouseState.moues_state = MouseState.Mouse_States.idle
-		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
+		MouseState.Mouse_idx = 1
 		
 var mouse_offset := Vector2.ZERO
 var in_drawer := false
@@ -75,25 +75,27 @@ func _mouse_enter() -> void:
 	MouseState.Mouse_Hovers.append(self)
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
 
-		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor3.png"))
+		MouseState.Mouse_idx = 3
 
 
 func _mouse_exit() -> void:
 	MouseState.Mouse_Hovers.erase(self)
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging and not MouseState.Mouse_Hovers:
-		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
+		MouseState.Mouse_idx = 1
 		
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if not lock_movement:
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_RIGHT:
-				if event.is_pressed():
-					
-					var x = remove_part()
-					if x:
-						get_parent().add_child(x)
-					
-					get_viewport().set_input_as_handled()
+				if dropable:
+					if Main.active_state == Main.GameStates.building:
+						if event.is_pressed():
+							
+							var x = remove_part()
+							if x:
+								get_parent().add_child(x)
+							
+							get_viewport().set_input_as_handled()
 
 
 			elif event.button_index == MOUSE_BUTTON_LEFT:
@@ -105,7 +107,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 					get_viewport().set_input_as_handled()
 					
 					MouseState.moues_state = MouseState.Mouse_States.dragging
-					Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor4.png"))
+					MouseState.Mouse_idx = 4
 				
 				else:
 					if dropable:

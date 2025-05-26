@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=113 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -66,9 +66,10 @@
 [ext_resource type="FontFile" uid="uid://qm22vgm1skpw" path="res://Assets/Fonts/quaver.ttf" id="50_uatky"]
 [ext_resource type="Texture2D" uid="uid://bfdtvaod81m6p" path="res://Assets/Art/main_btns.png" id="57_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://ddcfnj85mwh7y" path="res://UI/credits_app.tscn" id="64_ntx8l"]
-[ext_resource type="PackedScene" path="res://UI/tutorial_app.tscn" id="64_uatky"]
+[ext_resource type="PackedScene" uid="uid://iv6sqjoumju" path="res://UI/tutorial_app.tscn" id="64_uatky"]
 [ext_resource type="PackedScene" uid="uid://bx01p6j87fxwe" path="res://UI/settings_app.tscn" id="67_1vm84"]
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="68_wu3dr"]
+[ext_resource type="Texture2D" uid="uid://do2xa7gs205ah" path="res://Assets/Art/Intro.png" id="69_cyx1q"]
 
 [sub_resource type="Resource" id="Resource_rqtf5"]
 script = ExtResource("24_rm4vd")
@@ -488,11 +489,76 @@ func blackout(time:float):
 	
 "
 
+[sub_resource type="Animation" id="Animation_0dhbp"]
+resource_name = "Intro_Fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.83333, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jx0wj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kkkcx"]
+_data = {
+&"Intro_Fade_out": SubResource("Animation_0dhbp"),
+&"RESET": SubResource("Animation_jx0wj")
+}
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_074og")
 people = Array[ExtResource("2_82xsv")]([ExtResource("7_xuqvo"), ExtResource("8_qsp4k"), ExtResource("9_qsp4k"), ExtResource("10_ok6jj"), ExtResource("11_ok6jj"), ExtResource("12_facbu"), ExtResource("13_facbu"), ExtResource("14_4k2k6"), ExtResource("15_0rl1p"), ExtResource("16_4lmeg"), ExtResource("17_d2t1y"), ExtResource("18_d2t1y"), ExtResource("19_gngh3"), ExtResource("20_h8e4i"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("20_d2t1y"), ExtResource("21_b17eg"), ExtResource("23_ntx8l")])
 day_people_numbers = Array[int]([2, 4, 3, 5, 5])
 globe_parts = Array[ExtResource("24_rm4vd")]([ExtResource("25_pjyto"), ExtResource("26_sm6fg"), ExtResource("27_b17eg"), ExtResource("28_ntx8l"), ExtResource("29_uatky"), ExtResource("30_rqtf5"), ExtResource("31_1vm84"), ExtResource("32_wu3dr"), ExtResource("33_cyx1q"), ExtResource("34_0dhbp"), ExtResource("35_jx0wj"), ExtResource("36_kkkcx"), ExtResource("37_34ol3"), ExtResource("38_c2n8d"), ExtResource("39_wy5fy"), ExtResource("40_gx4rg"), ExtResource("41_5dllo"), SubResource("Resource_rqtf5"), SubResource("Resource_1vm84"), SubResource("Resource_wu3dr")])
+
+[node name="MouseTracer" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+process_priority = 1
 
 [node name="AreaHandler" type="Node" parent="."]
 unique_name_in_owner = true
@@ -850,7 +916,6 @@ layout_mode = 1
 [node name="TutorialApp" parent="CanvasLayer/TabletScreen/Apps" instance=ExtResource("64_uatky")]
 unique_name_in_owner = true
 layout_mode = 1
-Tutorial = Array[String](["", "Welcome at Tiny Globes!", "The place where you create Tiny Worlds for many different People.", "", "Use Left click to pick up items,", " merge them with others and", "Right click to disassemble them.", "You can open the drawer by clicking on it. ", "to the right you find some Buttons with", "wich you can change the current Floor of the drawer.", "To close the drawer click the x button next to the other buttons.", "", "Your goal is simple, to create globes", "that fit the preferences of your customers.", "", "A snowglobe is made out of a base,", "a globe (wich can both be found in the drawer) and the inside. ", "You can get the insides for the globe", "by pulling the lever at the gacha-machine.", "Put the parts together in this order and when you made", "enough globes you can start giving them out to your customers.", "", "The game is structured in 5 days with them having 2 stages:", "First - building the snow globes", "Second: handing globes out to customers", "", "In your tablet you can find the email app,", "with wich customers will contact you and the control app,", "where you can see your stores current rating and", "open the shop after assembling enough globes.", "", "Have fun building", "TINY WORLS! :D"])
 
 [node name="SettingsApp" parent="CanvasLayer/TabletScreen/Apps" instance=ExtResource("67_1vm84")]
 unique_name_in_owner = true
@@ -971,6 +1036,39 @@ theme_override_font_sizes/font_size = 50
 text = "Center"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Intro_TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = 1000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("69_cyx1q")
+
+[node name="Label" type="Label" parent="CanvasLayer/Intro_TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.521
+offset_left = -102.0
+offset_top = 70.0
+offset_right = 109.0
+offset_bottom = 85.292
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("68_wu3dr")
+text = "Click to start"
+horizontal_alignment = 1
+
+[node name="Intro_Player" type="AnimationPlayer" parent="CanvasLayer"]
+unique_name_in_owner = true
+root_node = NodePath("../Intro_TextureRect")
+libraries = {
+&"": SubResource("AnimationLibrary_kkkcx")
+}
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"

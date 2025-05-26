@@ -43,7 +43,7 @@ var is_dragged := false:
 		if is_dragged == false:
 			try_merge()
 			MouseState.moues_state = MouseState.Mouse_States.idle
-			Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor3.png"))
+			MouseState.Mouse_idx = 3
 
 var mouse_offset := Vector2.ZERO
 
@@ -110,14 +110,12 @@ func _process(_delta: float) -> void:
 func _mouse_enter() -> void:
 	MouseState.Mouse_Hovers.append(self)
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
-
-		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor3.png"))
-
+		MouseState.Mouse_idx = 3
 
 func _mouse_exit() -> void:
 	MouseState.Mouse_Hovers.erase(self)
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging and not MouseState.Mouse_Hovers:
-		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
+		MouseState.Mouse_idx = 1
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
@@ -138,7 +136,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 				for area in $Merge_Area2D.get_overlapping_areas():
 					check_for_merging(area)
 				MouseState.moues_state = MouseState.Mouse_States.dragging
-				Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor4.png"))
+				MouseState.Mouse_idx = 4
 					
 			else:
 				if dropable:
