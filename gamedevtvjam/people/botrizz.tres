@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Person" load_steps=22 format=3 uid="uid://nwcal736fha5"]
+[gd_resource type="Resource" script_class="Person" load_steps=23 format=3 uid="uid://nwcal736fha5"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_7y7i1"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_ypxvc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_v0sa0"]
 [ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="4_74o87"]
 [ext_resource type="Texture2D" uid="uid://blckbynpfddlc" path="res://Assets/Art/Globes/Base/Base2.png" id="5_segyg"]
+[ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="6_74o87"]
 [ext_resource type="Texture2D" uid="uid://btxwo0bn5jo5s" path="res://Assets/Art/Globes/Inside/inside9.png" id="6_flvls"]
 [ext_resource type="Texture2D" uid="uid://bhfeythh4kv2q" path="res://Assets/Art/Globes/Inside/Inside4.png" id="7_qdofw"]
 [ext_resource type="Texture2D" uid="uid://c8hm52qol42v" path="res://Assets/Art/Globes/Inside/Inside1.png" id="8_frs3r"]
@@ -116,14 +117,14 @@ metadata/_custom_type_script = "uid://ddg4s68ostpwi"
 [sub_resource type="Resource" id="Resource_a4aif"]
 script = ExtResource("9_dksgn")
 inside_ranks = Array[ExtResource("3_v0sa0")]([SubResource("Resource_uwokq"), SubResource("Resource_bhx0g"), SubResource("Resource_s6v0s")])
-base_ranks = Array[ExtResource("3_v0sa0")]([SubResource("Resource_gqgeh"), SubResource("Resource_ojcsa")])
+base_ranks = Array[ExtResource("3_v0sa0")]([SubResource("Resource_gqgeh"), SubResource("Resource_ojcsa"), ExtResource("6_74o87")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]
 script = ExtResource("2_ypxvc")
 name = "Robert Botrizz"
 texture = ExtResource("3_eqix6")
-dialogue = null
+dialogue = "uid://clvlvh5asbta0"
 earliest_day = 0
 latest_day = 10
 emails = Array[ExtResource("1_7y7i1")]([SubResource("Resource_gngh3"), SubResource("Resource_44p0w"), SubResource("Resource_ed64v"), SubResource("Resource_da3i5"), SubResource("Resource_e5wne")])

@@ -1,24 +1,47 @@
-[gd_resource type="Resource" script_class="Person" load_steps=5 format=3 uid="uid://bi2ytjsk2qb0r"]
+[gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://bi2ytjsk2qb0r"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_6jyln"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_6yfkb"]
 [ext_resource type="Texture2D" uid="uid://cjqikptnuuy3h" path="res://Assets/Art/people/person6.png" id="3_4ous6"]
+[ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_704sq"]
+[ext_resource type="Resource" uid="uid://c4y2kuxceoup4" path="res://GlobeParts/part4.tres" id="4_7yk6u"]
+[ext_resource type="Resource" uid="uid://cfssnts7xdku8" path="res://GlobeParts/part11.tres" id="5_85pq4"]
+[ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="6_02ar2"]
+[ext_resource type="Resource" uid="uid://bqbtlnf45xfcy" path="res://GlobeParts/part17.tres" id="7_2xcn8"]
+[ext_resource type="Resource" uid="uid://dw82k4lipvxtk" path="res://GlobeParts/part15.tres" id="8_errcq"]
+[ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="9_giaw3"]
+[ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="10_cxm4w"]
 
 [sub_resource type="Resource" id="Resource_d2t1y"]
 script = ExtResource("1_6jyln")
-from = ""
+from = "office@mexico.gov.us"
 to = "office@tinyglob.es"
-subject = ""
-text = ""
+subject = "Globe Purchase"
+text = "Dear Owner of the Globe Shop,
+in the next days my boss, will come to your place, to check out some globes. He asked me to tell you he is a mexican citizen. Uhm about his preferences:
+He likes dinero, but when you see him you will know what he likes.
+Also he likes giving stuff to his bud, who has way too much money, he loves his adventures into the darkness.
+Dont worry about the bit underneath, just make it bold
+Btw, if you see black suited people around while he is here, dont worry bout it.
+
+Your Sincerily,
+Secretary of the Pres, uhm nothing"
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_dleve"]
+script = ExtResource("10_cxm4w")
+inside_ranks = Array[ExtResource("3_704sq")]([ExtResource("7_2xcn8"), ExtResource("8_errcq"), ExtResource("9_giaw3")])
+base_ranks = Array[ExtResource("3_704sq")]([ExtResource("4_7yk6u"), ExtResource("5_85pq4"), ExtResource("6_02ar2")])
+metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]
 script = ExtResource("2_6yfkb")
 name = "Señor T."
 texture = ExtResource("3_4ous6")
-dialogue = "<null>"
+dialogue = "uid://cmp8lnljr37yh"
 earliest_day = 2
 latest_day = 10
 emails = Array[ExtResource("1_6jyln")]([SubResource("Resource_d2t1y")])
+stats = SubResource("Resource_dleve")
 metadata/_custom_type_script = "uid://buc8htkfrmars"

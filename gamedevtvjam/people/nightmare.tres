@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Person" load_steps=12 format=3 uid="uid://bys2i2sk67prp"]
+[gd_resource type="Resource" script_class="Person" load_steps=11 format=3 uid="uid://bys2i2sk67prp"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_xbulp"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_60t7l"]
@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://c4y2kuxceoup4" path="res://GlobeParts/part4.tres" id="4_pvyw0"]
 [ext_resource type="Resource" uid="uid://dhm8xfg3toxru" path="res://GlobeParts/part3.tres" id="5_pqpk3"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="6_jc4go"]
-[ext_resource type="Texture2D" uid="uid://brady56stiwla" path="res://Assets/Art/Globes/Inside/Inside2.png" id="6_rtbh3"]
+[ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="6_pqpk3"]
 
 [sub_resource type="Resource" id="Resource_seu75"]
 script = ExtResource("1_xbulp")
@@ -21,17 +21,9 @@ See ya!
 days_earlier = -1
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
-[sub_resource type="Resource" id="Resource_u4j5m"]
-script = ExtResource("3_ry4sr")
-type = 2
-texture = ExtResource("6_rtbh3")
-name = "Inside2"
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
 [sub_resource type="Resource" id="Resource_4c3xm"]
 script = ExtResource("6_jc4go")
-inside_ranks = Array[ExtResource("3_ry4sr")]([ExtResource("5_pqpk3"), SubResource("Resource_u4j5m")])
+inside_ranks = Array[ExtResource("3_ry4sr")]([ExtResource("5_pqpk3"), ExtResource("6_pqpk3")])
 base_ranks = Array[ExtResource("3_ry4sr")]([ExtResource("4_pvyw0")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
