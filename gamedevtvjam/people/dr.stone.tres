@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Person" load_steps=13 format=3 uid="uid://b31c1qjg3nb87"]
+[gd_resource type="Resource" script_class="Person" load_steps=18 format=3 uid="uid://b31c1qjg3nb87"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_fp571"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_h2rti"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_bml1d"]
 [ext_resource type="Resource" uid="uid://c4y2kuxceoup4" path="res://GlobeParts/part4.tres" id="4_pw3xn"]
 [ext_resource type="Resource" uid="uid://df75ixu7klk4s" path="res://GlobeParts/part8.tres" id="5_7ij2u"]
+[ext_resource type="Texture2D" uid="uid://blckbynpfddlc" path="res://Assets/Art/Globes/Base/Base2.png" id="5_bml1d"]
+[ext_resource type="Texture2D" uid="uid://cv65jg11ur6y2" path="res://Assets/Art/Globes/Base/Base7.png" id="6_6fvuh"]
 [ext_resource type="Resource" uid="uid://dw82k4lipvxtk" path="res://GlobeParts/part15.tres" id="6_b2lfb"]
 [ext_resource type="Resource" uid="uid://couw2x17i2nuf" path="res://GlobeParts/part14.tres" id="7_b3y40"]
 [ext_resource type="Resource" uid="uid://cyvhdqx7n3wtp" path="res://GlobeParts/part5.tres" id="8_gyh7v"]
@@ -13,7 +15,7 @@
 
 [sub_resource type="Resource" id="Resource_wybaj"]
 script = ExtResource("1_fp571")
-from = "dr.stone@office.com"
+from = "dr.stone@offi.ce"
 to = "office@tinyglob.es"
 subject = "Globe for dr. stone"
 text = "Greetings, 
@@ -23,10 +25,38 @@ dr. Stone"
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_8vrbu"]
+script = ExtResource("1_fp571")
+from = "dr.stone@offi.ce"
+to = "office@tinyglob.es"
+subject = "Office Order"
+text = "Dear Shopkeeper,
+one of my patients told me about your great shop and I got curious. Could it be possible to get me like a globe that fits into my office well? I think some bright colors could be great, and maybe some grass or moonstone in the globe would be great too.
+Have a great day!
+Dr. Stone"
+days_earlier = 0
+metadata/_custom_type_script = "uid://brlife1n53d64"
+
+[sub_resource type="Resource" id="Resource_fov4j"]
+script = ExtResource("3_bml1d")
+type = 1
+texture = ExtResource("5_bml1d")
+name = "Base2"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_lk2pb"]
+script = ExtResource("3_bml1d")
+type = 1
+texture = ExtResource("6_6fvuh")
+name = "Base7"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_n51u2"]
 script = ExtResource("9_cfxej")
 inside_ranks = Array[ExtResource("3_bml1d")]([ExtResource("5_7ij2u"), ExtResource("6_b2lfb"), ExtResource("7_b3y40"), ExtResource("8_gyh7v")])
-base_ranks = Array[ExtResource("3_bml1d")]([ExtResource("4_pw3xn")])
+base_ranks = Array[ExtResource("3_bml1d")]([ExtResource("4_pw3xn"), SubResource("Resource_fov4j"), SubResource("Resource_lk2pb")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]
@@ -36,6 +66,6 @@ texture = ExtResource("10_fp571")
 dialogue = "uid://bgjnkorljk1rl"
 earliest_day = 0
 latest_day = 5
-emails = Array[ExtResource("1_fp571")]([SubResource("Resource_wybaj")])
+emails = Array[ExtResource("1_fp571")]([SubResource("Resource_wybaj"), SubResource("Resource_8vrbu")])
 stats = SubResource("Resource_n51u2")
 metadata/_custom_type_script = "uid://buc8htkfrmars"

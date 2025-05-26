@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Person" load_steps=12 format=3 uid="uid://cxyesuwvyd02j"]
+[gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://cxyesuwvyd02j"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_2bkt5"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_5lyhg"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_djqxe"]
 [ext_resource type="Resource" uid="uid://bf7fg08g8mbhg" path="res://GlobeParts/part12.tres" id="4_b1yxg"]
+[ext_resource type="Texture2D" uid="uid://dmg8aobqt5es8" path="res://Assets/Art/Globes/Base/Base1.png" id="5_5lyhg"]
 [ext_resource type="Resource" uid="uid://dw82k4lipvxtk" path="res://GlobeParts/part15.tres" id="5_e7o4r"]
 [ext_resource type="Resource" uid="uid://bul4hv3nlkcd4" path="res://GlobeParts/part16.tres" id="6_1kpq6"]
 [ext_resource type="Resource" uid="uid://dp0l5naicgvdf" path="res://GlobeParts/part6.tres" id="7_fc772"]
@@ -16,15 +17,23 @@ from = "eamil@eamil.com"
 to = "office@tinyglob.es"
 subject = "order #81"
 text = "Hello,
-I still go to college and saw that this store makes custom snow globes, thats why I would like to order one for my school project. Also if thats possible I would prefer a small base so that the main piece can stand out more. I hope that I can afford it. But if you could make this, I would be very happy. 
+I still go to college and saw that this store makes custom snow globes, thats why I would like to order one for my school project. Also if thats possible I would prefer a small base so that the main piece can stand out more or like a neutral colored base. I hope that I can afford it. But if you could make this, I would be very happy. 
 Thanks."
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_djqxe"]
+script = ExtResource("3_djqxe")
+type = 1
+texture = ExtResource("5_5lyhg")
+name = "Base1"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_vke2r"]
 script = ExtResource("8_uwaq4")
 inside_ranks = Array[ExtResource("3_djqxe")]([ExtResource("5_e7o4r"), ExtResource("6_1kpq6"), ExtResource("7_fc772")])
-base_ranks = Array[ExtResource("3_djqxe")]([ExtResource("4_b1yxg")])
+base_ranks = Array[ExtResource("3_djqxe")]([ExtResource("4_b1yxg"), SubResource("Resource_djqxe")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]

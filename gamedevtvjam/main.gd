@@ -29,7 +29,12 @@ var finished_globes: Array[AssemblyGlobe]
 @onready var sfx: AudioStreamPlayer = $SFX
 @onready var music: AudioStreamPlayer = $Music
 
-var hello = preload("res://Assets/Audio/SFX/hello-81683.mp3")
+var throat_variants: Array[AudioStream] = [
+	preload("res://Assets/Audio/SFX/throat1.mp3"),
+	preload("res://Assets/Audio/SFX/throat2.mp3"),
+	preload("res://Assets/Audio/SFX/throat3.mp3"),
+	preload("res://Assets/Audio/SFX/throat4.mp3")
+]
 var done = preload("res://Assets/Audio/SFX/notification.mp3")
 
 signal _enough_globes_done
@@ -228,7 +233,8 @@ func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
 
 func _dialogue_started(__):
 	is_dialogue_active = true
-	sfx.stream = hello
+	var random_throat = throat_variants.pick_random()
+	sfx.stream = random_throat
 	sfx.play()
 
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Person" load_steps=11 format=3 uid="uid://rylsxttg2kfm"]
+[gd_resource type="Resource" script_class="Person" load_steps=13 format=3 uid="uid://rylsxttg2kfm"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_l1ma3"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_abof3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bf7fg08g8mbhg" path="res://GlobeParts/part12.tres" id="5_4acg4"]
 [ext_resource type="Resource" uid="uid://mxepxip08wv5" path="res://GlobeParts/part7.tres" id="6_oxn33"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_2entn"]
+[ext_resource type="Texture2D" uid="uid://bt32kkifmpgse" path="res://Assets/Art/Globes/Inside/inside7.png" id="7_abof3"]
 [ext_resource type="Texture2D" uid="uid://ce3a0jmghsj2p" path="res://Assets/Art/people/person9.png" id="8_6pj85"]
 
 [sub_resource type="Resource" id="Resource_4lmeg"]
@@ -20,9 +21,17 @@ Frank"
 days_earlier = -2
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_y51ut"]
+script = ExtResource("3_y51ut")
+type = 2
+texture = ExtResource("7_abof3")
+name = "inside7"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_0n3wm"]
 script = ExtResource("7_2entn")
-inside_ranks = Array[ExtResource("3_y51ut")]([ExtResource("6_oxn33")])
+inside_ranks = Array[ExtResource("3_y51ut")]([ExtResource("6_oxn33"), SubResource("Resource_y51ut")])
 base_ranks = Array[ExtResource("3_y51ut")]([ExtResource("4_jmv4v"), ExtResource("5_4acg4")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 

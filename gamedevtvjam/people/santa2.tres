@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Person" load_steps=11 format=3 uid="uid://b65hy111xaf5m"]
+[gd_resource type="Resource" script_class="Person" load_steps=17 format=3 uid="uid://b65hy111xaf5m"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_hfirv"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_eiafk"]
@@ -6,8 +6,11 @@
 [ext_resource type="Resource" uid="uid://bh1f7ro2k5npp" path="res://GlobeParts/part10.tres" id="4_das5i"]
 [ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="5_d0bxi"]
 [ext_resource type="Resource" uid="uid://bul4hv3nlkcd4" path="res://GlobeParts/part16.tres" id="6_hnvbw"]
+[ext_resource type="Texture2D" uid="uid://coh6r6hdtoyi0" path="res://Assets/Art/Globes/Base/Base5.png" id="6_wix5l"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_3f0af"]
 [ext_resource type="Texture2D" uid="uid://b5ick564wuchi" path="res://Assets/Art/people/person11.png" id="8_6q5bn"]
+[ext_resource type="Texture2D" uid="uid://btxwo0bn5jo5s" path="res://Assets/Art/Globes/Inside/inside9.png" id="8_uyurr"]
+[ext_resource type="Texture2D" uid="uid://bhfeythh4kv2q" path="res://Assets/Art/Globes/Inside/Inside4.png" id="9_cvty8"]
 
 [sub_resource type="Resource" id="Resource_qnost"]
 script = ExtResource("1_hfirv")
@@ -15,16 +18,40 @@ from = "elves@real.com"
 to = "office@tinyglob.es"
 subject = "help"
 text = "hello, 
-we as elves need your help.
+we as santas elves need your help.
 santa overworked us so much that we cant work anymore. we need you to make us a globe. Our boss will come pick it up in two days. he told us that its very important that the base is blue and the inside like christmas themed. we really hope you can fulfill this order. 
 thanks."
 days_earlier = -2
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_3f0af"]
+script = ExtResource("3_r4d1q")
+type = 1
+texture = ExtResource("6_wix5l")
+name = "Base5"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_6q5bn"]
+script = ExtResource("3_r4d1q")
+type = 2
+texture = ExtResource("8_uyurr")
+name = "inside9"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_hhyxs"]
+script = ExtResource("3_r4d1q")
+type = 2
+texture = ExtResource("9_cvty8")
+name = "Inside4"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_blkrb"]
 script = ExtResource("7_3f0af")
-inside_ranks = Array[ExtResource("3_r4d1q")]([ExtResource("6_hnvbw")])
-base_ranks = Array[ExtResource("3_r4d1q")]([ExtResource("4_das5i"), ExtResource("5_d0bxi")])
+inside_ranks = Array[ExtResource("3_r4d1q")]([ExtResource("6_hnvbw"), SubResource("Resource_6q5bn"), SubResource("Resource_hhyxs")])
+base_ranks = Array[ExtResource("3_r4d1q")]([ExtResource("4_das5i"), ExtResource("5_d0bxi"), SubResource("Resource_3f0af")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]

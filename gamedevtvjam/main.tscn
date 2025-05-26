@@ -35,13 +35,13 @@
 [ext_resource type="Resource" uid="uid://cxyesuwvyd02j" path="res://people/lucas.tres" id="20_d2t1y"]
 [ext_resource type="Resource" uid="uid://dtqe5hv5ka51h" path="res://people/hank.tres" id="20_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://dpmuhmxthqygn" path="res://Assets/Art/Notification.png" id="20_ryguw"]
-[ext_resource type="Resource" uid="uid://bi2ytjsk2qb0r" path="res://People/trump.tres" id="21_b17eg"]
+[ext_resource type="Resource" uid="uid://bi2ytjsk2qb0r" path="res://people/trump.tres" id="21_b17eg"]
 [ext_resource type="Resource" uid="uid://cljknnmddly5" path="res://people/lil_car_accident1.tres" id="21_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
 [ext_resource type="Resource" uid="uid://e3hb1xc02417" path="res://people/lil_car_accident2.tres" id="22_gngh3"]
 [ext_resource type="Resource" uid="uid://b31c1qjg3nb87" path="res://people/dr.stone.tres" id="23_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://d38x4a82clx7d" path="res://Assets/Audio/Music/soundtrack.mp3" id="23_d13ii"]
-[ext_resource type="Resource" uid="uid://nwcal736fha5" path="res://People/botrizz.tres" id="23_ntx8l"]
+[ext_resource type="Resource" uid="uid://nwcal736fha5" path="res://people/botrizz.tres" id="23_ntx8l"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="24_rm4vd"]
 [ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="25_pjyto"]
 [ext_resource type="Resource" uid="uid://jwd6u03qk0m3" path="res://GlobeParts/part2.tres" id="26_sm6fg"]
@@ -817,7 +817,8 @@ bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_d13ii")
-volume_db = 10.4
+volume_db = 1.0
+autoplay = true
 bus = &"Music"
 parameters/looping = true
 

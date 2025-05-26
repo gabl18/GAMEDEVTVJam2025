@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Person" load_steps=12 format=3 uid="uid://e3hb1xc02417"]
+[gd_resource type="Resource" script_class="Person" load_steps=16 format=3 uid="uid://e3hb1xc02417"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_o8rkn"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_apwud"]
@@ -8,7 +8,9 @@
 [ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="6_ryui0"]
 [ext_resource type="Resource" uid="uid://bqbtlnf45xfcy" path="res://GlobeParts/part17.tres" id="7_bnlt0"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_rhhf8"]
+[ext_resource type="Texture2D" uid="uid://btxwo0bn5jo5s" path="res://Assets/Art/Globes/Inside/inside9.png" id="8_f5n5x"]
 [ext_resource type="Texture2D" uid="uid://br35aajxextdt" path="res://Assets/Art/people/person13.png" id="8_twi2v"]
+[ext_resource type="Texture2D" uid="uid://bdq7v4kodycx7" path="res://Assets/Art/Globes/Inside/inside8.png" id="9_klqer"]
 
 [sub_resource type="Resource" id="Resource_v8tpy"]
 script = ExtResource("1_o8rkn")
@@ -16,16 +18,32 @@ from = "tableeater@studios.com"
 to = "office@tinyglob.es"
 subject = "Lil Car Accident order"
 text = "What's good my dude? 
-Called you again cuz I tought you could solve one of my homeboyz problem with a globe, you see his girls birthday is tomorrow so I calld you cuz you can solve any stuff. I sugest you make a globe with money inside, cuz she likes spending it. 
+Called you again cuz I tought you could solve one of my homeboyz problem with a globe, you see his girls birthday is tomorrow so I calld you cuz you can solve any stuff. I suggest you make a globe with money inside, cuz she likes spending it. If not, dont pankic, chill out bro - just do something like last time.
 Thank you so much again dawg, ill drop by tomorrow to take it. 
 Peace out,
 lil car accident"
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_atfdh"]
+script = ExtResource("3_c4u3s")
+type = 2
+texture = ExtResource("8_f5n5x")
+name = "inside9"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_rhhf8"]
+script = ExtResource("3_c4u3s")
+type = 2
+texture = ExtResource("9_klqer")
+name = "inside8"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_a2nws"]
 script = ExtResource("7_rhhf8")
-inside_ranks = Array[ExtResource("3_c4u3s")]([ExtResource("7_bnlt0")])
+inside_ranks = Array[ExtResource("3_c4u3s")]([ExtResource("7_bnlt0"), SubResource("Resource_atfdh"), SubResource("Resource_rhhf8")])
 base_ranks = Array[ExtResource("3_c4u3s")]([ExtResource("5_obbbf"), ExtResource("6_ryui0")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
