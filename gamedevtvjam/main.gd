@@ -78,9 +78,6 @@ func prepare_game():
 		while _todays_people.size() < day_people_numbers[day]:
 			var person: Person = people.pick_random()
 			
-			if person.name in todays_names:
-				continue
-			
 			if day == 4:
 				person = load("res://People/botrizz.tres")
 				person.emails.shuffle()
@@ -92,8 +89,11 @@ func prepare_game():
 					people.erase(person)
 					taken_people.append(person)
 					_todays_people.append(person)
-					continue
-			
+				continue
+					
+			if person.name in todays_names:
+				continue
+				
 			if person == load("res://People/botrizz.tres"):
 				continue
 			
