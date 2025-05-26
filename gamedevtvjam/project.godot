@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 MouseState="*res://mouse_state.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Main="*res://main.tscn"
 
 [display]
 

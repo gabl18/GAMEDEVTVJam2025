@@ -185,6 +185,10 @@ func gamecycle():
 	##------------------------------------------
 	active_state = GameStates.building
 	
+	for x in %Parts_Location.get_children():
+		if x is AssemblyGlobe:
+			x.glued = false
+	
 	## building part of the day
 	%Building_Poly.disabled = false
 	%Gatcha_Dispenser.locked = false
@@ -217,6 +221,10 @@ func gamecycle():
 	%TabletScreen.tablet_animationplayer.play_backwards("Tablet_Startup")
 	for x in %TabletScreen.parts.get_children():
 		x.lock_movement = false
+		
+	for x in %Parts_Location.get_children():
+		if x is AssemblyGlobe:
+			x.glued = true
 
 	## selling part of the day
 	## -------------------------------

@@ -51,6 +51,8 @@ var lock_movement := false
 
 var finished := false
 
+var glued :=false
+
 func _ready() -> void:
 	await get_tree().process_frame
 
@@ -88,7 +90,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_RIGHT:
 				if dropable:
-					if Main.active_state == Main.GameStates.building:
+					if not glued:
 						if event.is_pressed():
 							
 							var x = remove_part()

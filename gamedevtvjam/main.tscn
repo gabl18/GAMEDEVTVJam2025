@@ -565,6 +565,7 @@ globe_parts = Array[ExtResource("24_rm4vd")]([ExtResource("25_pjyto"), ExtResour
 [node name="MouseTracer" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 process_priority = 1
+z_index = 1001
 
 [node name="AreaHandler" type="Node" parent="."]
 unique_name_in_owner = true
