@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://jwd6u03qk0m3" path="res://GlobeParts/part2.tres" id="5_g150d"]
 [ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="6_ahp6c"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_a43yw"]
-[ext_resource type="Resource" uid="uid://cmust5fwl4ag4" path="res://GlobeParts/part18.tres" id="7_lt1c3"]
+[ext_resource type="Resource" path="res://GlobeParts/part18.tres" id="7_lt1c3"]
 [ext_resource type="Resource" uid="uid://dw82k4lipvxtk" path="res://GlobeParts/part15.tres" id="8_lt1c3"]
 
 [sub_resource type="Resource" id="Resource_8mcfd"]

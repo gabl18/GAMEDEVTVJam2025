@@ -16,7 +16,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 			if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 				if balls and $AnimationPlayer.current_animation == '':
 					sfx.stream = lever
-					sfx.play() 
+					sfx.play()
 					
 					randomize()
 					var new_ball = balls[0]

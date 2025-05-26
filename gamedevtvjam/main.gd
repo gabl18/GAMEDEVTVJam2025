@@ -276,8 +276,11 @@ func gamecycle():
 	
 	%myStoreApp.unlock_btns()
 	%myStoreApp.reset_btns()
-	print('done?')
-	gamecycle()
+	
+	if day_people_numbers.size() < passed_days:
+		show_outro(%myStoreApp.current_rating)
+	else:
+		gamecycle()
 
 
 func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
@@ -393,3 +396,7 @@ func pick_random_unique_elements(source_array: Array, amount: int) -> Array:
 	copy.shuffle()
 
 	return copy.slice(0, amount)
+	
+func show_outro(final_rating):
+	%Outro.show()
+	%Outro/TextureRect.texture.region.position.y = 20*(10-final_rating)

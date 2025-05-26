@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://cfssnts7xdku8" path="res://GlobeParts/part11.tres" id="5_85pq4"]
 [ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="6_02ar2"]
 [ext_resource type="Resource" uid="uid://bqbtlnf45xfcy" path="res://GlobeParts/part17.tres" id="7_2xcn8"]
-[ext_resource type="Resource" uid="uid://cmust5fwl4ag4" path="res://GlobeParts/part18.tres" id="8_7yk6u"]
+[ext_resource type="Resource" path="res://GlobeParts/part18.tres" id="8_7yk6u"]
 [ext_resource type="Resource" uid="uid://dw82k4lipvxtk" path="res://GlobeParts/part15.tres" id="8_errcq"]
 [ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="9_giaw3"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="10_cxm4w"]

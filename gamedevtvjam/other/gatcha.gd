@@ -15,9 +15,10 @@ var breakable := false
 
 func break_apart():
 	if breakable:
+		breakable = false
 		sfx.stream = disassemble
 		sfx.play()
-		breakable = false
+		
 		var new_part = GLOBE_PART.instantiate()
 		new_part.global_position = global_position
 		new_part.parttype = GlobePart.Parts.Inside
@@ -37,10 +38,9 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 
 func _mouse_enter() -> void:
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging:
-
-		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor2.png"))
+		MouseState.Mouse_idx = 2
 
 
 func _mouse_exit() -> void:
 	if not MouseState.moues_state == MouseState.Mouse_States.dragging and not MouseState.Mouse_Hovers:
-		Input.set_custom_mouse_cursor(load("res://Assets/Art/cursors/cursor1.png"))
+		MouseState.Mouse_idx = 1

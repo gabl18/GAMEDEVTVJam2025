@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=116 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -67,10 +67,11 @@
 [ext_resource type="FontFile" uid="uid://qm22vgm1skpw" path="res://Assets/Fonts/quaver.ttf" id="50_uatky"]
 [ext_resource type="Texture2D" uid="uid://bfdtvaod81m6p" path="res://Assets/Art/main_btns.png" id="57_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://ddcfnj85mwh7y" path="res://UI/credits_app.tscn" id="64_ntx8l"]
-[ext_resource type="PackedScene" uid="uid://dyerle6lr1k83" path="res://UI/tutorial_app.tscn" id="64_uatky"]
+[ext_resource type="PackedScene" uid="uid://iv6sqjoumju" path="res://UI/tutorial_app.tscn" id="64_uatky"]
 [ext_resource type="PackedScene" uid="uid://bx01p6j87fxwe" path="res://UI/settings_app.tscn" id="67_1vm84"]
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="68_wu3dr"]
 [ext_resource type="Texture2D" uid="uid://do2xa7gs205ah" path="res://Assets/Art/Intro.png" id="69_cyx1q"]
+[ext_resource type="Texture2D" uid="uid://bksauyjd1rour" path="res://Assets/Art/starts.png" id="71_jx0wj"]
 
 [sub_resource type="Resource" id="Resource_rqtf5"]
 script = ExtResource("24_rm4vd")
@@ -550,6 +551,10 @@ _data = {
 &"Intro_Fade_out": SubResource("Animation_0dhbp"),
 &"RESET": SubResource("Animation_jx0wj")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phcyf"]
+atlas = ExtResource("71_jx0wj")
+region = Rect2(0, 0, 96, 20)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_074og")
@@ -1070,6 +1075,40 @@ root_node = NodePath("../Intro_TextureRect")
 libraries = {
 &"": SubResource("AnimationLibrary_kkkcx")
 }
+
+[node name="Outro" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Outro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.701961)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Outro"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -365.0
+offset_top = -388.0
+offset_right = 364.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_phcyf")
+stretch_mode = 4
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
