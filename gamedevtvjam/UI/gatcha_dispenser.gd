@@ -4,6 +4,9 @@ const GATCHA = preload("res://other/gatcha.tscn")
 
 var balls: Array[GatchaBall]
 @onready var sfx: AudioStreamPlayer = $"../../../SFX"
+
+@onready var label_2: Label = $Label2
+
 var lever = preload("res://Assets/Audio/SFX/lever.mp3")
 var locked:= false
 
@@ -20,6 +23,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 					$Path2D.curve.set_point_position(2,Vector2(randf_range(720,780),randf_range(400,460)))
 					$Path2D/PathFollow2D.add_child(new_ball)
 					balls.pop_front()
+					label_2.text = str(balls.size())
 					$Sprite2D2.visible = not balls.is_empty()
 					$AnimationPlayer.play("Drop_Ball")
 					await $AnimationPlayer.animation_finished
@@ -44,6 +48,8 @@ func generate_balls(insides:Array[GlobePartRes]):
 		
 		balls.append(ball)
 		$Sprite2D2.show()
+	
+	label_2.text = str(balls.size())
 	
 	$Sprite2D2.visible = not balls.is_empty()
 		

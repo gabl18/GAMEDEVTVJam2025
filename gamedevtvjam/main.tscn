@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=91 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://nexl78gm5rfg" path="res://Assets/Art/Globes/Globe/Globe1.png" id="42_b17eg"]
 [ext_resource type="Texture2D" uid="uid://dmr4ayax1dhxf" path="res://Assets/Art/Globes/Globe/Globe2.png" id="43_ntx8l"]
 [ext_resource type="Texture2D" uid="uid://bh5oal5sj4y2g" path="res://Assets/Art/Globes/Globe/Globe3.png" id="44_uatky"]
+[ext_resource type="FontFile" uid="uid://qm22vgm1skpw" path="res://Assets/Fonts/quaver.ttf" id="50_uatky"]
 [ext_resource type="PackedScene" uid="uid://ddcfnj85mwh7y" path="res://UI/credits_app.tscn" id="64_ntx8l"]
 [ext_resource type="PackedScene" path="res://UI/tutorial_app.tscn" id="64_uatky"]
 
@@ -96,7 +97,7 @@ region = Rect2(0, 0, 150, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("6_yaehf")
-region = Rect2(40, 0, 40, 30)
+region = Rect2(0, 0, 41, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
 atlas = ExtResource("7_yaehf")
@@ -161,7 +162,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(40, 0, 40, 30)]
+"values": [Rect2(0, 0, 41, 30)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_074og"]
@@ -437,6 +438,18 @@ rotation = 1.5708
 scale = Vector2(5, 5)
 texture = SubResource("AtlasTexture_074og")
 
+[node name="Label2" type="Label" parent="CanvasLayer/Background/Gatcha_Dispenser"]
+offset_left = 1102.0
+offset_top = 161.0
+offset_right = 1133.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.0594, 0.66, 0.10945, 1)
+theme_override_fonts/font = ExtResource("50_uatky")
+theme_override_font_sizes/font_size = 30
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Background/Gatcha_Dispenser"]
 z_index = -1
 position = Vector2(1118, 137)
@@ -496,9 +509,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -70.0
+offset_top = -77.0
 offset_right = -4.0
-offset_bottom = -156.0
+offset_bottom = -163.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_getpj")
