@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="6_6vryb"]
 [ext_resource type="Resource" uid="uid://bh1f7ro2k5npp" path="res://GlobeParts/part10.tres" id="6_yisi2"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_qvngg"]
-[ext_resource type="Resource" uid="uid://dhm8xfg3toxru" path="res://GlobeParts/part3.tres" id="8_7vlmw"]
+[ext_resource type="Resource" uid="uid://cmust5fwl4ag4" path="res://GlobeParts/part18.tres" id="8_yisi2"]
 
 [sub_resource type="Resource" id="Resource_8mcfd"]
 script = ExtResource("1_x43an")
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://brlife1n53d64"
 
 [sub_resource type="Resource" id="Resource_bcyal"]
 script = ExtResource("7_qvngg")
-inside_ranks = Array[ExtResource("4_4py1h")]([ExtResource("6_6vryb"), ExtResource("8_7vlmw")])
+inside_ranks = Array[ExtResource("4_4py1h")]([ExtResource("6_6vryb"), ExtResource("8_yisi2")])
 base_ranks = Array[ExtResource("4_4py1h")]([ExtResource("5_jaom8"), ExtResource("6_yisi2")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 

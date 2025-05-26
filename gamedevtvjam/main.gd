@@ -48,6 +48,7 @@ var throat_variants: Array[AudioStream] = [
 var done = preload("res://Assets/Audio/SFX/notification.mp3")
 var entrance = preload("res://Assets/Audio/SFX/entrance.mp3")
 var finish = preload("res://Assets/Audio/SFX/finish_day.mp3")
+var sell = preload("res://Assets/Audio/SFX/store-scanner-beep-90395.mp3")
 
 signal _enough_globes_done
 signal _sold_globe(globe)
@@ -257,7 +258,8 @@ func gamecycle():
 		await DialogueManager.dialogue_ended
 		lock_dialogue = true
 		
-		# hier
+		sfx.stream = sell
+		sfx.play()
 		
 		await get_tree().create_timer(0.5).timeout
 
