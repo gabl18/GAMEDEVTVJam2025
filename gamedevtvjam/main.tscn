@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=107 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -445,6 +445,47 @@ _data = {
 &"Tablet_Startup": SubResource("Animation_ycdy4")
 }
 
+[sub_resource type="Gradient" id="Gradient_rqtf5"]
+colors = PackedColorArray(0.04, 0.04, 0.04, 1, 0.02, 0.02, 0.02, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1vm84"]
+gradient = SubResource("Gradient_rqtf5")
+width = 150
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+metadata/_snap_count = 34
+
+[sub_resource type="GDScript" id="GDScript_rqtf5"]
+resource_name = "Script"
+script/source = "extends TextureRect
+
+signal blacked_out
+
+func blackout(time:float):
+	modulate.a = 0
+	show()
+	var tween = self.create_tween()
+	tween.tween_property(self,\"modulate:a\",1,0.5)
+	
+	await tween.finished
+	blacked_out.emit()
+	
+	await get_tree().create_timer(time).timeout
+	
+	tween = self.create_tween()
+	tween.tween_property(self,\"modulate:a\",1,0.5)
+	tween.tween_property(self,\"modulate:a\",0,0.5)
+	
+	await tween.finished
+	tween.kill()
+	hide()
+	
+	
+	
+"
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_074og")
 people = Array[ExtResource("2_82xsv")]([ExtResource("7_xuqvo"), ExtResource("8_qsp4k"), ExtResource("9_qsp4k"), ExtResource("10_ok6jj"), ExtResource("11_ok6jj"), ExtResource("12_facbu"), ExtResource("13_facbu"), ExtResource("14_4k2k6"), ExtResource("15_0rl1p"), ExtResource("16_4lmeg"), ExtResource("17_d2t1y"), ExtResource("18_d2t1y"), ExtResource("19_gngh3"), ExtResource("20_h8e4i"), ExtResource("21_d2t1y"), ExtResource("22_gngh3"), ExtResource("23_0n3wm"), ExtResource("20_d2t1y"), ExtResource("21_b17eg"), ExtResource("23_ntx8l")])
@@ -708,6 +749,7 @@ stretch_mode = 4
 script = ExtResource("14_yaehf")
 
 [node name="TabletScreen" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
 visible = false
 z_index = 5
 anchors_preset = 15
@@ -895,6 +937,19 @@ polygon = PackedVector2Array(376, 666, 345, 735, 774, 734, 743, 667)
 [node name="Globe_Spawn_Area" type="CollisionPolygon2D" parent="CanvasLayer"]
 visible = false
 polygon = PackedVector2Array(21, 357, 307, 354, 192, 518, 27, 523)
+
+[node name="Blackscreen" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+z_index = 255
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = SubResource("GradientTexture2D_1vm84")
+script = SubResource("GDScript_rqtf5")
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"

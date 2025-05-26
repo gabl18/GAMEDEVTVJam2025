@@ -187,6 +187,12 @@ theme_override_fonts/normal_font = ExtResource("2_m1dit")
 theme_override_font_sizes/normal_font_size = 25
 text = "Dialogue..."
 
+[node name="Label" type="Label" parent="Balloon/Panel/Dialogue/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.38, 0.38, 1)
+text = "Press to continue"
+horizontal_alignment = 1
+
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
 anchors_preset = 7

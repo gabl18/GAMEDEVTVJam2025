@@ -26,6 +26,8 @@ var all_parts: Array[GlobePart]
 var all_globes: Array[AssemblyGlobe]
 var finished_globes: Array[AssemblyGlobe]
 
+var lock_dialogue: bool
+
 @onready var sfx: AudioStreamPlayer = $SFX
 @onready var music: AudioStreamPlayer = $Music
 
@@ -159,13 +161,20 @@ func gamecycle():
 	%DrawerHandler.generate_new_stuff(todays_globes,todays_bases)
 	%Gatcha_Dispenser.generate_balls(todays_insides)
 	
-	await self._enough_globes_done
+	await _enough_globes_done
 	%myStoreApp.unlock_btns()
 	
 	## GABL: sound effect when you have made enough globes
 
 	
 	await %myStoreApp.store_open_closed_pressed
+	
+	%Blackscreen.blackout(1)
+	await %Blackscreen.blacked_out
+	
+	%TabletScreen.tablet_animationplayer.play_backwards("Tablet_Startup")
+	for x in %TabletScreen.parts.get_children():
+		x.lock_movement = false
 
 	## selling part of the day
 	## -------------------------------
@@ -203,12 +212,20 @@ func gamecycle():
 		selling_globe = null
 		
 		await DialogueManager.dialogue_ended
-	
+		lock_dialogue = true
+		
+		await get_tree().create_timer(0.5).timeout
+		%Blackscreen.blackout(0.5)
+		lock_dialogue = false
+		
+		await %Blackscreen.blacked_out
+		
 	
 	%myStoreApp.unlock_btns()
 	%myStoreApp.reset_btns()
 	print('done?')
 	gamecycle()
+
 
 func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
 	var stats: PeopleStat = person.stats
@@ -237,9 +254,10 @@ func _dialogue_ended(__):
 
 
 func _on_talk_button_pressed() -> void:
-	if active_state == GameStates.selling:
-		if not is_dialogue_active:
-			DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"start")
+	if lock_dialogue:
+		if active_state == GameStates.selling:
+			if not is_dialogue_active:
+				DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"start")
 
 
 func globe_finished_unfinished(globe,finished:bool):
@@ -249,6 +267,7 @@ func globe_finished_unfinished(globe,finished:bool):
 		finished_globes.erase(globe)
 		
 	if finished_globes.size() >= todays_people.size():
+		await get_tree().process_frame
 		_enough_globes_done.emit()
 		sfx.stream = done
 		sfx.play()
