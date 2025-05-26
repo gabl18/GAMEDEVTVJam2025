@@ -173,6 +173,7 @@ func gamecycle():
 	%Gatcha_Dispenser.generate_balls(todays_insides)
 	
 	await _enough_globes_done
+	%DayLabel.hide()
 	%myStoreApp.unlock_btns()
 	
 	## GABL: sound effect when you have made enough globes
@@ -227,13 +228,21 @@ func gamecycle():
 		await DialogueManager.dialogue_ended
 		lock_dialogue = true
 		
+		# hier
+		
 		await get_tree().create_timer(0.5).timeout
+
 		%Blackscreen.blackout(0.5)
 		lock_dialogue = false
 		await %Blackscreen.blacked_out
-		sfx.stream = finish
-		sfx.play()
 		
+		
+		
+	sfx.stream = finish
+	sfx.play()
+	
+	%DayLabel.show()
+	%DayLabel.text = 'Day #' + str(passed_days)
 	
 	%myStoreApp.unlock_btns()
 	%myStoreApp.reset_btns()
@@ -309,6 +318,14 @@ func _on_parts_location_child_exiting_tree(node: Node) -> void:
 var selling_globe
 
 func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Settings"):
+		%TabletScreen._hide_all_apps()
+		%TabletScreen.settings_app.show()
+		%TabletScreen.active_screen = %TabletScreen.Screens.Settings
+		%TabletScreen/Tablet_Animationplayer.play('Tablet_Startup')
+		
+		
+		
 	if Input.is_action_just_released("just_released_mouse"):
 		if selling_globe:
 			_sold_globe.emit(selling_globe)

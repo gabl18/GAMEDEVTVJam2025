@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=109 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -66,8 +66,9 @@
 [ext_resource type="FontFile" uid="uid://qm22vgm1skpw" path="res://Assets/Fonts/quaver.ttf" id="50_uatky"]
 [ext_resource type="Texture2D" uid="uid://bfdtvaod81m6p" path="res://Assets/Art/main_btns.png" id="57_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://ddcfnj85mwh7y" path="res://UI/credits_app.tscn" id="64_ntx8l"]
-[ext_resource type="PackedScene" uid="uid://dyerle6lr1k83" path="res://UI/tutorial_app.tscn" id="64_uatky"]
+[ext_resource type="PackedScene" path="res://UI/tutorial_app.tscn" id="64_uatky"]
 [ext_resource type="PackedScene" uid="uid://bx01p6j87fxwe" path="res://UI/settings_app.tscn" id="67_1vm84"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://Assets/Themes/waste_no_space/waste_no_space.tres" id="68_wu3dr"]
 
 [sub_resource type="Resource" id="Resource_rqtf5"]
 script = ExtResource("24_rm4vd")
@@ -955,6 +956,21 @@ grow_vertical = 2
 mouse_filter = 0
 texture = SubResource("GradientTexture2D_1vm84")
 script = SubResource("GDScript_rqtf5")
+
+[node name="DayLabel" type="Label" parent="CanvasLayer/Blackscreen"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("68_wu3dr")
+theme_override_font_sizes/font_size = 50
+text = "Center"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
