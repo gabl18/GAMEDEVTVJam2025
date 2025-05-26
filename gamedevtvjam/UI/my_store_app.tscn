@@ -25,7 +25,7 @@ region = Rect2(0, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_th6ur"]
 atlas = ExtResource("5_spj7x")
-region = Rect2(0, 0, 96, 20)
+region = Rect2(0, 200, 96, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oac03"]
 atlas = ExtResource("5_oi3o8")
@@ -155,9 +155,10 @@ uppercase = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/side_margin = 50
-current_tab = 0
+current_tab = 1
 
 [node name="Rating" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -177,7 +178,6 @@ texture = SubResource("AtlasTexture_th6ur")
 stretch_mode = 5
 
 [node name="Controlpanel" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

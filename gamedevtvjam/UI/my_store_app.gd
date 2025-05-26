@@ -22,7 +22,7 @@ func set_rating(rating:int):
 func add_rating(rating:int):
 	current_rating_amount += 1
 	
-	rating = clamp(rating,0,10)
+	rating = clamp(rating,1,10)
 	@warning_ignore("integer_division")
 	current_rating = (current_rating * current_rating_amount + rating) / (current_rating_amount+1)
 	print(current_rating,current_rating_amount)

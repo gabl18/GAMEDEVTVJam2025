@@ -39,7 +39,7 @@ var is_dragged := false:
 	set(value):
 		is_dragged = value
 		MouseState.moues_state = MouseState.Mouse_States.idle
-		MouseState.Mouse_idx = 1
+		MouseState.Mouse_idx = 3
 		
 var mouse_offset := Vector2.ZERO
 var in_drawer := false

@@ -562,10 +562,14 @@ people = Array[ExtResource("2_82xsv")]([ExtResource("7_xuqvo"), ExtResource("8_q
 day_people_numbers = Array[int]([2, 4, 3, 5, 5])
 globe_parts = Array[ExtResource("24_rm4vd")]([ExtResource("25_pjyto"), ExtResource("26_sm6fg"), ExtResource("27_b17eg"), ExtResource("28_ntx8l"), ExtResource("29_uatky"), ExtResource("30_rqtf5"), ExtResource("31_1vm84"), ExtResource("32_wu3dr"), ExtResource("33_cyx1q"), ExtResource("34_0dhbp"), ExtResource("35_jx0wj"), ExtResource("36_kkkcx"), ExtResource("37_34ol3"), ExtResource("38_c2n8d"), ExtResource("39_wy5fy"), ExtResource("40_gx4rg"), ExtResource("41_5dllo"), ExtResource("41_cyx1q"), SubResource("Resource_rqtf5"), SubResource("Resource_1vm84"), SubResource("Resource_wu3dr")])
 
-[node name="MouseTracer" type="Sprite2D" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="MouseTracer" type="Sprite2D" parent="CanvasLayer2"]
 unique_name_in_owner = true
 process_priority = 1
-z_index = 1001
+z_index = 4096
+z_as_relative = false
 
 [node name="AreaHandler" type="Node" parent="."]
 unique_name_in_owner = true
