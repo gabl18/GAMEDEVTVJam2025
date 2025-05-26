@@ -724,7 +724,7 @@ polygon = PackedVector2Array(90, 839, 229, 570, 897, 572, 988, 819)
 
 [node name="Always_Poly" type="CollisionPolygon2D" parent="CanvasLayer/Background/Off_Table_Area2d"]
 visible = false
-polygon = PackedVector2Array(-15, 308, 1310, 313, 1321, -28, -207, -26, -216, 925, 1400, 923, 1320, 284, 1183, 320, 1161, 498, 1090, 390, 951, 396, 1034, 534, 1178, 571, 897, 568, 793, 569, 882, 813, 263, 811, 366, 602, 799, 605, 794, 573, 382, 572, -19, 574)
+polygon = PackedVector2Array(-16, 328, 1302, 330, 1321, -28, -207, -26, -216, 925, 1400, 923, 1320, 284, 1191, 332, 1161, 498, 1090, 390, 951, 396, 1034, 534, 1178, 571, 897, 568, 793, 569, 882, 813, 263, 811, 366, 602, 799, 605, 794, 573, 382, 572, -19, 574)
 
 [node name="Off_Table_Area2d_Globes" type="Area2D" parent="CanvasLayer/Background"]
 collision_layer = 0

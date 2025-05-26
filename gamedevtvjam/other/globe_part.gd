@@ -85,7 +85,7 @@ func _ready() -> void:
 		var scale_factor = -0.005 * y + 2.0
 		scale = Vector2.ONE * scale_factor
 	else:
-		scale = Vector2.ONE * 3
+		scale = Vector2.ONE * 3.5
 
 
 func _process(_delta: float) -> void:
@@ -104,7 +104,7 @@ func _process(_delta: float) -> void:
 				var scale_factor = -0.005 * y + 2.0
 				scale = Vector2.ONE * scale_factor
 			else:
-				scale = Vector2.ONE * 3
+				scale = Vector2.ONE * 3.5
 
 
 func _mouse_enter() -> void:

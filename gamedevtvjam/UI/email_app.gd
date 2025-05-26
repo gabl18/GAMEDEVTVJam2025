@@ -41,6 +41,7 @@ func _on_item_list_item_selected(index: int) -> void:
 	subject_label.text = email.subject
 	email_text_block.text = email.text
 	previous_selected_id = index
+	email_text_block.scroll_to_line(0)
 	
 	if unchecked_emails.is_empty():
 		notification_status_changed.emit(false)

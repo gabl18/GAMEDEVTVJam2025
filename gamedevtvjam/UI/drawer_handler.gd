@@ -101,7 +101,7 @@ func generate_new_stuff(globes:Array[GlobePartRes],bases:Array[GlobePartRes]):
 		new_part.sleep = true
 		new_part.no_merge = true
 		new_part.under_table = true
-		new_part.scale = Vector2.ONE * 3
+		new_part.scale = Vector2.ONE * 3.5
 		parts_location.add_child(new_part)
 		
 	hide_layer(0)
@@ -119,7 +119,7 @@ func generate_new_stuff(globes:Array[GlobePartRes],bases:Array[GlobePartRes]):
 		new_part.sleep = true
 		new_part.no_merge = true
 		new_part.under_table = true
-		new_part.scale = Vector2.ONE * 3
+		new_part.scale = Vector2.ONE * 3.5
 		parts_location.add_child(new_part)
 	hide_layer(1)
 
