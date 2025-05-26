@@ -11,6 +11,8 @@ const EXAMPLE_BALLOON = preload("res://UI/example_balloon.tscn")
 @export var day_people_numbers: Array[int]
 @export var globe_parts: Array[GlobePartRes]
 
+@export var botrizz_: Person
+
 var globe_parts_base: Array[GlobePartRes]
 var globe_parts_inside: Array[GlobePartRes]
 var globe_parts_globe: Array[GlobePartRes]
@@ -111,9 +113,15 @@ func prepare_game():
 		while _todays_people.size() < day_people_numbers[day]:
 			var person: Person = people.pick_random()
 			
+			if person.name in todays_names:
+				continue
+				
+			if person == botrizz_:
+				continue
+				
 			if day == 4 and not botrizz:
 				botrizz = true
-				person = load("res://People/botrizz.tres")
+				person = botrizz_
 				person.emails.shuffle()
 				for mail in person.emails:
 					if person.emails.find(mail) == 0:
@@ -125,11 +133,8 @@ func prepare_game():
 					_todays_people.append(person)
 				continue
 					
-			if person.name in todays_names:
-				continue
-				
-			if person == load("res://People/botrizz.tres"):
-				continue
+
+
 			
 			if person.only_after:
 				if person.only_after not in taken_people:
