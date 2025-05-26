@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://d1swuf50xbko0"
-path="res://.godot/imported/hank_dialogue.dialogue-03c35200b95d99a1a10441e398b46797.tres"
+path="res://.godot/imported/hank_dialogue.dialogue-ae0a8b914f32dd6ecdec1a787616ba16.tres"
 
 [deps]
 
-source_file="res://People/dialogue/hank_dialogue.dialogue"
-dest_files=["res://.godot/imported/hank_dialogue.dialogue-03c35200b95d99a1a10441e398b46797.tres"]
+source_file="res://people/dialogue/hank_dialogue.dialogue"
+dest_files=["res://.godot/imported/hank_dialogue.dialogue-ae0a8b914f32dd6ecdec1a787616ba16.tres"]
 
 [params]
 
