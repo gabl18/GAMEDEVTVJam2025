@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://bkc51s3m5kq0b"]
+[gd_scene load_steps=104 format=3 uid="uid://bkc51s3m5kq0b"]
 
 [ext_resource type="Script" uid="uid://urk3nwfltokv" path="res://main.gd" id="1_074og"]
 [ext_resource type="Script" uid="uid://c2u5ura4lsn0v" path="res://UI/area_handler.gd" id="1_efxa6"]
@@ -64,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://dmr4ayax1dhxf" path="res://Assets/Art/Globes/Globe/Globe2.png" id="43_ntx8l"]
 [ext_resource type="Texture2D" uid="uid://bh5oal5sj4y2g" path="res://Assets/Art/Globes/Globe/Globe3.png" id="44_uatky"]
 [ext_resource type="FontFile" uid="uid://qm22vgm1skpw" path="res://Assets/Fonts/quaver.ttf" id="50_uatky"]
+[ext_resource type="Texture2D" uid="uid://bfdtvaod81m6p" path="res://Assets/Art/main_btns.png" id="57_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://ddcfnj85mwh7y" path="res://UI/credits_app.tscn" id="64_ntx8l"]
 [ext_resource type="PackedScene" path="res://UI/tutorial_app.tscn" id="64_uatky"]
 
@@ -181,6 +182,54 @@ TooltipLabel/font_sizes/font_size = 30
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
 atlas = ExtResource("3_h2yge")
 region = Rect2(450, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vm84"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(70, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqtf5"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(80, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy5fy"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(110, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu3dr"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(60, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyx1q"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(40, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dhbp"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(50, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx4rg"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(100, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx0wj"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(30, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkkcx"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(10, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34ol3"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(20, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dllo"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(90, 0, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2n8d"]
+atlas = ExtResource("57_rqtf5")
+region = Rect2(0, 0, 10, 6)
 
 [sub_resource type="Animation" id="Animation_lquwl"]
 resource_name = "Opening_Closing_Cover"
@@ -570,11 +619,16 @@ anchor_left = 0.130812
 anchor_top = 0.824173
 anchor_right = 0.16866
 anchor_bottom = 0.885654
-offset_left = 0.304001
-offset_top = -0.0640259
-offset_right = -0.296036
-offset_bottom = 0.0958862
+offset_left = -5.69543
+offset_top = 5.51862
+offset_right = 9.70367
+offset_bottom = 5.53082
 mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_1vm84")
+texture_pressed = SubResource("AtlasTexture_rqtf5")
+texture_hover = SubResource("AtlasTexture_wy5fy")
+texture_disabled = SubResource("AtlasTexture_wu3dr")
+stretch_mode = 6
 
 [node name="Button_Cover_Up" type="TextureButton" parent="CanvasLayer/Background"]
 layout_mode = 1
@@ -588,6 +642,11 @@ offset_top = 0.0479736
 offset_right = -0.232002
 offset_bottom = -0.127991
 mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_cyx1q")
+texture_pressed = SubResource("AtlasTexture_0dhbp")
+texture_hover = SubResource("AtlasTexture_gx4rg")
+texture_disabled = SubResource("AtlasTexture_jx0wj")
+stretch_mode = 6
 
 [node name="Button_Cover_Down" type="TextureButton" parent="CanvasLayer/Background"]
 layout_mode = 1
@@ -596,10 +655,17 @@ anchor_left = 0.0659722
 anchor_top = 0.871642
 anchor_right = 0.132222
 anchor_bottom = 0.933642
-offset_top = 0.175964
-offset_right = -0.320007
+offset_left = 2.28882e-05
+offset_top = 0.0117798
+offset_right = -5.31973
+offset_bottom = -2.36426
 grow_vertical = 0
 mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_kkkcx")
+texture_pressed = SubResource("AtlasTexture_34ol3")
+texture_hover = SubResource("AtlasTexture_5dllo")
+texture_disabled = SubResource("AtlasTexture_c2n8d")
+stretch_mode = 6
 
 [node name="Desk_AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Background"]
 libraries = {
