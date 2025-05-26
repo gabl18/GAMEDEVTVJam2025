@@ -7,6 +7,7 @@ var current_rating_amount := 0
 
 func _ready() -> void:
 	set_rating(current_rating)
+	%InfoLabel.text = "you have to make enough globes first"
 
 func set_day(daynumber:int):
 	%NumberLabel.text = '#'+str(daynumber)
@@ -28,6 +29,7 @@ func add_rating(rating:int):
 	%StarsTexture.texture.region.position.y = 20*(10-current_rating)
 
 func unlock_btns():
+	%InfoLabel.text = "press open, to start recieving customers"
 	%CloseButton.disabled = false
 	%OpenButton.disabled = false
 
@@ -37,6 +39,10 @@ func _on_open_button_toggled(toggled_on: bool) -> void:
 		%CloseButton.disabled = true
 	else:
 		%OpenButton.disabled = true
+	
+	await visibility_changed
+	%InfoLabel.text = "you have to enough finished globes first"
+	
 		
 func reset_btns():
 	%CloseButton.button_pressed = true

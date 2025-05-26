@@ -2,6 +2,11 @@ extends TextureRect
 
 @onready var button_drawer_open: = $Button_Drawer_Open
 @onready var button_drawer_close: = $Button_Drawer_Close
+
+@onready var button_cover_up: TextureButton = $Button_Cover_Up
+@onready var button_cover_down: TextureButton = $Button_Cover_Down
+
+
 @onready var animation_player: AnimationPlayer = $Desk_AnimationPlayer
 @onready var sfx: AudioStreamPlayer = $"../../SFX"
 
@@ -45,7 +50,9 @@ func _on_button_drawer_open_pressed() -> void:
 				drawer_button_cooldown = false
 				
 			button_drawer_open.visible = false
-			button_drawer_close.visible = true
+			button_drawer_close.disabled = false
+			button_cover_up.disabled = false
+			button_cover_down.disabled = false
 	
 
 
@@ -62,8 +69,10 @@ func _on_button_drawer_close_pressed() -> void:
 				animation_player.play_backwards("Opening_Closing_Drawer")
 				drawer_button_cooldown = false
 				
-			button_drawer_close.visible = false
+			button_drawer_close.disabled = true
 			button_drawer_open.visible = true
+			button_cover_up.disabled = true
+			button_cover_down.disabled = true
 	
 
 

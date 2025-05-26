@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://bqwpj48dy50sy"
-path="res://.godot/imported/nightmare_dialogue.dialogue-87777bc176f79a2cfdcb3b32f6bdda51.tres"
+path="res://.godot/imported/nightmare_dialogue.dialogue-93314727cd95a3f8156df4d39cbed800.tres"
 
 [deps]
 
-source_file="res://people/dialogue/nightmare_dialogue.dialogue"
-dest_files=["res://.godot/imported/nightmare_dialogue.dialogue-87777bc176f79a2cfdcb3b32f6bdda51.tres"]
+source_file="res://People/dialogue/nightmare_dialogue.dialogue"
+dest_files=["res://.godot/imported/nightmare_dialogue.dialogue-93314727cd95a3f8156df4d39cbed800.tres"]
 
 [params]
 

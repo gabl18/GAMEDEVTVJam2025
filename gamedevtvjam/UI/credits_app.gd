@@ -13,3 +13,5 @@ func _ready() -> void:
 		%CreditsLocation.add_child(new_label)
 		
 		new_label.text = x
+		
+	
