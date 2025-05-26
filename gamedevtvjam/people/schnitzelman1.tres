@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Person" load_steps=11 format=3 uid="uid://837hbhwxf367"]
+[gd_resource type="Resource" script_class="Person" load_steps=15 format=3 uid="uid://837hbhwxf367"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_6qxtt"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_nwu7d"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_nwu7d"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_cr18q"]
 [ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="4_16ug5"]
 [ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="5_eqpc7"]
 [ext_resource type="Resource" uid="uid://cyvhdqx7n3wtp" path="res://GlobeParts/part5.tres" id="6_4m30t"]
+[ext_resource type="Texture2D" uid="uid://ckomcxt57rb65" path="res://Assets/Art/Globes/Inside/inside6.png" id="7_cr18q"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_o5mhb"]
+[ext_resource type="Texture2D" uid="uid://cfohb44m77lea" path="res://Assets/Art/Globes/Inside/inside10.png" id="8_e566q"]
 [ext_resource type="Texture2D" uid="uid://cso25blkq7dc8" path="res://Assets/Art/people/person3.png" id="8_tn265"]
 
 [sub_resource type="Resource" id="Resource_4lmeg"]
@@ -15,15 +17,31 @@ from = "schnitzelfactory@next.door"
 to = "office@tinyglob.es"
 subject = "schnitzel-tastic order"
 text = "Hello, I hope you have a schnitzel-tastic day! 
-We are reaching out to you from the \"Schnitzel-Factory\" next to your Shop, we would like to order a snow globe. We would really apprechiate if you could have like something Italy themed as the globe decor, because everybody knows that schnitzels are from italy (just kidding, they are made in Austria of course)
+We are reaching out to you from the \"Schnitzel-Factory\" next to your Shop, we would like to order a snow globe. We would really apprechiate if you could have like something Italy themed as the globe decor, because everybody knows that schnitzels are from Italy (just kidding, they are made in France of course, and the croissant is from Austria obviously)
 We will send a employee to pick up the globe today.
 Thank you."
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_000y1"]
+script = ExtResource("3_cr18q")
+type = 2
+texture = ExtResource("7_cr18q")
+name = "inside6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_meund"]
+script = ExtResource("3_cr18q")
+type = 2
+texture = ExtResource("8_e566q")
+name = "inside10"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_b7j8u"]
 script = ExtResource("7_o5mhb")
-inside_ranks = Array[ExtResource("3_cr18q")]([ExtResource("6_4m30t")])
+inside_ranks = Array[ExtResource("3_cr18q")]([ExtResource("6_4m30t"), SubResource("Resource_000y1"), SubResource("Resource_meund")])
 base_ranks = Array[ExtResource("3_cr18q")]([ExtResource("4_16ug5"), ExtResource("5_eqpc7")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 

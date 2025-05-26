@@ -1,12 +1,16 @@
-[gd_resource type="Resource" script_class="Person" load_steps=10 format=3 uid="uid://cljknnmddly5"]
+[gd_resource type="Resource" script_class="Person" load_steps=18 format=3 uid="uid://cljknnmddly5"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_kexf8"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_qtwp1"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_qtwp1"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_3n1od"]
 [ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="4_ab036"]
+[ext_resource type="Texture2D" uid="uid://blckbynpfddlc" path="res://Assets/Art/Globes/Base/Base2.png" id="5_e2tc7"]
 [ext_resource type="Resource" uid="uid://dp0l5naicgvdf" path="res://GlobeParts/part6.tres" id="5_hqlmr"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="6_45x4n"]
 [ext_resource type="Texture2D" uid="uid://br35aajxextdt" path="res://Assets/Art/people/person13.png" id="7_8n2r7"]
+[ext_resource type="Texture2D" uid="uid://bt32kkifmpgse" path="res://Assets/Art/Globes/Inside/inside7.png" id="7_45x4n"]
+[ext_resource type="Texture2D" uid="uid://ckomcxt57rb65" path="res://Assets/Art/Globes/Inside/inside6.png" id="8_8n2r7"]
+[ext_resource type="Texture2D" uid="uid://btxwo0bn5jo5s" path="res://Assets/Art/Globes/Inside/inside9.png" id="9_v8tpy"]
 
 [sub_resource type="Resource" id="Resource_v8tpy"]
 script = ExtResource("1_kexf8")
@@ -14,15 +18,48 @@ from = "tableeater@studios.com"
 to = "office@tinyglob.es"
 subject = "Lil Car Accident order"
 text = "What's up dawg? 
-It's me the one and only **Lil Car Accident**. I wanted to reach out to you for a snowglobe cuz I just realeased my new album \"Accident in every Country\" and I hoped you could do a globe for me with the great wall of China to symbolize my new album, cuz I know how much I fw with shop. I will pick it up today.
+It's me the one and only **Lil Car Accident**. I wanted to reach out to you for a snowglobe cuz I just realeased my new album \"Accident in every Country\" and I hoped you could do a globe for me with the great wall of China to symbolize my new album, cuz I know how much I fw with shop. Maybe you can get me some orange or green into the base, that would be lit. I will pick it up today.
+
 Thanks brother."
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_rmq26"]
+script = ExtResource("3_3n1od")
+type = 1
+texture = ExtResource("5_e2tc7")
+name = "Base2"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_q485g"]
+script = ExtResource("3_3n1od")
+type = 2
+texture = ExtResource("7_45x4n")
+name = "inside7"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_lksre"]
+script = ExtResource("3_3n1od")
+type = 2
+texture = ExtResource("8_8n2r7")
+name = "inside6"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
+[sub_resource type="Resource" id="Resource_qf5a7"]
+script = ExtResource("3_3n1od")
+type = 2
+texture = ExtResource("9_v8tpy")
+name = "inside9"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_a2nws"]
 script = ExtResource("6_45x4n")
-inside_ranks = Array[ExtResource("3_3n1od")]([ExtResource("5_hqlmr")])
-base_ranks = Array[ExtResource("3_3n1od")]([ExtResource("4_ab036")])
+inside_ranks = Array[ExtResource("3_3n1od")]([ExtResource("5_hqlmr"), SubResource("Resource_q485g"), SubResource("Resource_lksre"), SubResource("Resource_qf5a7")])
+base_ranks = Array[ExtResource("3_3n1od")]([ExtResource("4_ab036"), SubResource("Resource_rmq26")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
 [resource]

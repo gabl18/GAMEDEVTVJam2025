@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://c4k87coa112f1"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_l2jcd"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_136hp"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_136hp"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_dwx6x"]
 [ext_resource type="Resource" uid="uid://b212px0jxpgje" path="res://GlobeParts/part9.tres" id="4_yrjkq"]
 [ext_resource type="Resource" uid="uid://bh1f7ro2k5npp" path="res://GlobeParts/part10.tres" id="5_hpdbv"]
@@ -16,10 +16,10 @@
 script = ExtResource("1_l2jcd")
 from = "mel@idiotn.di"
 to = "office@tinyglob.es"
-subject = "another globe"
-text = "Heey, my Friends loved the globe you made last time and asked if you could make another one? Maybe just get like a more green base or something similar because thats more Noras favourite. I wont have time to pick it up today, but would it be fine if I get it like tomorrow?
-Best wishes,
-Mel"
+subject = "visiting the shop"
+text = "Hi, 
+I saw your shop online and thought I definetly had to come visit your store. You are definetly doing some great work. So, to get to my order. I havent exactly looked what you have as options, but I recently travelled with my friends Gabe and Nora and would really want something that lets me think back to the great time we had. If it is possible, could you also put use some blue for the base or sth like that? 
+Thanks for everything in advance, happy to get the product! "
 days_earlier = -1
 metadata/_custom_type_script = "uid://brlife1n53d64"
 

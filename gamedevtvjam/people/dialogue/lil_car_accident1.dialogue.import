@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://cxxpm02d8xufi"
-path="res://.godot/imported/lil_car_accident1.dialogue-823ff2a85332bcf3239dbd8f09f11f66.tres"
+path="res://.godot/imported/lil_car_accident1.dialogue-20abd9adf8bf7c7be0a7ab204c2b1fbb.tres"
 
 [deps]
 
-source_file="res://People/dialogue/lil_car_accident1.dialogue"
-dest_files=["res://.godot/imported/lil_car_accident1.dialogue-823ff2a85332bcf3239dbd8f09f11f66.tres"]
+source_file="res://people/dialogue/lil_car_accident1.dialogue"
+dest_files=["res://.godot/imported/lil_car_accident1.dialogue-20abd9adf8bf7c7be0a7ab204c2b1fbb.tres"]
 
 [params]
 

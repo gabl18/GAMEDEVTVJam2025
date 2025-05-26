@@ -1,27 +1,37 @@
-[gd_resource type="Resource" script_class="Person" load_steps=10 format=3 uid="uid://bys2i2sk67prp"]
+[gd_resource type="Resource" script_class="Person" load_steps=12 format=3 uid="uid://bys2i2sk67prp"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_xbulp"]
-[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_60t7l"]
+[ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://people/person.gd" id="2_60t7l"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_ry4sr"]
 [ext_resource type="Texture2D" uid="uid://cpi3e8qs7jkov" path="res://Assets/Art/people/person8.png" id="3_t8tgn"]
 [ext_resource type="Resource" uid="uid://c4y2kuxceoup4" path="res://GlobeParts/part4.tres" id="4_pvyw0"]
 [ext_resource type="Resource" uid="uid://dhm8xfg3toxru" path="res://GlobeParts/part3.tres" id="5_pqpk3"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="6_jc4go"]
+[ext_resource type="Texture2D" uid="uid://brady56stiwla" path="res://Assets/Art/Globes/Inside/Inside2.png" id="6_rtbh3"]
 
 [sub_resource type="Resource" id="Resource_seu75"]
 script = ExtResource("1_xbulp")
 from = "GGamer69@fremail.us"
 to = "office@tinyglob.es"
 subject = "#order"
-text = "Hello Broster, I am a Blockcraft MeTuber with over 10 Million Stalkers and I would really apprechiate if you could prepare a #gamerpro Snow Globe 3001. Like just... uhm.. like, just do something that I would really like, just surprise me. Just like when I lost all my money at the Casino #yolo or when I had my first ever shower. My favorite Color is Pink (of course because its the color of my Blockcraft skin), so I would really apprechiate if you could use this color somewhere. I usually dont go outside, but I hope that I can get to your shop probably tomorrow days. And I hope you dont have any grass near your shop bc I am doing the dont touch any grass challange #coool!
+text = "Hello Broster, 
+I am a Blockcraft MeTuber with over 10 Million Stalkers and I would really apprechiate if you could prepare a #gamerpro Snow Globe 3001. Like just... uhm.. like, just do something that I would really like, just surprise me. Just like when I lost all my money at the Casino #yolo or when I had my first ever shower. My favorite Color is Pink (of course because its the color of my Blockcraft skin), so I would really apprechiate if you could use this color somewhere. I usually dont go outside, but I hope that I can get to your shop probably tomorrow days. And I hope you dont have any grass near your shop bc I am doing the dont touch any grass challange #coool! I love Cars!
 See ya!
 "
 days_earlier = -1
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
+[sub_resource type="Resource" id="Resource_u4j5m"]
+script = ExtResource("3_ry4sr")
+type = 2
+texture = ExtResource("6_rtbh3")
+name = "Inside2"
+adjectives = Array[String]([])
+metadata/_custom_type_script = "uid://ddg4s68ostpwi"
+
 [sub_resource type="Resource" id="Resource_4c3xm"]
 script = ExtResource("6_jc4go")
-inside_ranks = Array[ExtResource("3_ry4sr")]([ExtResource("5_pqpk3")])
+inside_ranks = Array[ExtResource("3_ry4sr")]([ExtResource("5_pqpk3"), SubResource("Resource_u4j5m")])
 base_ranks = Array[ExtResource("3_ry4sr")]([ExtResource("4_pvyw0")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
