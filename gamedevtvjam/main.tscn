@@ -40,7 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://coepueusuau1m" path="res://UI/my_store_app.tscn" id="21_getpj"]
 [ext_resource type="Resource" uid="uid://e3hb1xc02417" path="res://People/lil_car_accident2.tres" id="22_gngh3"]
 [ext_resource type="Resource" uid="uid://b31c1qjg3nb87" path="res://People/dr.stone.tres" id="23_0n3wm"]
-[ext_resource type="AudioStream" uid="uid://d38x4a82clx7d" path="res://Assets/Audio/Music/soundtrack.mp3" id="23_d13ii"]
+[ext_resource type="AudioStream" uid="uid://b1rqeracw1d4m" path="res://Assets/Audio/Music/soundtrack.mp3" id="23_d13ii"]
 [ext_resource type="Resource" uid="uid://nwcal736fha5" path="res://People/botrizz.tres" id="23_ntx8l"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="24_rm4vd"]
 [ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="25_pjyto"]
@@ -66,8 +66,8 @@
 [ext_resource type="FontFile" uid="uid://qm22vgm1skpw" path="res://Assets/Fonts/quaver.ttf" id="50_uatky"]
 [ext_resource type="Texture2D" uid="uid://bfdtvaod81m6p" path="res://Assets/Art/main_btns.png" id="57_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://ddcfnj85mwh7y" path="res://UI/credits_app.tscn" id="64_ntx8l"]
-[ext_resource type="PackedScene" path="res://UI/tutorial_app.tscn" id="64_uatky"]
-[ext_resource type="PackedScene" uid="uid://cm3kphwlbydnw" path="res://UI/settings_app.tscn" id="67_1vm84"]
+[ext_resource type="PackedScene" uid="uid://dyerle6lr1k83" path="res://UI/tutorial_app.tscn" id="64_uatky"]
+[ext_resource type="PackedScene" uid="uid://bx01p6j87fxwe" path="res://UI/settings_app.tscn" id="67_1vm84"]
 
 [sub_resource type="Resource" id="Resource_rqtf5"]
 script = ExtResource("24_rm4vd")
@@ -962,6 +962,7 @@ bus = &"SFX"
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_d13ii")
 volume_db = 1.0
+autoplay = true
 bus = &"Music"
 parameters/looping = true
 

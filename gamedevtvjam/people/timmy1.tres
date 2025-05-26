@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Person" load_steps=14 format=3 uid="uid://bsklw110bptug"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_x8h15"]
-[ext_resource type="Resource" path="res://people/mails/timmy_email_1.tres" id="2_xwhwl"]
+[ext_resource type="Resource" uid="uid://cp0b1vt3etxud" path="res://People/mails/timmy_email_1.tres" id="2_xwhwl"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="3_6uj1v"]
 [ext_resource type="Texture2D" uid="uid://bmjm0e1knaxsb" path="res://Assets/Art/people/person5.png" id="4_887rc"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="4_icvd0"]
