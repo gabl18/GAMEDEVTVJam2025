@@ -26,7 +26,7 @@ var all_parts: Array[GlobePart]
 var all_globes: Array[AssemblyGlobe]
 var finished_globes: Array[AssemblyGlobe]
 
-var lock_dialogue: bool
+var lock_dialogue := false
 
 @onready var sfx: AudioStreamPlayer = $SFX
 @onready var music: AudioStreamPlayer = $Music
@@ -74,9 +74,12 @@ func prepare_game():
 	for day in range(day_people_numbers.size()):
 		var todays_mails: Array[EmailRes]
 		var _todays_people: Array[Person]
+		var todays_names: Array[String]
 		while _todays_people.size() < day_people_numbers[day]:
 			var person: Person = people.pick_random()
 			
+			if person.name in todays_names:
+				continue
 			
 			if day == 4:
 				person = load("res://People/botrizz.tres")
@@ -123,6 +126,7 @@ func prepare_game():
 			if tries == 0:
 				continue
 			
+			todays_names.append(person.name)
 			people.erase(person)
 			taken_people.append(person)
 			_todays_people.append(person)
@@ -260,7 +264,7 @@ func _dialogue_ended(__):
 
 
 func _on_talk_button_pressed() -> void:
-	if lock_dialogue:
+	if not lock_dialogue:
 		if active_state == GameStates.selling:
 			if not is_dialogue_active:
 				DialogueManager.show_dialogue_balloon_scene(EXAMPLE_BALLOON,load(active_person.dialogue),"start")

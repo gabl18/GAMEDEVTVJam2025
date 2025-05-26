@@ -8,7 +8,7 @@ extends TextureRect
 @onready var email_app: Panel = $Apps/EmailApp
 @onready var my_store_app: Panel = %myStoreApp
 @onready var credits_app: Panel = %CreditsApp
-@onready var apps: Array= [email_app,my_store_app,credits_app,tutorial_app]#,settings_app
+@onready var apps: Array= [email_app,my_store_app,credits_app,tutorial_app,settings_app]
 
 @onready var sfx: AudioStreamPlayer = $"../../SFX"
 var click = preload("res://Assets/Audio/SFX/click.mp3")
