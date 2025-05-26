@@ -1078,6 +1078,7 @@ libraries = {
 
 [node name="Outro" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 z_index = 999
 layout_mode = 3
 anchors_preset = 15
@@ -1102,9 +1103,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -365.0
-offset_top = -388.0
-offset_right = 364.0
+offset_left = -368.0
+offset_top = -572.0
+offset_right = 361.0
+offset_bottom = -395.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("AtlasTexture_phcyf")
@@ -1113,9 +1115,9 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="CanvasLayer/Outro"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.302951
+anchor_left = -0.00173611
 anchor_top = 0.0695187
-anchor_right = 0.75
+anchor_right = 0.657986
 anchor_bottom = 0.435829
 offset_right = 401.0
 offset_bottom = 31.0
@@ -1123,7 +1125,28 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("68_wu3dr")
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
-text = "You have completed shift"
+theme_override_font_sizes/font_size = 50
+text = "You have completed your shift
+You got a rating of:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Outro"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00260417
+anchor_top = 0.532086
+anchor_right = 0.651042
+anchor_bottom = 0.898396
+offset_right = 401.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("68_wu3dr")
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 70
+text = "Thank you for playing!"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
