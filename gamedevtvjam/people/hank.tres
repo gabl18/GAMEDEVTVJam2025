@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Person" load_steps=13 format=3 uid="uid://dtqe5hv5ka51h"]
+[gd_resource type="Resource" script_class="Person" load_steps=12 format=3 uid="uid://dtqe5hv5ka51h"]
 
 [ext_resource type="Script" uid="uid://brlife1n53d64" path="res://other/email_res.gd" id="1_slngi"]
 [ext_resource type="Script" uid="uid://buc8htkfrmars" path="res://People/person.gd" id="2_hdqj5"]
 [ext_resource type="Script" uid="uid://ddg4s68ostpwi" path="res://other/Globepart_res.gd" id="3_4hj2e"]
 [ext_resource type="Resource" uid="uid://8va21srvmlvi" path="res://GlobeParts/part13.tres" id="4_y208w"]
 [ext_resource type="Resource" uid="uid://bh1f7ro2k5npp" path="res://GlobeParts/part10.tres" id="5_pdqtt"]
-[ext_resource type="Texture2D" uid="uid://btxwo0bn5jo5s" path="res://Assets/Art/Globes/Inside/inside9.png" id="6_hdqj5"]
+[ext_resource type="Resource" uid="uid://dhm8xfg3toxru" path="res://GlobeParts/part3.tres" id="6_pdqtt"]
 [ext_resource type="Resource" uid="uid://bqbtlnf45xfcy" path="res://GlobeParts/part17.tres" id="6_tjgf2"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_or7xq"]
 [ext_resource type="Texture2D" uid="uid://c0okq8ttkpaq4" path="res://Assets/Art/people/person10.png" id="8_toj5s"]
@@ -23,17 +23,9 @@ I love robots and the color blue btw 👉👈"
 days_earlier = -2
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
-[sub_resource type="Resource" id="Resource_4hj2e"]
-script = ExtResource("3_4hj2e")
-type = 2
-texture = ExtResource("6_hdqj5")
-name = ""
-adjectives = Array[String]([])
-metadata/_custom_type_script = "uid://ddg4s68ostpwi"
-
 [sub_resource type="Resource" id="Resource_uypp3"]
 script = ExtResource("7_or7xq")
-inside_ranks = Array[ExtResource("3_4hj2e")]([SubResource("Resource_4hj2e"), ExtResource("6_tjgf2")])
+inside_ranks = Array[ExtResource("3_4hj2e")]([ExtResource("6_pdqtt"), ExtResource("6_tjgf2")])
 base_ranks = Array[ExtResource("3_4hj2e")]([ExtResource("5_pdqtt"), ExtResource("4_y208w")])
 metadata/_custom_type_script = "uid://csbqj0pebdsua"
 
