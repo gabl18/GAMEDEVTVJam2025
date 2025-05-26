@@ -103,6 +103,7 @@ func _process(_delta: float) -> void:
 	%MouseTracer.texture = cursors[shape_idx-1]
 
 func prepare_game():
+	var botrizz := false
 	for day in range(day_people_numbers.size()):
 		var todays_mails: Array[EmailRes]
 		var _todays_people: Array[Person]
@@ -110,7 +111,8 @@ func prepare_game():
 		while _todays_people.size() < day_people_numbers[day]:
 			var person: Person = people.pick_random()
 			
-			if day == 4:
+			if day == 4 and not botrizz:
+				botrizz = true
 				person = load("res://People/botrizz.tres")
 				person.emails.shuffle()
 				for mail in person.emails:
@@ -285,7 +287,7 @@ func gamecycle():
 	%myStoreApp.unlock_btns()
 	%myStoreApp.reset_btns()
 	
-	if day_people_numbers.size() < passed_days:
+	if day_people_numbers.size() <= passed_days:
 		show_outro(%myStoreApp.current_rating)
 	else:
 		gamecycle()
