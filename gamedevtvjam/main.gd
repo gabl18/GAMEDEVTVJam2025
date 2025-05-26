@@ -38,6 +38,8 @@ var throat_variants: Array[AudioStream] = [
 	preload("res://Assets/Audio/SFX/throat4.mp3")
 ]
 var done = preload("res://Assets/Audio/SFX/notification.mp3")
+var entrance = preload("res://Assets/Audio/SFX/entrance.mp3")
+var finish = preload("res://Assets/Audio/SFX/finish_day.mp3")
 
 signal _enough_globes_done
 signal _sold_globe(globe)
@@ -197,6 +199,8 @@ func gamecycle():
 	
 	for person in todays_people:
 		# screen blackout
+		sfx.stream = entrance
+		sfx.play()
 		active_person = person
 		%People.texture = active_person.texture
 		%People.visible = true
@@ -226,8 +230,9 @@ func gamecycle():
 		await get_tree().create_timer(0.5).timeout
 		%Blackscreen.blackout(0.5)
 		lock_dialogue = false
-		
 		await %Blackscreen.blacked_out
+		sfx.stream = finish
+		sfx.play()
 		
 	
 	%myStoreApp.unlock_btns()
