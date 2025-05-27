@@ -9,18 +9,14 @@
 [ext_resource type="Resource" uid="uid://dv7l6lv4dw3wp" path="res://GlobeParts/part1.tres" id="6_6vryb"]
 [ext_resource type="Resource" uid="uid://bh1f7ro2k5npp" path="res://GlobeParts/part10.tres" id="6_yisi2"]
 [ext_resource type="Script" uid="uid://csbqj0pebdsua" path="res://other/people_stat.gd" id="7_qvngg"]
-[ext_resource type="Resource" path="res://GlobeParts/part18.tres" id="8_yisi2"]
+[ext_resource type="Resource" uid="uid://cmust5fwl4ag4" path="res://GlobeParts/part18.tres" id="8_yisi2"]
 
 [sub_resource type="Resource" id="Resource_8mcfd"]
 script = ExtResource("1_x43an")
-from = "timmys_mom@help.me"
+from = "aSDVAD@asdf.me"
 to = "office@tinyglob.es"
 subject = "broken snow globe"
-text = "Hi, this is Timmy's mom and it appears that my son has been bothering you and wasting my money on StUpiD F**** *** * *** ***SNOWY *** * GLOBES. anyways...
-
-I am deeply sorry for any inconvienience that my son may have caused. I looked trough your shop and noticed that you produce great work. 🥰 I would really love if you could produce another globe for little Timmy.
-
-Best wishes, Timmy's Mom 😘"
+text = "ma gloube bwoke ):"
 days_earlier = 0
 metadata/_custom_type_script = "uid://brlife1n53d64"
 

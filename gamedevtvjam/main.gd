@@ -119,22 +119,22 @@ func prepare_game():
 			if person == botrizz_:
 				continue
 				
-			if day == 4 and not botrizz:
-				botrizz = true
-				person = botrizz_
-				person.emails.shuffle()
-				for mail in person.emails:
-					if person.emails.find(mail) == 0:
-						todays_mails.append(mail)
-					else:
-						all_mails[person.emails.find(mail)-1].append(mail)
+			if day == 4:
+				if not botrizz:
+					print(1)
+					botrizz = true
+					person = botrizz_
+					person.emails.shuffle()
+					for mail in person.emails:
+						if person.emails.find(mail) == 0:
+							todays_mails.append(mail)
+						else:
+							all_mails[person.emails.find(mail)-1].append(mail)
 					people.erase(person)
 					taken_people.append(person)
 					_todays_people.append(person)
-				continue
-					
-
-
+					continue
+			
 			
 			if person.only_after:
 				if person.only_after not in taken_people:
