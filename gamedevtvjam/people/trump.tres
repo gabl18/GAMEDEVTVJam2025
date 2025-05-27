@@ -19,7 +19,7 @@ from = "office@mexico.gov.us"
 to = "office@tinyglob.es"
 subject = "Globe Purchase"
 text = "Dear Owner of the Globe Shop,
-in the next days my boss, will come to your place, to check out some globes. He asked me to tell you he is a mexican citizen. Uhm about his preferences:
+tomorrow my boss, will come to your place, to check out some globes. He asked me to tell you he is a mexican citizen. Uhm about his preferences:
 He likes dinero, but when you see him you will know what he likes.
 Also he likes giving stuff to his bud, who has way too much money, he loves his adventures into the darkness.
 Dont worry about the bit underneath, just make it bold
@@ -27,7 +27,7 @@ Btw, if you see black suited people around while he is here, dont worry bout it.
 
 Your Sincerily,
 Secretary of the Pres, uhm nothing"
-days_earlier = 0
+days_earlier = -1
 metadata/_custom_type_script = "uid://brlife1n53d64"
 
 [sub_resource type="Resource" id="Resource_dleve"]

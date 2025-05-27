@@ -1160,11 +1160,12 @@ metadata/_edit_use_anchors_ = true
 bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("23_d13ii")
 volume_db = 1.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+parameters/looping = false
 
 [connection signal="changed_drawer_layer" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_changed_drawer_layer"]
 [connection signal="drawer_opened_closed" from="CanvasLayer/Background" to="DrawerHandler" method="_on_texture_rect_drawer_opened_closed"]
@@ -1196,3 +1197,4 @@ parameters/looping = true
 [connection signal="area_exited" from="CanvasLayer/Drawer_Area2D" to="DrawerHandler" method="_on_drawer_area_2d_area_exited"]
 [connection signal="area_entered" from="CanvasLayer/AboveTable_Area2D" to="AreaHandler" method="_on_above_table_area_2d_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/AboveTable_Area2D" to="AreaHandler" method="_on_above_table_area_2d_area_exited"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]

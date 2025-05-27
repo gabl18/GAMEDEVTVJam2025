@@ -203,9 +203,14 @@ func gamecycle():
 	%Background.lock_drawer = false
 	%People.visible = false
 	%DrawerHandler.tidy_everything_away()
+	var y: int
+	if passed_days < 2:
+		y = 2
+	else:
+		y = 0
 	
-	var todays_bases = pick_random_unique_elements(globe_parts_base, todays_people.size()+2)
-	var todays_insides = pick_random_unique_elements(globe_parts_inside, todays_people.size()+3)
+	var todays_bases = pick_random_unique_elements(globe_parts_base, todays_people.size()+y)
+	var todays_insides = pick_random_unique_elements(globe_parts_inside, todays_people.size()+y+1)
 	var todays_globes: Array[GlobePartRes]
 	for x in range(todays_people.size()):
 		todays_globes.append(globe_parts_globe.pick_random())
@@ -301,16 +306,21 @@ func gamecycle():
 func rate_globe(person:Person,globe:AssemblyGlobe) -> int:
 	var stats: PeopleStat = person.stats
 	var ranking := 10
+	print(globe.owned_parts[globe.Parts.Base])
+	print(stats.base_ranks)
 	if globe.owned_parts[globe.Parts.Base] in stats.base_ranks:
-		ranking -= stats.base_ranks.find(globe.owned_parts[globe.Parts.Base])
+		@warning_ignore("narrowing_conversion")
+		ranking -= stats.base_ranks.find(globe.owned_parts[globe.Parts.Base])*0.9
 	else:
-		ranking -= 3
-		
+		@warning_ignore("narrowing_conversion")
+		ranking -= 2.5
+
 	if globe.owned_parts[globe.Parts.Inside] in stats.inside_ranks:
-		ranking -= stats.inside_ranks.find(globe.owned_parts[globe.Parts.Inside])*2
+		@warning_ignore("narrowing_conversion")
+		ranking -= stats.inside_ranks.find(globe.owned_parts[globe.Parts.Inside])*1.8
 	else:
-		ranking -= 7
-		
+		@warning_ignore("narrowing_conversion")
+		ranking -= 4.5
 	ranking = clamp(ranking,0,10)
 	
 	return ranking
@@ -415,3 +425,8 @@ func pick_random_unique_elements(source_array: Array, amount: int) -> Array:
 func show_outro(final_rating):
 	%Outro.show()
 	%Outro/TextureRect.texture.region.position.y = 20*(10-final_rating)
+
+
+func _on_music_finished() -> void:
+	print('music repeat')
+	%Music.play()
